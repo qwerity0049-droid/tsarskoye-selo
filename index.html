@@ -1,699 +1,547 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Царское село — Детейлинг-центр Тольятти</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: '#C9A84C',
-            'gold-light': '#E8C96B',
-            'dark': '#0A0A0A',
-          }
-        }
-      }
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:#0A0A0A;font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-    @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .fade-in{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-    .fade-in.visible{opacity:1;transform:translateY(0)}
-    .float-anim{animation:float 5s ease-in-out infinite}
-    .gold-btn{
-      background:linear-gradient(135deg,#C9A84C 0%,#E8C96B 50%,#C9A84C 100%);
-      background-size:200% auto;
-      transition:background-position .4s ease,transform .2s ease,box-shadow .3s ease;
-      box-shadow:0 4px 24px rgba(201,168,76,.45);
-    }
-    .gold-btn:hover{background-position:right center;transform:translateY(-2px);box-shadow:0 8px 36px rgba(201,168,76,.65)}
-    .gold-btn:active{transform:translateY(0)}
-    .card-hover{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-    .card-hover:hover{transform:translateY(-7px);box-shadow:0 24px 48px rgba(201,168,76,.12);border-color:rgba(201,168,76,.35)!important}
-    .gradient-text{
-      background:linear-gradient(135deg,#C9A84C,#E8C96B,#C9A84C);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
-    .grid-bg{
-      background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);
-      background-size:60px 60px;
-    }
-    .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-    .acc-body.open{max-height:300px}
-    .logo-item{filter:grayscale(100%) brightness(.45);transition:filter .3s ease}
-    .logo-item:hover{filter:grayscale(0%) brightness(1)}
-    ::-webkit-scrollbar{width:5px}
-    ::-webkit-scrollbar-track{background:#0A0A0A}
-    ::-webkit-scrollbar-thumb{background:#C9A84C;border-radius:3px}
-    @media(max-width:768px){
-      .hide-mobile{display:none!important}
-      .mobile-col{flex-direction:column!important}
-      .mobile-center{text-align:center!important;align-items:center!important}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prestige Tech — Аренда спецтехники: автокраны, панелевозы, грузовики, тягачи</title>
+<meta name="description" content="Prestige Tech — аренда спецтехники в наличии. Автокраны, панелевозы, грузовики и тягачи. Подача за 2 часа. Без посредников. Договор и закрывающие документы." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10;
+  --bg-2:#11141a;
+  --panel:#15191f;
+  --line:#23282f;
+  --text:#e9ecef;
+  --muted:#9aa3ad;
+  --gold:#c9a35a;
+  --gold-2:#e3c685;
+  --gold-soft:rgba(201,163,90,.12);
+  --accent:#f5d68a;
+  --danger:#e25c4a;
+  --radius:18px;
+  --radius-s:12px;
+  --container:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4{font-family:'Unbounded',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+.section{padding:110px 0;position:relative}
+.section h2{font-size:clamp(28px,4vw,52px);margin-bottom:18px}
+.section .sub{color:var(--muted);font-size:17px;max-width:680px;margin-bottom:56px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,13,16,.6);border-bottom:1px solid transparent;transition:.3s}
+.header.scrolled{background:rgba(11,13,16,.88);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:18px;letter-spacing:.02em}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-2));display:grid;place-items:center;color:#1a1408;font-weight:800}
+.logo span{color:var(--gold)}
+.nav-links{display:none;gap:32px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.phone-top{display:none;font-weight:600;font-size:15px}
+.phone-top:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:14px;letter-spacing:.01em;transition:transform .2s ease,box-shadow .25s ease,background .25s}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1408;box-shadow:0 8px 30px rgba(201,163,90,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,163,90,.4)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:120px;padding-bottom:80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.35;filter:grayscale(.2) contrast(1.05)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(201,163,90,.12),transparent 50%),linear-gradient(180deg,rgba(11,13,16,.7) 0%,rgba(11,13,16,.95) 70%,var(--bg) 100%)}
+.hero-grid{position:relative;z-index:1;display:grid;gap:60px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,76px);font-weight:700;margin-bottom:24px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.lead{font-size:clamp(16px,1.4vw,19px);color:var(--muted);margin-bottom:36px;max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:54px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:580px}
+.hero-stats .stat{padding:18px 0;border-top:1px solid var(--line)}
+.hero-stats .num{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3vw,34px);color:var(--gold);font-weight:600}
+.hero-stats .lbl{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+
+.pains{display:grid;grid-template-columns:1fr;gap:18px}
+.pain{padding:28px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);display:flex;gap:18px;align-items:flex-start;transition:.3s}
+.pain:hover{border-color:#3a3025;background:#181410}
+.pain-x{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:rgba(226,92,74,.1);color:var(--danger);display:grid;place-items:center;font-size:22px;font-weight:700}
+.pain h4{font-size:17px;margin-bottom:6px;font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:0}
+.pain p{color:var(--muted);font-size:14.5px}
+
+.solution{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
+.sol-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+.sol-card{padding:36px;border-radius:var(--radius);background:linear-gradient(180deg,#181c24,#11141a);border:1px solid var(--line);position:relative;overflow:hidden}
+.sol-card::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sol-list{list-style:none;display:grid;gap:14px;margin-top:10px}
+.sol-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.sol-list li::before{content:"";flex-shrink:0;margin-top:7px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--gold-soft)}
+.sol-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:4/3}
+.sol-img img{width:100%;height:100%;object-fit:cover;transition:1.2s}
+.sol-img:hover img{transform:scale(1.04)}
+
+.adv-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.adv{padding:32px 28px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);transition:.35s;position:relative;overflow:hidden}
+.adv:hover{transform:translateY(-4px);border-color:var(--gold);background:#1a1610}
+.adv-num{font-family:'Unbounded',sans-serif;font-size:42px;font-weight:700;color:var(--gold);opacity:.5;margin-bottom:14px}
+.adv h3{font-size:19px;margin-bottom:10px}
+.adv p{color:var(--muted);font-size:14.5px}
+
+.services{background:var(--bg-2)}
+.services-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.service{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--panel);border:1px solid var(--line);transition:.4s}
+.service:hover{transform:translateY(-6px);border-color:var(--gold)}
+.service-img{aspect-ratio:16/10;overflow:hidden;position:relative}
+.service-img img{width:100%;height:100%;object-fit:cover;transition:1.2s}
+.service:hover .service-img img{transform:scale(1.06)}
+.service-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(17,20,26,.85) 100%)}
+.service-body{padding:28px}
+.service h3{font-size:22px;margin-bottom:10px}
+.service .price{color:var(--gold);font-family:'Unbounded',sans-serif;font-size:14px;margin-bottom:14px;font-weight:500}
+.service p{color:var(--muted);font-size:14.5px;margin-bottom:18px;min-height:42px}
+.service-feats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.service-feats span{font-size:12px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;color:#bcc4cc}
+.service .btn{width:100%;justify-content:center}
+
+.proof-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:60px}
+.proof-stat{padding:32px 24px;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.proof-stat .num{font-family:'Unbounded',sans-serif;font-size:clamp(32px,5vw,52px);background:linear-gradient(135deg,var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.proof-stat .lbl{color:var(--muted);font-size:13px;margin-top:8px}
+
+.reviews{display:grid;grid-template-columns:1fr;gap:20px}
+.review{padding:30px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);position:relative}
+.review .quote{font-size:48px;font-family:'Unbounded',sans-serif;color:var(--gold);line-height:.8;position:absolute;top:20px;right:24px;opacity:.4}
+.review p{font-size:15.5px;color:#d6dbe1;margin-bottom:20px;font-style:italic}
+.review .who{display:flex;align-items:center;gap:14px}
+.review .avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1408;display:grid;place-items:center;font-weight:700;font-family:'Unbounded',sans-serif}
+.review .name{font-weight:600;font-size:14px}
+.review .role{font-size:12px;color:var(--muted);margin-top:2px}
+
+.about{background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+.about-grid{display:grid;grid-template-columns:1fr;gap:50px;align-items:center}
+.about-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;position:relative}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(11,13,16,.6))}
+.about-text p{font-size:16.5px;color:#cfd5db;margin-bottom:18px}
+.about-text p.lead{font-size:19px;color:var(--text)}
+.about-points{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:32px}
+.about-point .num{font-family:'Unbounded',sans-serif;color:var(--gold);font-size:28px;font-weight:600}
+.about-point .lbl{color:var(--muted);font-size:13.5px;margin-top:4px}
+
+.faq-list{max-width:860px;margin:0 auto;display:grid;gap:14px}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius-s);background:var(--panel);overflow:hidden;transition:.3s}
+.faq-item.open{border-color:var(--gold);background:#15110a}
+.faq-q{width:100%;text-align:left;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:16px;font-weight:600}
+.faq-q:hover{color:var(--gold)}
+.faq-toggle{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.3s;color:var(--gold);font-size:18px;font-weight:300}
+.faq-item.open .faq-toggle{background:var(--gold);color:#1a1408;border-color:var(--gold);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--muted);font-size:15px}
+.faq-a-inner{padding:0 26px 24px}
+
+.cta-section{padding:100px 0}
+.cta-box{position:relative;padding:70px 40px;border-radius:24px;background:linear-gradient(135deg,#1a1610 0%,#0e1014 100%);border:1px solid var(--gold);overflow:hidden;text-align:center}
+.cta-box::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,var(--gold-soft) 0%,transparent 40%)}
+.cta-box>*{position:relative;z-index:1}
+.cta-box h2{font-size:clamp(28px,4vw,46px);margin-bottom:18px}
+.cta-box p{color:#cfd5db;max-width:540px;margin:0 auto 32px;font-size:17px}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.cta-phone{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3vw,30px);color:var(--gold);font-weight:600;display:block;margin-bottom:8px}
+
+.footer{padding:70px 0 110px;background:#08090c;border-top:1px solid var(--line)}
+.footer-grid{display:grid;gap:40px;grid-template-columns:1fr}
+.footer-col h5{font-family:'Unbounded',sans-serif;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
+.footer-col p,.footer-col a{color:var(--muted);font-size:14.5px;display:block;margin-bottom:10px;transition:.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{margin-top:50px;padding-top:30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px}
+
+.mobile-call{position:fixed;bottom:18px;right:18px;left:18px;z-index:90;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1408;padding:16px 22px;border-radius:999px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 14px 40px rgba(201,163,90,.4);font-size:15px}
+.mobile-call svg{width:18px;height:18px}
+
+.hero-visual{position:relative}
+.hero-card{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-card img{width:100%;height:520px;object-fit:cover}
+.hero-float{position:absolute;background:rgba(15,18,23,.9);backdrop-filter:blur(20px);border:1px solid var(--line);padding:16px 20px;border-radius:14px;display:flex;align-items:center;gap:14px}
+.hero-float.top{top:24px;left:-12px}
+.hero-float.bot{bottom:24px;right:-12px}
+.hero-float .dot{width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 6px rgba(74,222,128,.2)}
+.hero-float .t1{font-size:13px;font-weight:600}
+.hero-float .t2{font-size:11px;color:var(--muted);margin-top:2px}
+
+@media(min-width:640px){
+  .pains{grid-template-columns:1fr 1fr}
+  .adv-grid,.services-grid{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:1fr 1fr}
+  .proof-stats{grid-template-columns:repeat(4,1fr)}
+}
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .phone-top{display:inline-flex}
+  .hero-grid{grid-template-columns:1.2fr 1fr;gap:80px}
+  .pains{grid-template-columns:repeat(2,1fr)}
+  .adv-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .sol-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:.85fr 1.15fr}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}
+  .mobile-call{display:none}
+  .footer{padding-bottom:70px}
+}
+@media(max-width:899px){
+  body{padding-bottom:90px}
+}
+</style>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-const { useState, useEffect, useRef } = React;
 
-function useReveal(threshold = 0.1) {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) el.classList.add('visible');
-    }, { threshold });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return ref;
-}
-
-function useCounter(target, active, duration = 1800) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!active) return;
-    let v = 0;
-    const step = target / (duration / 16);
-    const t = setInterval(() => {
-      v += step;
-      if (v >= target) { setVal(target); clearInterval(t); }
-      else setVal(Math.floor(v));
-    }, 16);
-    return () => clearInterval(t);
-  }, [active, target]);
-  return val;
-}
-
-/* ── NAV ── */
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', h);
-    return () => window.removeEventListener('scroll', h);
-  }, []);
-  return (
-    <nav style={{
-      position:'fixed',top:0,left:0,right:0,zIndex:100,
-      background: scrolled ? 'rgba(10,10,10,.96)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(201,168,76,.1)' : 'none',
-      transition:'all .3s ease', padding:'0 24px'
-    }}>
-      <div style={{maxWidth:1200,margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',height:72}}>
-        <div style={{display:'flex',alignItems:'center',gap:12}}>
-          <div style={{width:40,height:40,borderRadius:10,background:'linear-gradient(135deg,#C9A84C,#E8C96B)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:20}}>👑</div>
-          <div>
-            <div style={{fontSize:16,fontWeight:700,lineHeight:1.2}}>Царское село</div>
-            <div style={{fontSize:10,color:'#C9A84C',letterSpacing:'.1em',textTransform:'uppercase'}}>Детейлинг-центр</div>
-          </div>
-        </div>
-        <div className="hide-mobile" style={{display:'flex',gap:32,alignItems:'center'}}>
-          {['Услуги','Цены','О нас','Контакты'].map(i=>(
-            <a key={i} href="#" style={{color:'#888',fontSize:14,textDecoration:'none',transition:'color .2s'}}
-               onMouseEnter={e=>e.target.style.color='#C9A84C'} onMouseLeave={e=>e.target.style.color='#888'}>{i}</a>
-          ))}
-          <a href="tel:+79278915575" style={{color:'#C9A84C',fontSize:14,fontWeight:600,textDecoration:'none'}}>+7 927 891-55-75</a>
-          <button className="gold-btn" style={{padding:'10px 22px',borderRadius:8,border:'none',cursor:'pointer',fontSize:13,fontWeight:700,color:'#0A0A0A'}}>
-            Рассчитать услугу
-          </button>
-        </div>
-      </div>
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#" class="logo"><span class="logo-mark">P</span>Prestige<span>Tech</span></a>
+    <nav class="nav-links">
+      <a href="#services">Техника</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#about">О компании</a>
+      <a href="#faq">Вопросы</a>
     </nav>
-  );
-}
+    <div class="nav-cta">
+      <a href="tel:+79371434638" class="phone-top">8 (937) 143-46-38</a>
+      <a href="#cta" class="btn btn-primary">Заказать</a>
+    </div>
+  </div>
+</header>
 
-/* ── HERO ── */
-function Hero() {
-  return (
-    <section className="grid-bg" style={{minHeight:'100vh',display:'flex',alignItems:'center',padding:'120px 24px 80px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:'30%',left:'40%',transform:'translate(-50%,-50%)',width:700,height:700,borderRadius:'50%',background:'radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%)',pointerEvents:'none'}}/>
-      <div style={{maxWidth:1200,margin:'0 auto',width:'100%',display:'flex',alignItems:'center',gap:60,flexWrap:'wrap'}}>
-        {/* Left */}
-        <div style={{flex:1,minWidth:280}}>
-          <div style={{display:'inline-flex',alignItems:'center',gap:8,background:'rgba(201,168,76,.1)',border:'1px solid rgba(201,168,76,.25)',borderRadius:100,padding:'6px 16px',marginBottom:28}}>
-            <span style={{color:'#C9A84C',fontSize:13}}>★★★★★</span>
-            <span style={{color:'#C9A84C',fontSize:13,fontWeight:600}}>4.9 · 46 отзывов</span>
-          </div>
-          <h1 style={{fontSize:'clamp(38px,5.5vw,70px)',fontWeight:900,lineHeight:1.08,marginBottom:24}}>
-            Детейлинг,<br/>
-            <span className="gradient-text">достойный короля</span>
-          </h1>
-          <p style={{fontSize:18,color:'#777',lineHeight:1.75,marginBottom:40,maxWidth:480}}>
-            Премиальный уход за вашим автомобилем в Тольятти. Полировка, керамика, химчистка — делаем машину лучше, чем с завода.
-          </p>
-          <div className="mobile-col" style={{display:'flex',gap:16,alignItems:'center',marginBottom:48,flexWrap:'wrap'}}>
-            <button className="gold-btn" style={{padding:'16px 36px',borderRadius:12,border:'none',cursor:'pointer',fontSize:16,fontWeight:800,color:'#0A0A0A',whiteSpace:'nowrap'}}>
-              Рассчитать услугу
-            </button>
-            <a href="tel:+79278915575" style={{display:'flex',alignItems:'center',gap:10,textDecoration:'none',color:'#fff',fontSize:15,fontWeight:500}}>
-              <div style={{width:44,height:44,borderRadius:12,border:'1px solid rgba(201,168,76,.3)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:20}}>📞</div>
-              +7 927 891-55-75
-            </a>
-          </div>
-          <div style={{display:'flex',gap:32,flexWrap:'wrap'}}>
-            <div>
-              <div style={{fontSize:13,fontWeight:600,color:'#C9A84C',marginBottom:2}}>Открыто сейчас</div>
-              <div style={{fontSize:12,color:'#555'}}>Ежедневно 09:00–21:00</div>
-            </div>
-            <div>
-              <div style={{fontSize:13,fontWeight:600,color:'#C9A84C',marginBottom:2}}>Тольятти</div>
-              <div style={{fontSize:12,color:'#555'}}>ул. 40 лет Победы, 351</div>
-            </div>
-          </div>
-        </div>
-        {/* Right */}
-        <div style={{flex:1,minWidth:280,display:'flex',justifyContent:'center'}} className="float-anim">
-          <HeroPhoto/>
-        </div>
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1800&q=80" alt="Спецтехника на стройплощадке" />
+  </div>
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="eyebrow reveal">Аренда спецтехники с 2014 года</div>
+      <h1 class="reveal d1">Спецтехника, которая <em>не подведёт</em> на объекте</h1>
+      <p class="lead reveal d2">Автокраны, панелевозы, грузовики и тягачи — собственный парк, проверенные водители, подача за 2 часа. Без посредников и сорванных сроков.</p>
+      <div class="hero-cta reveal d3">
+        <a href="#cta" class="btn btn-primary">Рассчитать стоимость
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">Парк техники</a>
       </div>
-    </section>
-  );
-}
-
-function HeroPhoto() {
-  return (
-    <div style={{position:'relative',width:520,maxWidth:'100%'}}>
-      {/* Outer ambient glow */}
-      <div style={{position:'absolute',inset:-40,borderRadius:60,background:'radial-gradient(ellipse,rgba(201,168,76,.18) 0%,transparent 70%)',pointerEvents:'none',zIndex:0}}/>
-      {/* Gold border frame */}
-      <div style={{position:'relative',zIndex:1,borderRadius:22,padding:2,background:'linear-gradient(135deg,rgba(201,168,76,.6),rgba(201,168,76,.15),rgba(201,168,76,.5))'}}>
-        <div style={{borderRadius:20,overflow:'hidden',position:'relative'}}>
-          <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
-            alt="Премиальный автомобиль после детейлинга"
-            style={{width:'100%',height:400,objectFit:'cover',display:'block'}}
-          />
-          {/* Bottom fade */}
-          <div style={{position:'absolute',bottom:0,left:0,right:0,height:130,background:'linear-gradient(to top,rgba(10,10,10,.88),transparent)'}}/>
-          {/* Top-right badge */}
-          <div style={{position:'absolute',top:16,right:16,background:'rgba(201,168,76,.18)',border:'1px solid rgba(201,168,76,.4)',borderRadius:10,padding:'8px 14px',backdropFilter:'blur(14px)'}}>
-            <div style={{color:'#C9A84C',fontSize:12,fontWeight:700}}>Ceramic Pro</div>
-            <div style={{color:'#aaa',fontSize:10}}>Официальный партнёр</div>
-          </div>
-          {/* Bottom-left badge */}
-          <div style={{position:'absolute',bottom:16,left:16,background:'rgba(10,10,10,.88)',border:'1px solid rgba(255,255,255,.12)',borderRadius:10,padding:'8px 14px',backdropFilter:'blur(14px)',display:'flex',alignItems:'center',gap:10}}>
-            <div style={{width:32,height:32,borderRadius:'50%',background:'linear-gradient(135deg,#C9A84C,#E8C96B)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,flexShrink:0}}>✓</div>
-            <div>
-              <div style={{color:'#fff',fontSize:11,fontWeight:700}}>Детейлинг завершён</div>
-              <div style={{color:'#C9A84C',fontSize:10}}>Защита на 5 лет</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Stars badge floating top-left */}
-      <div style={{position:'absolute',top:-16,left:20,zIndex:2,background:'rgba(10,10,10,.95)',border:'1px solid rgba(201,168,76,.25)',borderRadius:100,padding:'6px 14px',backdropFilter:'blur(14px)',display:'flex',alignItems:'center',gap:6}}>
-        <span style={{color:'#C9A84C',fontSize:12}}>★★★★★</span>
-        <span style={{color:'#fff',fontSize:12,fontWeight:600}}>4.9</span>
-        <span style={{color:'#555',fontSize:11}}>Яндекс.Карты</span>
+      <div class="hero-stats reveal d4">
+        <div class="stat"><div class="num">12+</div><div class="lbl">лет на рынке</div></div>
+        <div class="stat"><div class="num">40</div><div class="lbl">единиц в парке</div></div>
+        <div class="stat"><div class="num">2 ч</div><div class="lbl">подача техники</div></div>
       </div>
     </div>
-  );
-}
-
-/* ── SOCIAL PROOF ── */
-function SocialProof() {
-  const ref = useReveal();
-  const brands = [
-    {name:"Meguiar's",sub:"USA Pro"},
-    {name:"Ceramic Pro",sub:"Nano Coat"},
-    {name:"3M",sub:"Industrial"},
-    {name:"Koch Chemie",sub:"Germany"},
-    {name:"RUPES",sub:"Italy"},
-    {name:"CarPro",sub:"Detailing"},
-  ];
-  return (
-    <section style={{padding:'56px 24px',borderTop:'1px solid rgba(255,255,255,.05)',borderBottom:'1px solid rgba(255,255,255,.05)'}}>
-      <div ref={ref} className="fade-in" style={{maxWidth:1200,margin:'0 auto'}}>
-        <p style={{textAlign:'center',color:'#444',fontSize:12,letterSpacing:'.15em',textTransform:'uppercase',fontWeight:600,marginBottom:36}}>
-          Работаем с профессиональными материалами
-        </p>
-        <div style={{display:'flex',gap:'clamp(20px,4vw,48px)',justifyContent:'center',flexWrap:'wrap',alignItems:'center'}}>
-          {brands.map(({name,sub})=>(
-            <div key={name} className="logo-item" style={{display:'flex',flexDirection:'column',alignItems:'center',gap:3,padding:'8px 16px',cursor:'default'}}>
-              <div style={{fontSize:17,fontWeight:800,color:'#C9A84C',letterSpacing:'-.01em'}}>{name}</div>
-              <div style={{fontSize:9,color:'#555',letterSpacing:'.1em',textTransform:'uppercase'}}>{sub}</div>
-            </div>
-          ))}
+    <div class="hero-visual reveal d2">
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&q=80" alt="Автокран на объекте" />
+      </div>
+      <div class="hero-float top">
+        <div class="dot"></div>
+        <div>
+          <div class="t1">Техника в наличии</div>
+          <div class="t2">Готова к выезду сегодня</div>
         </div>
       </div>
-    </section>
-  );
-}
-
-/* ── FEATURES ── */
-function Features() {
-  const ref = useReveal();
-  const items = [
-    {icon:'✨',title:'Полировка кузова',desc:'Убираем царапины, окислы и матовость — ваш автомобиль снова сияет, как с завода.'},
-    {icon:'🛡️',title:'Керамическое покрытие',desc:'Защищаем ЛКП на 3–7 лет от ультрафиолета, химии и механических повреждений.'},
-    {icon:'🪣',title:'Химчистка салона',desc:'Глубокая очистка сидений, потолка, ковров и пластика — никаких пятен и запахов.'},
-    {icon:'🔧',title:'Детейлинг двигателя',desc:'Обезжириваем, очищаем и консервируем подкапотное пространство.'},
-    {icon:'💧',title:'Антидождь',desc:'Нанопокрытие на стёкла — вода скатывается каплями, видимость в дождь идеальная.'},
-    {icon:'🎨',title:'Защитная плёнка',desc:'ПУ-плёнка на сколозоны защищает от камней, царапин и пескоструя надолго.'},
-  ];
-  return (
-    <section style={{padding:'96px 24px'}}>
-      <div style={{maxWidth:1200,margin:'0 auto'}}>
-        <div ref={ref} className="fade-in" style={{textAlign:'center',marginBottom:60}}>
-          <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,letterSpacing:'.15em',textTransform:'uppercase',marginBottom:14}}>Наши услуги</div>
-          <h2 style={{fontSize:'clamp(30px,4vw,50px)',fontWeight:800,lineHeight:1.15,marginBottom:14}}>
-            Полный спектр<br/><span className="gradient-text">премиального детейлинга</span>
-          </h2>
-          <p style={{color:'#555',fontSize:15,maxWidth:480,margin:'0 auto'}}>Используем только сертифицированные материалы мировых брендов и профессиональное оборудование</p>
-        </div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(290px,1fr))',gap:20}}>
-          {items.map(({icon,title,desc},i)=>(
-            <FCard key={title} icon={icon} title={title} desc={desc} delay={i*90}/>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FCard({icon,title,desc,delay}) {
-  const ref = useReveal();
-  return (
-    <div ref={ref} className="fade-in card-hover" style={{background:'#111',border:'1px solid rgba(255,255,255,.06)',borderRadius:16,padding:26,transitionDelay:`${delay}ms`}}>
-      <div style={{width:50,height:50,borderRadius:13,background:'rgba(201,168,76,.1)',border:'1px solid rgba(201,168,76,.2)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:22,marginBottom:18}}>{icon}</div>
-      <h3 style={{fontSize:17,fontWeight:700,marginBottom:8}}>{title}</h3>
-      <p style={{color:'#5a5a5a',fontSize:14,lineHeight:1.7}}>{desc}</p>
-    </div>
-  );
-}
-
-/* ── GALLERY ── */
-function Gallery() {
-  const ref = useReveal();
-  const photos = [
-    {
-      src:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=440&q=85',
-      label:'Полировка кузова',
-      sub:'Двухфазная коррекция ЛКП',
-      tag:'Процесс'
-    },
-    {
-      src:'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&h=440&q=85',
-      label:'Зеркальный блеск',
-      sub:'Результат после полировки',
-      tag:'Результат'
-    },
-    {
-      src:'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=600&h=440&q=85',
-      label:'Керамическое покрытие',
-      sub:'Ceramic Pro — защита на 5+ лет',
-      tag:'Защита'
-    },
-  ];
-  return (
-    <section style={{padding:'0 24px 96px'}}>
-      <div style={{maxWidth:1200,margin:'0 auto'}}>
-        <div ref={ref} className="fade-in" style={{textAlign:'center',marginBottom:48}}>
-          <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,letterSpacing:'.15em',textTransform:'uppercase',marginBottom:14}}>Наши работы</div>
-          <h2 style={{fontSize:'clamp(28px,3.5vw,46px)',fontWeight:800,lineHeight:1.15}}>
-            Результат говорит<br/><span className="gradient-text">сам за себя</span>
-          </h2>
-        </div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:18}}>
-          {photos.map(({src,label,sub,tag},i)=>(
-            <GalleryCard key={label} src={src} label={label} sub={sub} tag={tag} delay={i*110}/>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function GalleryCard({src,label,sub,tag,delay}) {
-  const ref = useReveal();
-  const [hov,setHov] = useState(false);
-  return (
-    <div ref={ref} className="fade-in" style={{
-      borderRadius:18,overflow:'hidden',position:'relative',cursor:'pointer',
-      border:`1px solid ${hov?'rgba(201,168,76,.35)':'rgba(255,255,255,.06)'}`,
-      transitionDelay:`${delay}ms`,
-      transform:hov?'translateY(-6px)':'translateY(0)',
-      transition:'transform .35s ease,box-shadow .35s ease,border-color .35s ease',
-      boxShadow:hov?'0 24px 48px rgba(201,168,76,.14)':'0 0 0 transparent',
-    }}
-    onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-      <div style={{overflow:'hidden',height:290}}>
-        <img src={src} alt={label} style={{width:'100%',height:'100%',objectFit:'cover',display:'block',transform:hov?'scale(1.07)':'scale(1)',transition:'transform .55s ease'}}/>
-      </div>
-      <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.08) 55%,transparent 100%)'}}/>
-      <div style={{position:'absolute',top:14,left:14,background:'rgba(201,168,76,.18)',border:'1px solid rgba(201,168,76,.35)',borderRadius:100,padding:'4px 12px'}}>
-        <span style={{color:'#C9A84C',fontSize:11,fontWeight:700}}>{tag}</span>
-      </div>
-      <div style={{position:'absolute',bottom:0,left:0,right:0,padding:'18px 20px'}}>
-        <div style={{fontSize:16,fontWeight:700,color:'#fff',marginBottom:4}}>{label}</div>
-        <div style={{fontSize:12,color:'#C9A84C'}}>{sub}</div>
-      </div>
-    </div>
-  );
-}
-
-/* ── PRICING ── */
-function Pricing() {
-  const ref = useReveal();
-  const plans = [
-    {
-      name:'Стандарт', price:'3 500', desc:'Базовый уход за автомобилем',
-      features:['Ручная мойка кузова','Чернение резины','Полировка стёкол','Пылесос салона','Ароматизация'],
-      cta:'Записаться', hot:false,
-    },
-    {
-      name:'Оптимум', price:'9 900', desc:'Самый популярный выбор',
-      features:['Всё из «Стандарт»','Двухфазная полировка','Химчистка салона','Антидождь на стёкла','Восстановление фар','Детейлинг дисков'],
-      cta:'Рассчитать услугу', hot:true, badge:'★ Хит',
-    },
-    {
-      name:'Премиум VIP', price:'24 900', desc:'Максимальная защита и блеск',
-      features:['Всё из «Оптимум»','Ceramic Pro покрытие','Детейлинг двигателя','Защитная плёнка','Озонирование салона','Гарантия 3 года'],
-      cta:'Рассчитать услугу', hot:false,
-    },
-  ];
-  return (
-    <section style={{padding:'96px 24px',background:'#0D0D0D'}}>
-      <div style={{maxWidth:1200,margin:'0 auto'}}>
-        <div ref={ref} className="fade-in" style={{textAlign:'center',marginBottom:60}}>
-          <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,letterSpacing:'.15em',textTransform:'uppercase',marginBottom:14}}>Тарифы</div>
-          <h2 style={{fontSize:'clamp(30px,4vw,50px)',fontWeight:800,lineHeight:1.15}}>
-            Прозрачные цены,<br/><span className="gradient-text">честный результат</span>
-          </h2>
-        </div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:22,alignItems:'start'}}>
-          {plans.map((p,i)=><PCard key={p.name} plan={p} delay={i*110}/>)}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PCard({plan,delay}) {
-  const ref = useReveal();
-  const [hov,setHov]=useState(false);
-  return (
-    <div ref={ref} className="fade-in card-hover" style={{
-      background:plan.hot?'linear-gradient(180deg,rgba(201,168,76,.13) 0%,rgba(201,168,76,.04) 100%)':'#111',
-      border:`1px solid ${plan.hot?'rgba(201,168,76,.4)':'rgba(255,255,255,.06)'}`,
-      borderRadius:20,padding:30,position:'relative',transitionDelay:`${delay}ms`,
-      boxShadow:plan.hot?'0 0 48px rgba(201,168,76,.1)':'none'
-    }}>
-      {plan.badge&&<div style={{position:'absolute',top:-13,left:'50%',transform:'translateX(-50%)',background:'linear-gradient(135deg,#C9A84C,#E8C96B)',color:'#0A0A0A',fontSize:12,fontWeight:800,padding:'4px 18px',borderRadius:100,whiteSpace:'nowrap'}}>{plan.badge}</div>}
-      <div style={{fontSize:19,fontWeight:700,color:plan.hot?'#C9A84C':'#fff',marginBottom:6}}>{plan.name}</div>
-      <div style={{fontSize:13,color:'#555',marginBottom:22}}>{plan.desc}</div>
-      <div style={{marginBottom:26}}>
-        <span style={{fontSize:42,fontWeight:900}}>{plan.price}</span>
-        <span style={{color:'#555',fontSize:14,marginLeft:4}}>₽</span>
-      </div>
-      <div style={{borderTop:'1px solid rgba(255,255,255,.06)',paddingTop:22,marginBottom:26}}>
-        {plan.features.map(f=>(
-          <div key={f} style={{display:'flex',alignItems:'center',gap:10,marginBottom:11}}>
-            <div style={{width:18,height:18,borderRadius:'50%',background:plan.hot?'rgba(201,168,76,.18)':'rgba(255,255,255,.05)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-              <span style={{color:'#C9A84C',fontSize:10}}>✓</span>
-            </div>
-            <span style={{color:'#888',fontSize:13}}>{f}</span>
-          </div>
-        ))}
-      </div>
-      <button
-        className={plan.hot?'gold-btn':''}
-        onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-        style={{width:'100%',padding:'13px',borderRadius:11,border:plan.hot?'none':'1px solid rgba(201,168,76,.3)',background:plan.hot?undefined:(hov?'rgba(201,168,76,.1)':'transparent'),cursor:'pointer',fontSize:14,fontWeight:700,color:plan.hot?'#0A0A0A':'#C9A84C',transition:'all .3s ease'}}>
-        {plan.cta}
-      </button>
-    </div>
-  );
-}
-
-/* ── STATS ── */
-function Stats() {
-  const ref = useRef(null);
-  const [active,setActive]=useState(false);
-  useEffect(()=>{
-    const el=ref.current; if(!el) return;
-    const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting)setActive(true)},{threshold:.3});
-    obs.observe(el); return ()=>obs.disconnect();
-  },[]);
-  const items=[
-    {val:500,suf:'+',label:'Довольных клиентов',sub:'с 2018 года'},
-    {val:null,raw:'4.9★',label:'Рейтинг',sub:'на Яндекс.Картах'},
-    {val:7,suf:'',label:'Лет опыта',sub:'на рынке Тольятти'},
-    {val:98,suf:'%',label:'Рекомендуют',sub:'своим друзьям'},
-  ];
-  return (
-    <section style={{padding:'76px 24px',background:'linear-gradient(135deg,rgba(201,168,76,.07) 0%,rgba(10,10,10,0) 50%,rgba(201,168,76,.07) 100%)',borderTop:'1px solid rgba(201,168,76,.1)',borderBottom:'1px solid rgba(201,168,76,.1)'}}>
-      <div ref={ref} style={{maxWidth:1200,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:36,textAlign:'center'}}>
-        {items.map(it=><StatItem key={it.label} {...it} active={active}/>)}
-      </div>
-    </section>
-  );
-}
-function StatItem({val,suf,raw,label,sub,active}) {
-  const count=useCounter(val||0,active&&!raw);
-  const display=raw?(active?raw:'0★'):(count+(suf||''));
-  return (
-    <div>
-      <div style={{fontSize:'clamp(40px,5.5vw,60px)',fontWeight:900,lineHeight:1}} className="gradient-text">{display}</div>
-      <div style={{fontSize:15,fontWeight:600,marginTop:8,marginBottom:4}}>{label}</div>
-      <div style={{fontSize:12,color:'#555'}}>{sub}</div>
-    </div>
-  );
-}
-
-/* ── HOW IT WORKS ── */
-function HowItWorks() {
-  const ref=useReveal();
-  const steps=[
-    {n:'01',icon:'📋',title:'Оставьте заявку',desc:'Позвоните или нажмите «Рассчитать услугу». Расскажите о машине — подберём оптимальный пакет и сориентируем по стоимости.'},
-    {n:'02',icon:'🚗',title:'Привезите автомобиль',desc:'Приезжайте в удобное время на ул. 40 лет Победы, 351. Специалист осмотрит авто и согласует финальный объём работ.'},
-    {n:'03',icon:'✨',title:'Забирайте результат',desc:'Выполним работу в срок и уведомим вас. Получите автомобиль в безупречном состоянии с документами о гарантии.'},
-  ];
-  return (
-    <section style={{padding:'96px 24px'}}>
-      <div style={{maxWidth:1200,margin:'0 auto'}}>
-        <div ref={ref} className="fade-in" style={{textAlign:'center',marginBottom:60}}>
-          <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,letterSpacing:'.15em',textTransform:'uppercase',marginBottom:14}}>Как это работает</div>
-          <h2 style={{fontSize:'clamp(30px,4vw,50px)',fontWeight:800,lineHeight:1.15}}>
-            Просто. Быстро.<br/><span className="gradient-text">Без лишних вопросов.</span>
-          </h2>
-        </div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:36,position:'relative'}}>
-          {steps.map(({n,icon,title,desc},i)=>(
-            <StepCard key={n} n={n} icon={icon} title={title} desc={desc} delay={i*130}/>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-function StepCard({n,icon,title,desc,delay}) {
-  const ref=useReveal();
-  return (
-    <div ref={ref} className="fade-in" style={{textAlign:'center',transitionDelay:`${delay}ms`}}>
-      <div style={{width:70,height:70,borderRadius:'50%',margin:'0 auto 22px',background:'rgba(201,168,76,.1)',border:'2px solid rgba(201,168,76,.25)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:26,position:'relative'}}>
-        {icon}
-        <div style={{position:'absolute',top:-10,right:-10,width:26,height:26,borderRadius:'50%',background:'linear-gradient(135deg,#C9A84C,#E8C96B)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontWeight:900,color:'#0A0A0A'}}>{n}</div>
-      </div>
-      <h3 style={{fontSize:19,fontWeight:700,marginBottom:10}}>{title}</h3>
-      <p style={{color:'#555',fontSize:14,lineHeight:1.75,maxWidth:290,margin:'0 auto'}}>{desc}</p>
-    </div>
-  );
-}
-
-/* ── FAQ ── */
-function FAQ() {
-  const ref=useReveal();
-  const [open,setOpen]=useState(null);
-  const faqs=[
-    {q:'Сколько времени занимает полный детейлинг?',a:'Полный детейлинг с полировкой и нанесением керамики занимает 1–3 дня в зависимости от состояния авто. Стандартные услуги (мойка, химчистка) выполняются за 3–5 часов.'},
-    {q:'Нужно ли записываться заранее?',a:'Рекомендуем записываться за 1–2 дня, особенно для комплексных работ. По телефону +7 927 891-55-75 сразу скажем ближайшее свободное время. В некоторые дни есть окна без записи.'},
-    {q:'Какие материалы вы используете?',a:'Работаем исключительно с сертифицированными профессиональными материалами: Ceramic Pro, Koch Chemie, Meguiar\'s, 3M, RUPES. Только то, что даёт стабильный долгосрочный результат.'},
-    {q:'Есть ли гарантия на работы?',a:'На все работы — письменная гарантия. На нанесение керамического покрытия — до 3 лет. На полировку кузова — 6 месяцев. Если что-то пойдёт не так, устраним за наш счёт.'},
-    {q:'Делаете ли детейлинг новых автомобилей?',a:'Да, это один из наших приоритетов. Предпродажный детейлинг и защита нового автомобиля — лучший способ сохранить вид и стоимость машины на годы. Рекомендуем сделать сразу после покупки.'},
-    {q:'Можно ли оставить автомобиль на несколько дней?',a:'Конечно. Центр находится в охраняемом помещении с круглосуточным видеонаблюдением. Оставьте машину на время работ — уведомим, когда всё будет готово.'},
-  ];
-  return (
-    <section style={{padding:'96px 24px',background:'#0D0D0D'}}>
-      <div style={{maxWidth:760,margin:'0 auto'}}>
-        <div ref={ref} className="fade-in" style={{textAlign:'center',marginBottom:56}}>
-          <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,letterSpacing:'.15em',textTransform:'uppercase',marginBottom:14}}>Вопросы и ответы</div>
-          <h2 style={{fontSize:'clamp(30px,4vw,50px)',fontWeight:800}}>Часто задают</h2>
-        </div>
-        <div style={{display:'flex',flexDirection:'column',gap:8}}>
-          {faqs.map(({q,a},i)=><FaqItem key={i} q={q} a={a} isOpen={open===i} onToggle={()=>setOpen(open===i?null:i)} delay={i*70}/>)}
-        </div>
-      </div>
-    </section>
-  );
-}
-function FaqItem({q,a,isOpen,onToggle,delay}) {
-  const ref=useReveal();
-  return (
-    <div ref={ref} className="fade-in" style={{transitionDelay:`${delay}ms`}}>
-      <div onClick={onToggle} style={{background:isOpen?'rgba(201,168,76,.08)':'#111',border:`1px solid ${isOpen?'rgba(201,168,76,.3)':'rgba(255,255,255,.06)'}`,borderRadius:13,cursor:'pointer',overflow:'hidden',transition:'all .3s ease'}}>
-        <div style={{padding:'18px 22px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:14}}>
-          <span style={{fontSize:15,fontWeight:600,color:isOpen?'#C9A84C':'#fff',flex:1}}>{q}</span>
-          <div style={{width:26,height:26,borderRadius:'50%',border:'1px solid rgba(201,168,76,.3)',display:'flex',alignItems:'center',justifyContent:'center',color:'#C9A84C',fontSize:18,flexShrink:0,transform:isOpen?'rotate(45deg)':'rotate(0)',transition:'transform .3s ease'}}>+</div>
-        </div>
-        <div className={`acc-body${isOpen?' open':''}`}>
-          <div style={{padding:'0 22px 18px'}}>
-            <p style={{color:'#777',fontSize:14,lineHeight:1.8}}>{a}</p>
-          </div>
+      <div class="hero-float bot">
+        <div>
+          <div class="t1">★ 4.9 / 5.0</div>
+          <div class="t2">218 закрытых заказов</div>
         </div>
       </div>
     </div>
-  );
-}
+  </div>
+</section>
 
-/* ── BOTTOM CTA ── */
-function BottomCTA() {
-  const ref=useReveal();
-  const [hov,setHov]=useState(false);
-  return (
-    <section className="grid-bg" style={{padding:'100px 24px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',width:700,height:400,background:'radial-gradient(ellipse,rgba(201,168,76,.09) 0%,transparent 70%)',pointerEvents:'none'}}/>
-      <div ref={ref} className="fade-in" style={{maxWidth:680,margin:'0 auto',textAlign:'center',position:'relative'}}>
-        <div style={{display:'inline-flex',alignItems:'center',gap:8,background:'rgba(201,168,76,.1)',border:'1px solid rgba(201,168,76,.22)',borderRadius:100,padding:'6px 18px',marginBottom:28}}>
-          <span style={{color:'#C9A84C',fontSize:13}}>👑</span>
-          <span style={{color:'#C9A84C',fontSize:13,fontWeight:600}}>Открыто ежедневно с 09:00 до 21:00</span>
-        </div>
-        <h2 style={{fontSize:'clamp(32px,5vw,58px)',fontWeight:900,lineHeight:1.1,marginBottom:18}}>
-          Ваш автомобиль заслуживает<br/><span className="gradient-text">лучшего ухода</span>
-        </h2>
-        <p style={{color:'#555',fontSize:17,lineHeight:1.65,marginBottom:40}}>
-          Запишитесь прямо сейчас и получите бесплатную консультацию.<br/>Рассчитаем стоимость и подберём оптимальный пакет.
-        </p>
-        <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <button className="gold-btn" style={{padding:'17px 42px',borderRadius:13,border:'none',cursor:'pointer',fontSize:16,fontWeight:800,color:'#0A0A0A'}}>
-            Рассчитать услугу
-          </button>
-          <a href="tel:+79278915575" onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-            style={{padding:'17px 30px',borderRadius:13,border:'1px solid rgba(201,168,76,.3)',background:hov?'rgba(201,168,76,.1)':'transparent',color:'#C9A84C',fontSize:16,fontWeight:700,textDecoration:'none',display:'inline-flex',alignItems:'center',gap:8,transition:'background .3s ease'}}>
-            📞 +7 927 891-55-75
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── FOOTER ── */
-function Footer() {
-  return (
-    <footer style={{background:'#080808',borderTop:'1px solid rgba(255,255,255,.05)',padding:'64px 24px 28px'}}>
-      <div style={{maxWidth:1200,margin:'0 auto'}}>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',gap:44,marginBottom:56}}>
-          {/* Brand */}
-          <div>
-            <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:14}}>
-              <div style={{width:38,height:38,borderRadius:9,background:'linear-gradient(135deg,#C9A84C,#E8C96B)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:18}}>👑</div>
-              <div>
-                <div style={{fontSize:15,fontWeight:700}}>Царское село</div>
-                <div style={{fontSize:9,color:'#C9A84C',letterSpacing:'.1em',textTransform:'uppercase'}}>Детейлинг-центр</div>
-              </div>
-            </div>
-            <p style={{color:'#3a3a3a',fontSize:13,lineHeight:1.7,marginBottom:18}}>Премиальный детейлинг в Тольятти с 2018 года. Ваш автомобиль в надёжных руках.</p>
-            <div style={{display:'flex',gap:10}}>
-              {[{icon:'💬',label:'ВКонтакте'},{icon:'✈️',label:'Telegram'},{icon:'📷',label:'Instagram'},{icon:'▶',label:'YouTube'}].map(({icon,label})=>(
-                <SocBtn key={label} icon={icon} label={label}/>
-              ))}
-            </div>
-          </div>
-          {/* Services */}
-          <div>
-            <FootCol title="Услуги" links={['Полировка кузова','Керамическое покрытие','Химчистка салона','Антидождь','Детейлинг двигателя','Защитная плёнка']}/>
-          </div>
-          {/* Company */}
-          <div>
-            <FootCol title="Компания" links={['О нас','Цены','Отзывы','Гарантии','Акции','Контакты']}/>
-          </div>
-          {/* Contact */}
-          <div>
-            <div style={{fontSize:11,fontWeight:700,color:'#fff',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:18}}>Контакты</div>
-            <div style={{color:'#444',fontSize:13,lineHeight:1.75,marginBottom:12}}>ул. 40 лет Победы, 351,<br/>этаж 2, Тольятти,<br/>Самарская обл., 445056</div>
-            <a href="tel:+79278915575" style={{display:'block',color:'#C9A84C',fontSize:15,fontWeight:700,textDecoration:'none',marginBottom:6}}>+7 927 891-55-75</a>
-            <div style={{color:'#444',fontSize:12,marginBottom:16}}>Ежедневно 09:00–21:00</div>
-            <div style={{padding:'11px 14px',background:'rgba(201,168,76,.08)',borderRadius:9,border:'1px solid rgba(201,168,76,.15)'}}>
-              <div style={{color:'#C9A84C',fontSize:12,fontWeight:700,marginBottom:3}}>★ 4.9 на Яндекс.Картах</div>
-              <div style={{color:'#444',fontSize:11}}>46 отзывов довольных клиентов</div>
-            </div>
-          </div>
-        </div>
-        <div style={{borderTop:'1px solid rgba(255,255,255,.05)',paddingTop:22,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
-          <div style={{color:'#333',fontSize:12}}>© 2024 Царское село. Детейлинг-центр. Все права защищены.</div>
-          <div style={{display:'flex',gap:20}}>
-            {['Политика конфиденциальности','Условия использования'].map(t=>(
-              <a key={t} href="#" style={{color:'#333',fontSize:11,textDecoration:'none',transition:'color .2s'}}
-                 onMouseEnter={e=>e.target.style.color='#666'} onMouseLeave={e=>e.target.style.color='#333'}>{t}</a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function SocBtn({icon,label}) {
-  const [h,setH]=useState(false);
-  return (
-    <a href="#" title={label} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
-      style={{width:34,height:34,borderRadius:8,background:h?'rgba(201,168,76,.1)':'rgba(255,255,255,.04)',border:`1px solid ${h?'rgba(201,168,76,.4)':'rgba(255,255,255,.07)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,textDecoration:'none',transition:'all .2s ease'}}>
-      {icon}
-    </a>
-  );
-}
-
-function FootCol({title,links}) {
-  return (
-    <>
-      <div style={{fontSize:11,fontWeight:700,color:'#fff',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:18}}>{title}</div>
-      {links.map(l=>(
-        <a key={l} href="#" style={{display:'block',color:'#3a3a3a',fontSize:13,textDecoration:'none',marginBottom:11,transition:'color .2s'}}
-           onMouseEnter={e=>e.target.style.color='#C9A84C'} onMouseLeave={e=>e.target.style.color='#3a3a3a'}>{l}</a>
-      ))}
-    </>
-  );
-}
-
-/* ── APP ── */
-function App() {
-  return (
-    <div style={{minHeight:'100vh',background:'#0A0A0A'}}>
-      <Navbar/>
-      <Hero/>
-      <SocialProof/>
-      <Features/>
-      <Gallery/>
-      <Pricing/>
-      <Stats/>
-      <HowItWorks/>
-      <FAQ/>
-      <BottomCTA/>
-      <Footer/>
+<section class="section" id="pains">
+  <div class="container">
+    <div class="eyebrow reveal">Знакомая ситуация?</div>
+    <h2 class="reveal d1">Почему стройка встаёт, а сроки летят</h2>
+    <p class="sub reveal d2">Каждый день простоя — это деньги, штрафы по договору и нервы прораба. Мы знаем, с чем вы сталкиваетесь.</p>
+    <div class="pains">
+      <div class="pain reveal d1"><div class="pain-x">!</div><div><h4>Техника опоздала на смену</h4><p>Подрядчик обещал «к девяти», приехал к обеду. Бригада курит, бетон схватывается, день сгорел.</p></div></div>
+      <div class="pain reveal d2"><div class="pain-x">!</div><div><h4>Кран не справился с весом</h4><p>На объекте выяснилось, что грузоподъёмности не хватает. Перезаказ — это ещё сутки и удвоенный бюджет.</p></div></div>
+      <div class="pain reveal d3"><div class="pain-x">!</div><div><h4>Водитель без опыта</h4><p>Поцарапанная панель, разбитый бордюр, конфликт с заказчиком — и ваша репутация в придачу.</p></div></div>
+      <div class="pain reveal d4"><div class="pain-x">!</div><div><h4>Цена «по факту»</h4><p>Озвучили одну сумму — в счёте другая. Плюс «непредвиденное», «переработка», «холостой пробег».</p></div></div>
     </div>
-  );
-}
+  </div>
+</section>
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+<section class="section solution">
+  <div class="container">
+    <div class="sol-grid">
+      <div class="sol-img reveal">
+        <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?w=1200&q=80" alt="Парк спецтехники" />
+      </div>
+      <div class="reveal d1">
+        <div class="eyebrow">Решение</div>
+        <h2>Один партнёр на весь цикл работ</h2>
+        <p class="sub">Prestige Tech — это собственный парк техники и водители в штате. Мы отвечаем рублём за каждую минуту простоя.</p>
+        <div class="sol-card">
+          <ul class="sol-list">
+            <li>Фиксированная цена в договоре — никаких «доплат по факту»</li>
+            <li>Подача в течение 2 часов по городу и области</li>
+            <li>Водители с опытом 7+ лет и допусками на ОПО</li>
+            <li>Полный пакет документов: договор, ТТН, счёт-фактура</li>
+            <li>Работаем с НДС и без — как удобно вашей бухгалтерии</li>
+            <li>Замена техники в течение часа, если что-то пошло не так</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="advantages">
+  <div class="container">
+    <div class="eyebrow reveal">Почему Prestige Tech</div>
+    <h2 class="reveal d1">6 причин работать с нами вдолгую</h2>
+    <p class="sub reveal d2">Не громкие обещания, а конкретные обязательства. Каждое — закреплено в договоре.</p>
+    <div class="adv-grid">
+      <div class="adv reveal d1"><div class="adv-num">01</div><h3>Собственный парк</h3><p>40 единиц техники в одном гараже. Не ищем у субподрядчиков — выезжаем сразу.</p></div>
+      <div class="adv reveal d2"><div class="adv-num">02</div><h3>Проверенные водители</h3><p>Каждый — в штате, с медосмотром, страховкой и опытом от 7 лет на тяжёлой технике.</p></div>
+      <div class="adv reveal d3"><div class="adv-num">03</div><h3>Прозрачные тарифы</h3><p>Считаем заранее по факту задачи. В договоре — финальная сумма без звёздочек.</p></div>
+      <div class="adv reveal d1"><div class="adv-num">04</div><h3>Любые объёмы</h3><p>От одной смены частнику до годового контракта с застройщиком на 5 единиц техники.</p></div>
+      <div class="adv reveal d2"><div class="adv-num">05</div><h3>Техосмотр 24/7</h3><p>Свой механик и склад запчастей — техника не встанет в простой посреди объекта.</p></div>
+      <div class="adv reveal d3"><div class="adv-num">06</div><h3>Документы под ключ</h3><p>Закрывающие — в день оплаты. Работаем по 44-ФЗ и 223-ФЗ для тендеров.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="eyebrow reveal">Парк техники</div>
+    <h2 class="reveal d1">Подберём машину под вашу задачу</h2>
+    <p class="sub reveal d2">Стандартные тарифы за смену. Для долгосрочных проектов — индивидуальные условия и скидка до 18%.</p>
+    <div class="services-grid">
+
+      <div class="service reveal d1">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?w=1200&q=80" alt="Автокран" /></div>
+        <div class="service-body">
+          <h3>Автокраны</h3>
+          <div class="price">от 2 500 ₽ / час</div>
+          <p>От 16 до 50 тонн. Стрелы до 34 метров. Работаем на стройке, монтаже ангаров, разгрузке тяжёлых конструкций.</p>
+          <div class="service-feats"><span>16–50 т</span><span>стрела до 34 м</span><span>с оператором</span></div>
+          <a href="#cta" class="btn btn-ghost">Уточнить условия</a>
+        </div>
+      </div>
+
+      <div class="service reveal d2">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1565793979206-6ea1ae8f7029?w=1200&q=80" alt="Панелевоз" /></div>
+        <div class="service-body">
+          <h3>Панелевозы</h3>
+          <div class="price">от 1 800 ₽ / час</div>
+          <p>Доставка железобетонных панелей, плит перекрытия и ферм. Платформа до 14 метров, грузоподъёмность до 25 тонн.</p>
+          <div class="service-feats"><span>до 25 т</span><span>14 м платформа</span><span>крепёжный комплект</span></div>
+          <a href="#cta" class="btn btn-ghost">Уточнить условия</a>
+        </div>
+      </div>
+
+      <div class="service reveal d3">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&q=80" alt="Грузовик" /></div>
+        <div class="service-body">
+          <h3>Грузовики</h3>
+          <div class="price">от 1 200 ₽ / час</div>
+          <p>Бортовые и самосвалы от 5 до 20 тонн. Перевозка стройматериалов, песка, щебня, грунта. Возможна работа на объекте посменно.</p>
+          <div class="service-feats"><span>5–20 т</span><span>борт / самосвал</span><span>тент по запросу</span></div>
+          <a href="#cta" class="btn btn-ghost">Уточнить условия</a>
+        </div>
+      </div>
+
+      <div class="service reveal d4">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=1200&q=80" alt="Тягач" /></div>
+        <div class="service-body">
+          <h3>Тягачи</h3>
+          <div class="price">от 2 200 ₽ / час</div>
+          <p>Седельные тягачи с полуприцепами. Негабарит, длинномеры, спецгрузы. Сопровождение и согласование маршрута — на нашей стороне.</p>
+          <div class="service-feats"><span>до 40 т</span><span>негабарит</span><span>сопровождение</span></div>
+          <a href="#cta" class="btn btn-ghost">Уточнить условия</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow reveal">Цифры и отзывы</div>
+    <h2 class="reveal d1">Нам доверяют то, что нельзя сорвать</h2>
+    <p class="sub reveal d2">Среди наших клиентов — застройщики, монтажные бригады, ритейлеры и частные заказчики.</p>
+
+    <div class="proof-stats">
+      <div class="proof-stat reveal d1"><div class="num">12</div><div class="lbl">лет на рынке аренды</div></div>
+      <div class="proof-stat reveal d2"><div class="num">87%</div><div class="lbl">клиентов возвращаются</div></div>
+      <div class="proof-stat reveal d3"><div class="num">218</div><div class="lbl">объектов в 2024 году</div></div>
+      <div class="proof-stat reveal d4"><div class="num">4.9</div><div class="lbl">средняя оценка клиента</div></div>
+    </div>
+
+    <div class="reviews">
+      <div class="review reveal d1">
+        <div class="quote">”</div>
+        <p>Заказывали панелевоз и автокран на монтаж склада. Подача утром в 7:00 — техника уже на объекте. Закрылись на день раньше графика.</p>
+        <div class="who"><div class="avatar">АК</div><div><div class="name">Андрей Климов</div><div class="role">Прораб, «СтройМонтаж»</div></div></div>
+      </div>
+      <div class="review reveal d2">
+        <div class="quote">”</div>
+        <p>Работаем с Prestige Tech третий год. Машины в идеале, водители вежливые, документы приходят в день оплаты. Это уже не подрядчик — это партнёр.</p>
+        <div class="who"><div class="avatar">МС</div><div><div class="name">Мария Соколова</div><div class="role">Главбух, ООО «ВолгаЖилСтрой»</div></div></div>
+      </div>
+      <div class="review reveal d3">
+        <div class="quote">”</div>
+        <p>Тягач с негабаритом везли из Самары в Казань — сопровождение, согласование, всё под ключ. Я просто следил за машиной в трекере. Рекомендую.</p>
+        <div class="who"><div class="avatar">ДВ</div><div><div class="name">Дмитрий Воронцов</div><div class="role">Логист, промышленное оборудование</div></div></div>
+      </div>
+      <div class="review reveal d4">
+        <div class="quote">”</div>
+        <p>Подавали тендер по 44-ФЗ — Prestige Tech собрали полный пакет за два дня. Выиграли контракт, отработали без единого нарекания заказчика.</p>
+        <div class="who"><div class="avatar">ИЛ</div><div><div class="name">Игорь Лапин</div><div class="role">Директор, подрядчик мунзаказа</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80" alt="Команда Prestige Tech" />
+    </div>
+    <div class="about-text reveal d1">
+      <div class="eyebrow">О компании</div>
+      <h2>Не транспортная компания. Инфраструктура для вашей стройки.</h2>
+      <p class="lead">Prestige Tech начинался в 2014 году с одного автокрана и одного водителя. Сегодня — 40 единиц техники, штатные механики, диспетчерская 24/7 и репутация, ради которой мы каждый день встаём в 6 утра.</p>
+      <p>Мы не сдаём «то, что осталось» — мы подбираем технику под задачу. Не подписываем договор, который не сможем выполнить. И не уходим с объекта, пока заказчик не подписал акт без замечаний.</p>
+      <div class="about-points">
+        <div class="about-point"><div class="num">2014</div><div class="lbl">год основания</div></div>
+        <div class="about-point"><div class="num">40+</div><div class="lbl">единиц техники</div></div>
+        <div class="about-point"><div class="num">24/7</div><div class="lbl">диспетчерская</div></div>
+        <div class="about-point"><div class="num">100%</div><div class="lbl">официальные документы</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="eyebrow reveal" style="text-align:center;display:block">Частые вопросы</div>
+    <h2 class="reveal d1" style="text-align:center">Отвечаем заранее</h2>
+    <p class="sub reveal d2" style="margin-left:auto;margin-right:auto;text-align:center">Если вашего вопроса нет — позвоните, ответим в течение минуты.</p>
+    <div class="faq-list">
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Как быстро вы подаёте технику?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">По городу и ближайшим районам — в течение 2 часов с момента подтверждения. По области — от 4 часов. Срочный выезд (60 минут) возможен при наличии свободной техники.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Можно ли арендовать технику без оператора?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Грузовики и тягачи — да, при наличии у вашего водителя категории и опыта. Автокраны и панелевозы — только с нашим оператором: это требование безопасности и условие страховки.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Работаете с юрлицами и ИП? Есть ли НДС?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Работаем со всеми формами: физлица, ИП, ООО, бюджетные организации. Договор, счёт, акт, счёт-фактура. Работаем как с НДС, так и без — на выбор клиента.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Что если техника сломается на объекте?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Замена в течение 60 минут — это обязательство в договоре. Время простоя не оплачивается. Свой механик и склад запчастей позволяют закрыть 95% поломок прямо на объекте.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Можно ли арендовать технику на месяц или дольше?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Да. Долгосрочная аренда (от 14 смен) — индивидуальные условия и скидка до 18%. Закрепляем технику и водителя за вашим объектом, водитель проходит инструктаж по вашим правилам безопасности.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">Как формируется цена?<span class="faq-toggle">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">По часам или сменам — зависит от типа техники и задачи. Минимальная смена обычно 4 часа. В стоимость уже включены подача, работа оператора и топливо. Никаких доплат «по факту».</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="eyebrow" style="justify-content:center;display:inline-flex">Готовы начать</div>
+      <h2>Расскажите задачу — подберём технику за 15 минут</h2>
+      <p>Позвоните или оставьте номер: перезвоним в течение 5 минут, рассчитаем стоимость и забронируем технику на удобную дату.</p>
+      <a href="tel:+79371434638" class="cta-phone">8 (937) 143-46-38</a>
+      <div class="cta-actions">
+        <a href="tel:+79371434638" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          Позвонить сейчас
+        </a>
+        <a href="https://wa.me/79371434638" class="btn btn-ghost">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="logo" style="margin-bottom:16px"><span class="logo-mark">P</span>Prestige<span>Tech</span></a>
+        <p style="max-width:340px">Аренда спецтехники с 2014 года. Автокраны, панелевозы, грузовики и тягачи под любые задачи строительства и логистики.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Техника</h5>
+        <a href="#services">Автокраны</a>
+        <a href="#services">Панелевозы</a>
+        <a href="#services">Грузовики</a>
+        <a href="#services">Тягачи</a>
+      </div>
+      <div class="footer-col">
+        <h5>Компания</h5>
+        <a href="#about">О нас</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#cta">Связаться</a>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <a href="tel:+79371434638">8 (937) 143-46-38</a>
+        <a href="mailto:info@prestige-tech.ru">info@prestige-tech.ru</a>
+        <a href="https://wa.me/79371434638">WhatsApp / Telegram</a>
+        <p>Ежедневно, 7:00–22:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2014–2026 Prestige Tech. Все права защищены.</div>
+      <div>Аренда спецтехники без посредников</div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+79371434638" class="mobile-call">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+  Позвонить — 8 (937) 143-46-38
+</a>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)});
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  });
+},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q');
+  const a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.toggle('open');
+    a.style.maxHeight=open?a.scrollHeight+'px':0;
+  });
+});
 </script>
 </body>
 </html>

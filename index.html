@@ -249,20 +249,20 @@
   }
   /* ── Усиленный герой на мобиле ── */
   @media(max-width:760px){
-    .hero{align-items:flex-end}
-    .hero-bg::after{background:linear-gradient(180deg,rgba(23,37,32,.5) 0%,rgba(23,37,32,.32) 30%,rgba(23,37,32,.86) 72%,rgba(23,37,32,.96) 100%)}
-    .hero-inner{padding:118px 0 84px}
-    .hero .eyebrow{font-size:11px;letter-spacing:.18em}
-    .hero h1{font-size:clamp(40px,12vw,56px);line-height:1.02}
-    .hero-lead{font-size:16.5px;margin:20px 0 30px;color:#fff;max-width:none}
-    .hero-cta{gap:12px}
-    .hero-cta .btn{flex:1;padding:17px 18px}
-    .hero-meta{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.22)}
-    .hero-meta div{padding:16px 6px 0 0;margin:0;border-right:1px solid rgba(255,255,255,.16)}
+    .hero{align-items:flex-end;min-height:100svh}
+    .hero-bg::after{background:linear-gradient(180deg,rgba(23,37,32,.34) 0%,rgba(23,37,32,.1) 26%,rgba(23,37,32,.5) 52%,rgba(23,37,32,.84) 78%,rgba(23,37,32,.96) 100%)}
+    .hero-inner{padding:0 20px 54px}
+    .hero .eyebrow{font-size:10.5px;letter-spacing:.16em;margin-bottom:4px}
+    .hero h1{font-size:clamp(42px,12.5vw,58px);line-height:1.0}
+    .hero-lead{font-size:16px;line-height:1.5;margin:18px 0 28px;color:#fff;max-width:none;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+    .hero-cta{gap:11px}
+    .hero-cta .btn{flex:1;padding:17px 16px}
+    .hero-meta{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.28);padding-top:4px}
+    .hero-meta div{padding:16px 6px 0 0;margin:0;border-right:1px solid rgba(255,255,255,.18)}
     .hero-meta div:nth-child(3){border-right:0}
     .hero-meta div:nth-child(4){display:none}
-    .hero-meta b{font-size:26px}
-    .hero-meta small{font-size:9.5px;letter-spacing:.1em}
+    .hero-meta b{font-size:27px}
+    .hero-meta small{font-size:9.5px;letter-spacing:.08em}
     .scroll-hint{display:none}
   }
   @media(max-width:560px){
@@ -307,7 +307,7 @@
 <section class="hero">
   <div class="hero-bg">
     <picture>
-      <source media="(max-width:760px)" srcset="https://images.unsplash.com/photo-1762255107395-bcb83548e83f?auto=format&fit=crop&w=1100&h=1700&q=82">
+      <source media="(max-width:760px)" srcset="https://images.unsplash.com/photo-1761834614379-c5c67cda1480?auto=format&fit=crop&w=1100&h=1750&q=82">
       <img src="https://images.unsplash.com/photo-1774013710036-982f187dfe38?auto=format&fit=crop&w=2000&q=82" alt="Геокуполы ЙОЛА в сосновом лесу">
     </picture>
   </div>

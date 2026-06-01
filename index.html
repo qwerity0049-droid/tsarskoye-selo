@@ -3,59 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЙОЛА Глемпинг · Место, где наполняешься силой · 67 км от Уфы</title>
-<meta name="description" content="ЙОЛА — атмосферный глемпинг в 67 км от Уфы, с. Теперишево. 5 уютных домов, 300+ лошадей, конные прогулки и тишина башкирской природы. Бронируйте отдых, который перезагружает.">
+<title>ЙОЛА Глэмпинг · Геокуполы в сосновом лесу · 67 км от Уфы</title>
+<meta name="description" content="ЙОЛА — современный глэмпинг из геокуполов в сосновом лесу, 67 км от Уфы. 5 уютных куполов, чан и баня, табун из 300 лошадей рядом, квадроциклы, рыбалка. Отключись от суеты, не отключаясь от горячей воды.">
+<meta property="og:title" content="ЙОЛА Глэмпинг · Место, где наполняешься силой">
+<meta property="og:description" content="Геокуполы в сосновом лесу под Уфой. Чан круглый год, агротуризм, 300 лошадей.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --forest:#23362b;
-    --forest-deep:#172520;
-    --moss:#4f6b53;
-    --sage:#8ba888;
-    --clay:#c0764a;
-    --clay-soft:#d99366;
-    --gold:#cda35a;
-    --cream:#f4efe6;
-    --cream-2:#ebe3d4;
-    --ink:#1d2620;
-    --paper:#faf7f1;
-    --muted:#6f7d72;
-    --line:rgba(35,54,43,.12);
-    --shadow:0 30px 70px -30px rgba(23,37,32,.45);
+    --forest:#23362b;--forest-deep:#172520;--moss:#4f6b53;--sage:#8ba888;
+    --clay:#c0764a;--clay-soft:#d99366;--gold:#cda35a;
+    --cream:#f4efe6;--cream-2:#ebe3d4;--ink:#1d2620;--paper:#faf7f1;--muted:#6f7d72;
+    --line:rgba(35,54,43,.12);--shadow:0 30px 70px -30px rgba(23,37,32,.45);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Manrope',sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.65;
-    font-weight:400;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{font-family:'Manrope',sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   h1,h2,h3,h4{font-family:'Cormorant',serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
   img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-  .eyebrow{
-    font-family:'Manrope',sans-serif;font-weight:600;font-size:13px;letter-spacing:.28em;
-    text-transform:uppercase;color:var(--clay);display:inline-flex;align-items:center;gap:12px;
-  }
+  .eyebrow{font-family:'Manrope',sans-serif;font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--clay);display:inline-flex;align-items:center;gap:12px}
   .eyebrow::before{content:"";width:34px;height:1px;background:currentColor;display:inline-block;opacity:.7}
   .eyebrow.center{justify-content:center}
   .eyebrow.center::after{content:"";width:34px;height:1px;background:currentColor;display:inline-block;opacity:.7}
 
   .reveal{opacity:0;transform:translateY(38px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  .reveal[data-d="1"]{transition-delay:.12s}
-  .reveal[data-d="2"]{transition-delay:.24s}
-  .reveal[data-d="3"]{transition-delay:.36s}
-  .reveal[data-d="4"]{transition-delay:.48s}
+  .reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}
+  .reveal[data-d="3"]{transition-delay:.3s}.reveal[data-d="4"]{transition-delay:.4s}
 
-  /* NAV */
   header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;transition:.4s ease}
   header.nav.scrolled{background:rgba(23,37,32,.92);backdrop-filter:blur(14px);padding:14px 0;box-shadow:0 14px 40px -24px rgba(0,0,0,.6)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between}
@@ -63,7 +41,7 @@
   .brand-mark{width:42px;height:42px;border:1.5px solid rgba(255,255,255,.55);display:grid;place-items:center;font-family:'Cormorant',serif;font-size:22px;font-weight:700;color:#fff}
   .brand-name{font-family:'Cormorant',serif;font-size:25px;font-weight:700;letter-spacing:.16em;line-height:1}
   .brand-sub{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:3px}
-  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links{display:flex;align-items:center;gap:30px}
   .nav-links a{color:rgba(255,255,255,.82);font-size:14px;font-weight:500;transition:.25s}
   .nav-links a:hover{color:#fff}
   .nav-phone{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600;font-size:15px}
@@ -76,30 +54,49 @@
   .btn-clay:hover{background:#a85f37;transform:translateY(-2px);box-shadow:0 18px 30px -14px rgba(192,118,74,.7)}
   .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
   .btn-ghost:hover{background:#fff;color:var(--forest);border-color:#fff}
+  .btn-wa{background:#25623f;color:#fff}
+  .btn-wa:hover{background:#1d4d31;transform:translateY(-2px)}
+  .btn-sm{padding:12px 22px;font-size:12px}
 
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
   .hero-bg{position:absolute;inset:0;z-index:0}
   .hero-bg img{width:100%;height:100%;object-fit:cover;animation:slowzoom 22s ease-out forwards}
   @keyframes slowzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,.62) 0%,rgba(23,37,32,.35) 40%,rgba(23,37,32,.82) 100%)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,.6) 0%,rgba(23,37,32,.32) 42%,rgba(23,37,32,.85) 100%)}
   .hero-inner{position:relative;z-index:2;width:100%;padding:140px 0 60px}
-  .hero h1{font-size:clamp(46px,8vw,108px);font-weight:600;letter-spacing:-.02em}
+  .hero h1{font-size:clamp(44px,7.4vw,100px);font-weight:600;letter-spacing:-.02em}
   .hero h1 em{font-style:italic;color:var(--clay-soft);font-weight:500}
-  .hero-lead{font-size:clamp(18px,2.4vw,23px);font-weight:300;max-width:560px;margin:26px 0 38px;color:rgba(255,255,255,.9);line-height:1.55}
+  .hero-lead{font-size:clamp(17px,2.3vw,22px);font-weight:300;max-width:620px;margin:26px 0 38px;color:rgba(255,255,255,.92);line-height:1.55}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  .hero-meta{position:relative;z-index:2;display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);margin-top:64px}
-  .hero-meta div{padding:24px 38px 0 0;margin-right:38px;border-right:1px solid rgba(255,255,255,.16)}
+  .hero-meta{position:relative;z-index:2;display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);margin-top:60px}
+  .hero-meta div{padding:24px 36px 0 0;margin-right:36px;border-right:1px solid rgba(255,255,255,.16)}
   .hero-meta div:last-child{border:0}
-  .hero-meta b{font-family:'Cormorant',serif;font-size:40px;font-weight:700;display:block;line-height:1;color:var(--gold)}
-  .hero-meta small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+  .hero-meta b{font-family:'Cormorant',serif;font-size:38px;font-weight:700;display:block;line-height:1;color:var(--gold)}
+  .hero-meta small{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
   .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
   .scroll-hint i{width:1px;height:46px;background:rgba(255,255,255,.5);display:block;animation:drop 2s infinite}
   @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
+  /* CONCEPT */
+  .section{padding:120px 0}
+  .sec-head{max-width:760px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(34px,5vw,58px);margin:20px 0 0}
+  .sec-head p{color:var(--muted);font-size:17px;margin-top:18px;font-weight:300}
+
+  .concept{background:var(--cream)}
+  .concept-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:stretch}
+  .concept-text{padding:90px 80px 90px 0;display:flex;flex-direction:column;justify-content:center}
+  .concept-text h2{font-size:clamp(32px,4vw,52px);margin:18px 0 22px}
+  .concept-text p{color:#4a5650;font-size:16.5px;font-weight:300;margin-bottom:18px}
+  .concept-text .sign{font-family:'Cormorant',serif;font-style:italic;font-size:25px;color:var(--clay);margin-top:10px;line-height:1.3}
+  .concept-img{position:relative;min-height:560px;overflow:hidden}
+  .concept-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
   /* PAINS */
   .pains{background:var(--forest);color:var(--cream);padding:120px 0}
-  .pains .lead{font-size:clamp(28px,4vw,46px);font-family:'Cormorant',serif;font-weight:500;max-width:880px;line-height:1.22;margin:26px 0 0}
+  .pains .lead{font-size:clamp(28px,4vw,46px);font-family:'Cormorant',serif;font-weight:500;max-width:920px;line-height:1.22;margin:26px 0 0}
   .pains .lead span{color:var(--clay-soft);font-style:italic}
   .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:70px}
   .pain-card{background:var(--forest);padding:44px 36px;transition:.4s}
@@ -108,58 +105,79 @@
   .pain-card h3{font-size:24px;margin:14px 0 12px;color:#fff}
   .pain-card p{color:rgba(244,239,230,.66);font-size:15px;font-weight:300}
 
-  .section{padding:120px 0}
-  .sec-head{max-width:720px}
-  .sec-head.center{margin:0 auto;text-align:center}
-  .sec-head h2{font-size:clamp(34px,5vw,58px);margin:20px 0 0}
-  .sec-head p{color:var(--muted);font-size:17px;margin-top:18px;font-weight:300}
+  /* DOMES */
+  .domes{background:var(--cream-2)}
+  .dome-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:60px}
+  .dome-card{background:var(--paper);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 50px -34px rgba(23,37,32,.4);transition:.4s}
+  .dome-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .dome-card.feat{grid-column:span 2;flex-direction:row}
+  .dome-media{position:relative;overflow:hidden}
+  .dome-card:not(.feat) .dome-media{height:260px}
+  .dome-card.feat .dome-media{flex:1.1;min-height:380px}
+  .dome-media img{width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .dome-card:hover .dome-media img{transform:scale(1.06)}
+  .dome-badge{position:absolute;top:18px;left:18px;background:var(--forest);color:#fff;font-family:'Cormorant',serif;font-size:18px;font-weight:700;padding:7px 16px;letter-spacing:.04em;z-index:2}
+  .dome-cap{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.92);color:var(--forest);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;z-index:2}
+  .dome-body{padding:30px 32px 32px;display:flex;flex-direction:column;flex:1}
+  .dome-card.feat .dome-body{flex:1;justify-content:center}
+  .dome-body h3{font-size:27px;margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .chip{font-size:12px;font-weight:500;color:var(--moss);background:rgba(79,107,83,.1);padding:6px 12px;letter-spacing:.02em}
+  .chip.gold{color:#9b7322;background:rgba(205,163,90,.16)}
+  .dome-price{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:20px;flex-wrap:wrap}
+  .price-val b{font-family:'Cormorant',serif;font-size:34px;font-weight:700;color:var(--ink);line-height:1}
+  .price-val span{color:var(--muted);font-size:13px;font-weight:300}
+  .price-val small{display:block;color:var(--clay);font-size:12.5px;font-weight:600;margin-top:6px}
+  .feat-price{display:flex;gap:26px;flex-wrap:wrap;margin:6px 0 22px}
+  .feat-price div b{font-family:'Cormorant',serif;font-size:26px;font-weight:700;display:block;line-height:1.1}
+  .feat-price div span{font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .dome-note{text-align:center;color:var(--muted);font-size:14px;font-weight:300;margin-top:34px}
+  .dome-note b{color:var(--ink);font-weight:600}
 
-  /* SOLUTION */
-  .split{display:grid;grid-template-columns:1.05fr 1fr}
-  .split-img{position:relative;min-height:560px;overflow:hidden}
-  .split-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-  .split-text{background:var(--cream);padding:80px;display:flex;flex-direction:column;justify-content:center}
-  .split-text h2{font-size:clamp(32px,4vw,52px);margin:18px 0 22px}
-  .split-text p{color:#4a5650;font-size:16.5px;font-weight:300;margin-bottom:18px}
-  .split-text .sign{font-family:'Cormorant',serif;font-style:italic;font-size:26px;color:var(--clay);margin-top:14px}
+  /* AMENITIES */
+  .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:60px;border:1px solid var(--line)}
+  .amen{background:var(--paper);padding:34px 26px;transition:.35s}
+  .amen:hover{background:var(--cream)}
+  .amen .ic{width:42px;height:42px;margin-bottom:16px}
+  .amen .ic svg{width:100%;height:100%;stroke:var(--clay);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .amen h4{font-family:'Cormorant',serif;font-size:21px;margin-bottom:6px}
+  .amen p{color:var(--muted);font-size:13.5px;font-weight:300;line-height:1.5}
 
-  /* ADVANTAGES */
-  .adv{background:var(--cream-2)}
-  .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
-  .adv-card{background:var(--paper);padding:40px 30px;border-top:3px solid var(--clay);transition:.4s}
-  .adv-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-  .adv-ic{width:54px;height:54px;margin-bottom:22px}
-  .adv-ic svg{width:100%;height:100%;stroke:var(--moss);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .adv-card h3{font-size:23px;margin-bottom:10px}
-  .adv-card p{color:var(--muted);font-size:14.5px;font-weight:300}
-
-  /* SERVICES */
-  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:64px}
-  .serv-card{position:relative;overflow:hidden;min-height:420px;display:flex;align-items:flex-end;color:#fff;cursor:pointer}
-  .serv-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s cubic-bezier(.2,.7,.2,1)}
-  .serv-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,0) 35%,rgba(23,37,32,.9) 100%)}
-  .serv-card:hover img{transform:scale(1.07)}
-  .serv-body{position:relative;z-index:2;padding:34px}
-  .serv-body span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-  .serv-body h3{font-size:27px;margin:8px 0}
-  .serv-body p{font-size:14px;font-weight:300;color:rgba(255,255,255,.82);max-height:0;overflow:hidden;opacity:0;transition:.5s}
-  .serv-card:hover .serv-body p{max-height:120px;opacity:1;margin-top:4px}
-  .serv-wide{grid-column:span 3;min-height:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;background:var(--forest);color:var(--cream);padding:46px 50px;flex-wrap:wrap}
-  .serv-wide::after{display:none}
-  .serv-wide h3{font-size:30px;color:#fff}
-  .serv-wide p{position:static;max-height:none;opacity:1;color:rgba(244,239,230,.7);font-weight:300;margin-top:6px}
-
-  /* STRIP */
-  .strip{position:relative;color:#fff;padding:130px 0;text-align:center;overflow:hidden}
+  /* STRIP / SLOGAN */
+  .strip{position:relative;color:#fff;padding:140px 0;text-align:center;overflow:hidden}
   .strip-bg{position:absolute;inset:0;z-index:0}
   .strip-bg img{width:100%;height:100%;object-fit:cover}
-  .strip-bg::after{content:"";position:absolute;inset:0;background:rgba(23,37,32,.78)}
-  .strip-inner{position:relative;z-index:2}
-  .strip h2{font-size:clamp(30px,4vw,50px);max-width:820px;margin:0 auto;color:#fff}
+  .strip-bg::after{content:"";position:absolute;inset:0;background:rgba(23,37,32,.8)}
+  .strip-inner{position:relative;z-index:2;max-width:920px;margin:0 auto}
+  .strip h2{font-size:clamp(28px,3.8vw,48px);color:#fff;font-weight:500}
   .strip h2 em{font-style:italic;color:var(--clay-soft)}
 
+  /* AGRO */
+  .agro{background:var(--forest-deep);color:var(--cream)}
+  .agro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .agro-text h2{font-size:clamp(32px,4.5vw,54px);color:#fff;margin:18px 0 22px}
+  .agro-text p{color:rgba(244,239,230,.74);font-weight:300;font-size:16.5px;margin-bottom:20px}
+  .agro-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  .agro-list span{border:1px solid rgba(255,255,255,.2);padding:9px 16px;font-size:13.5px;color:#fff;font-weight:500}
+  .agro-list span b{color:var(--gold);font-weight:700}
+  .agro-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .agro-imgs img{width:100%;height:100%;object-fit:cover;min-height:200px}
+  .agro-imgs .tall{grid-row:span 2;min-height:416px}
+
+  /* QUAD */
+  .quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:60px}
+  .quad-card{background:var(--paper);border:1px solid var(--line);padding:40px 38px}
+  .quad-card h3{font-size:26px;margin-bottom:4px}
+  .quad-card .sub{color:var(--clay);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+  .quad-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .quad-row:last-child{border-bottom:0}
+  .quad-row .nm{font-weight:500;font-size:15.5px}
+  .quad-row .nm small{display:block;color:var(--muted);font-weight:300;font-size:12.5px}
+  .quad-row .pr{font-family:'Cormorant',serif;font-size:24px;font-weight:700;color:var(--clay);white-space:nowrap}
+  .quad-note{color:var(--muted);font-size:14px;font-weight:300;margin-top:26px;text-align:center}
+
   /* REVIEWS */
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:64px}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
   .rev-card{background:var(--paper);border:1px solid var(--line);padding:38px 34px;display:flex;flex-direction:column;gap:18px}
   .stars{color:var(--gold);font-size:18px;letter-spacing:3px}
   .rev-card p{font-size:16px;font-weight:300;color:#3f4b44;font-style:italic;flex:1;line-height:1.6}
@@ -168,17 +186,8 @@
   .rev-who b{font-size:15px;font-weight:600}
   .rev-who small{display:block;color:var(--muted);font-size:13px;font-weight:300}
 
-  /* ABOUT */
-  .about{background:var(--forest-deep);color:var(--cream)}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-  .about-text h2{font-size:clamp(32px,4.5vw,54px);color:#fff;margin:18px 0 24px}
-  .about-text p{color:rgba(244,239,230,.72);font-weight:300;font-size:16.5px;margin-bottom:18px}
-  .about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .about-imgs img{width:100%;height:100%;object-fit:cover;min-height:200px}
-  .about-imgs .tall{grid-row:span 2;min-height:420px}
-
   /* FAQ */
-  .faq-wrap{max-width:840px;margin:60px auto 0}
+  .faq-wrap{max-width:860px;margin:56px auto 0}
   .faq-item{border-bottom:1px solid var(--line)}
   .faq-q{width:100%;background:none;border:0;text-align:left;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-family:'Cormorant',serif;font-size:23px;font-weight:600;color:var(--ink)}
   .faq-q .pl{width:26px;height:26px;flex-shrink:0;position:relative}
@@ -190,55 +199,59 @@
   .faq-a p{padding:0 0 26px;color:var(--muted);font-weight:300;font-size:16px}
 
   /* CTA */
-  .cta{position:relative;color:#fff;text-align:center;padding:140px 0;overflow:hidden}
+  .cta{position:relative;color:#fff;text-align:center;padding:150px 0;overflow:hidden}
   .cta-bg{position:absolute;inset:0;z-index:0}
   .cta-bg img{width:100%;height:100%;object-fit:cover}
-  .cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,.7),rgba(23,37,32,.88))}
-  .cta-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,.72),rgba(23,37,32,.9))}
+  .cta-inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
   .cta h2{font-size:clamp(36px,6vw,72px);color:#fff;margin:22px 0 18px}
-  .cta p{font-size:19px;font-weight:300;color:rgba(255,255,255,.85);margin-bottom:38px}
+  .cta p{font-size:18px;font-weight:300;color:rgba(255,255,255,.85);margin-bottom:20px}
+  .cta .small{font-size:14.5px;color:rgba(255,255,255,.6);margin-bottom:34px}
   .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .cta-phone{margin-top:30px;font-family:'Cormorant',serif;font-size:30px;color:var(--gold);font-weight:600;display:inline-block}
+  .cta-phone{margin-top:28px;font-family:'Cormorant',serif;font-size:30px;color:var(--gold);font-weight:600;display:inline-block}
 
   /* FOOTER */
   footer{background:var(--forest-deep);color:rgba(244,239,230,.66);padding:80px 0 40px}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
   .foot-brand .brand-name{color:#fff}
   .foot-brand p{margin-top:20px;font-weight:300;max-width:340px;font-size:15px}
+  .foot-tags{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+  .foot-tags span{font-size:12.5px;color:var(--gold);font-weight:500}
   .foot-col h4{font-family:'Manrope',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600}
   .foot-col a,.foot-col p{display:block;color:rgba(244,239,230,.66);margin-bottom:12px;font-weight:300;font-size:15px;transition:.25s}
   .foot-col a:hover{color:#fff}
   .foot-bottom{padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(244,239,230,.45);font-weight:300}
 
-  /* MOBILE CALL */
-  .mcall{display:none;position:fixed;bottom:18px;left:18px;right:18px;z-index:60}
-  .mcall a{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--clay);color:#fff;padding:17px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;box-shadow:0 16px 34px -10px rgba(192,118,74,.8)}
+  .mcall{display:none;position:fixed;bottom:18px;left:18px;right:18px;z-index:60;gap:10px}
+  .mcall a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:13px}
+  .mcall .c1{background:var(--clay);color:#fff;box-shadow:0 16px 34px -10px rgba(192,118,74,.8)}
+  .mcall .c2{background:#25623f;color:#fff;box-shadow:0 16px 34px -10px rgba(37,98,63,.8)}
 
-  /* MOBILE MENU */
-  .mmenu{position:fixed;inset:0;z-index:55;background:var(--forest-deep);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;opacity:0;pointer-events:none;transition:.4s}
+  .mmenu{position:fixed;inset:0;z-index:55;background:var(--forest-deep);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px;opacity:0;pointer-events:none;transition:.4s}
   .mmenu.open{opacity:1;pointer-events:auto}
-  .mmenu a{color:#fff;font-family:'Cormorant',serif;font-size:32px}
+  .mmenu a{color:#fff;font-family:'Cormorant',serif;font-size:30px}
   .mmenu .close{position:absolute;top:26px;right:26px;font-size:36px;color:#fff;background:none;border:0;cursor:pointer}
 
   @media(max-width:980px){
     .nav-links,.nav-phone{display:none}
     .burger{display:flex}
-    .pain-grid,.split,.serv-grid,.rev-grid,.foot-grid{grid-template-columns:1fr}
-    .split-img{min-height:340px}
-    .split-text{padding:54px 30px}
-    .adv-grid{grid-template-columns:1fr 1fr}
-    .serv-wide{grid-column:span 1}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    .mcall{display:block}
+    .pain-grid,.dome-grid,.quad-grid,.rev-grid,.foot-grid,.concept-grid,.agro-grid{grid-template-columns:1fr}
+    .dome-card.feat{grid-column:span 1;flex-direction:column}
+    .dome-card.feat .dome-media{min-height:260px;height:260px}
+    .amen-grid{grid-template-columns:1fr 1fr}
+    .concept-text{padding:54px 0}
+    .concept-img{min-height:340px}
+    .agro-grid{gap:40px}
+    .mcall{display:flex}
     .hero-meta div{padding:18px 22px 0 0;margin-right:22px}
-    .hero-meta b{font-size:32px}
+    .hero-meta b{font-size:30px}
   }
   @media(max-width:560px){
-    .adv-grid{grid-template-columns:1fr}
+    .amen-grid{grid-template-columns:1fr}
     .hero-cta .btn{flex:1}
-    .split-text{padding:44px 22px}
     .wrap{padding:0 18px}
-    .section,.pains{padding:84px 0}
+    .section,.pains{padding:80px 0}
+    .quad-card{padding:32px 24px}
   }
 </style>
 </head>
@@ -248,275 +261,338 @@
   <div class="wrap nav-inner">
     <a href="#" class="brand">
       <div class="brand-mark">Й</div>
-      <div>
-        <div class="brand-name">ЙОЛА</div>
-        <div class="brand-sub">Глемпинг · Башкирия</div>
-      </div>
+      <div><div class="brand-name">ЙОЛА</div><div class="brand-sub">Глэмпинг · Башкортостан</div></div>
     </a>
     <nav class="nav-links">
-      <a href="#solution">О месте</a>
-      <a href="#advantages">Почему ЙОЛА</a>
-      <a href="#services">Дома и услуги</a>
-      <a href="#reviews">Отзывы</a>
+      <a href="#concept">О глэмпинге</a>
+      <a href="#domes">Купола и цены</a>
+      <a href="#amenities">Услуги</a>
+      <a href="#agro">Хозяйство</a>
       <a href="#faq">Вопросы</a>
     </nav>
-    <a href="tel:+79270803010" class="nav-phone"><span>☏</span> +7 927 080-30-10</a>
+    <a href="tel:+79270803010" class="nav-phone"><span>☏</span> 8 927 080-30-10</a>
     <button class="burger" id="burger" aria-label="Меню"><i></i><i></i><i></i></button>
   </div>
 </header>
 
 <div class="mmenu" id="mmenu">
   <button class="close" id="mclose" aria-label="Закрыть">×</button>
-  <a href="#solution">О месте</a>
-  <a href="#advantages">Почему ЙОЛА</a>
-  <a href="#services">Дома и услуги</a>
-  <a href="#reviews">Отзывы</a>
+  <a href="#concept">О глэмпинге</a>
+  <a href="#domes">Купола и цены</a>
+  <a href="#amenities">Услуги</a>
+  <a href="#agro">Хозяйство</a>
   <a href="#faq">Вопросы</a>
-  <a href="tel:+79270803010" style="color:var(--gold)">+7 927 080-30-10</a>
+  <a href="tel:+79270803010" style="color:var(--gold)">8 927 080-30-10</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=2000&q=80" alt="Башкирские холмы на закате">
+    <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?auto=format&fit=crop&w=2000&q=80" alt="Геокупол ЙОЛА в сосновом лесу">
   </div>
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal" style="color:var(--clay-soft)">67 км от Уфы · с. Теперишево</span>
+    <span class="eyebrow reveal" style="color:var(--clay-soft)">67 км от Уфы · с. Теперишево · база отдыха</span>
     <h1 class="reveal" data-d="1">Место, где<br><em>наполняешься</em> силой</h1>
-    <p class="hero-lead reveal" data-d="2">Глемпинг ЙОЛА — пять уютных домов посреди башкирских холмов, 300 с лишним лошадей и тишина, которой так не хватает в городе. Приезжайте перезагрузиться.</p>
+    <p class="hero-lead reveal" data-d="2">Современный глэмпинг из геокуполов в окружении сосен. Отключись от суеты, не отключаясь от горячей воды и мягкой кровати. Слушай пение птиц, а не соседей за стеной.</p>
     <div class="hero-cta reveal" data-d="3">
-      <a href="#cta" class="btn btn-clay">Забронировать дом</a>
-      <a href="#services" class="btn btn-ghost">Смотреть дома</a>
+      <a href="https://wa.me/79270803010" class="btn btn-clay" target="_blank" rel="noopener">Забронировать купол</a>
+      <a href="#domes" class="btn btn-ghost">Купола и цены</a>
     </div>
     <div class="hero-meta reveal" data-d="4">
-      <div><b>5</b><small>уютных домов</small></div>
-      <div><b>300+</b><small>лошадей</small></div>
-      <div><b>67 км</b><small>от Уфы</small></div>
+      <div><b>5</b><small>геокуполов</small></div>
+      <div><b>300</b><small>лошадей рядом</small></div>
+      <div><b>26</b><small>гостей максимум</small></div>
+      <div><b>365</b><small>дней в году</small></div>
     </div>
   </div>
   <div class="scroll-hint">Листайте вниз<i></i></div>
 </section>
 
+<!-- CONCEPT -->
+<section class="section concept" id="concept">
+  <div class="wrap concept-grid">
+    <div class="concept-text">
+      <span class="eyebrow reveal">Что такое ЙОЛА-ГЛЭМП</span>
+      <h2 class="reveal" data-d="1">Геокуполы среди сосен — для тех, кто ценит тишину</h2>
+      <p class="reveal" data-d="2">ЙОЛА — это современный глэмпинг из уютных 2-, 4- и 8-местных геокуполов, расположенных на огромной территории в окружении соснового леса.</p>
+      <p class="reveal" data-d="2">Наша концепция — спокойный отдых в кругу семьи или близких. Без шумных компаний, громкой музыки и чрезмерного алкоголя. Только вы, природа и ощущение, что время наконец-то замедлилось.</p>
+      <p class="sign reveal" data-d="3">«Чувствовать себя не туристом с рюкзаком, а главным героем своей собственной сказки.»</p>
+    </div>
+    <div class="concept-img reveal" data-d="1">
+      <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=80" alt="Купол с панорамными окнами в лесу">
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
 <section class="pains">
   <div class="wrap">
     <span class="eyebrow reveal">Знакомо?</span>
-    <p class="lead reveal" data-d="1">Город не отпускает. Уведомления, пробки, бесконечные дела — а сил остаётся всё меньше. <span>Вы давно не слышали тишину.</span></p>
+    <p class="lead reveal" data-d="1">Город не отпускает: уведомления, пробки, дела без конца — а сил всё меньше. <span>Хочется на природу, но без палаток, комаров и сырого спальника.</span></p>
     <div class="pain-grid">
-      <div class="pain-card reveal" data-d="1"><div class="n">01</div><h3>Выходные «ни о чём»</h3><p>Два дня пролетают за экраном, а в понедельник такое чувство, будто и не отдыхал.</p></div>
-      <div class="pain-card reveal" data-d="2"><div class="n">02</div><h3>Природа «по фото»</h3><p>Хочется к лошадям, лесу и звёздам — но без палаток, комаров и сырого спальника.</p></div>
-      <div class="pain-card reveal" data-d="3"><div class="n">03</div><h3>Далеко и дорого</h3><p>Кажется, что настоящий отдых — это аэропорт, виза и недельный отпуск. А времени нет.</p></div>
+      <div class="pain-card reveal" data-d="1"><div class="n">01</div><h3>Выходные «ни о чём»</h3><p>Два дня уходят на экран, а в понедельник чувство, будто и не отдыхал.</p></div>
+      <div class="pain-card reveal" data-d="2"><div class="n">02</div><h3>Соседи за стеной</h3><p>В отелях и на базах — чужая музыка и шумные компании вместо пения птиц.</p></div>
+      <div class="pain-card reveal" data-d="3"><div class="n">03</div><h3>Далеко и сложно</h3><p>Кажется, настоящий отдых — это самолёт и отпуск. А душа просит тишины уже сейчас.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="solution" style="padding-bottom:0">
-  <div class="split">
-    <div class="split-img reveal">
-      <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?auto=format&fit=crop&w=1400&q=80" alt="Уютный дом глемпинга на природе">
-    </div>
-    <div class="split-text">
-      <span class="eyebrow reveal">Решение — ЙОЛА</span>
-      <h2 class="reveal" data-d="1">Природа с комфортом отеля — в часе пути от дома</h2>
-      <p class="reveal" data-d="2">ЙОЛА — это глемпинг, где не нужно выбирать между дикой природой и удобством. Тёплый дом с мягкой кроватью, панорамные окна на холмы, утренний кофе под ржание лошадей.</p>
-      <p class="reveal" data-d="3">Собрались за пару часов, доехали за час — и вот вы уже сидите у огня, а телефон лежит где-то в сумке, никому не нужный.</p>
-      <p class="sign reveal" data-d="3">«Йола» по-башкирски — путь. Ваш путь к себе начинается здесь.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section adv" id="advantages">
+<!-- DOMES -->
+<section class="section domes" id="domes">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow center reveal">Почему именно ЙОЛА</span>
-      <h2 class="reveal" data-d="1">Четыре причины приехать</h2>
-      <p class="reveal" data-d="2">Мы продумали отдых так, чтобы вам осталось только дышать полной грудью.</p>
+      <span class="eyebrow center reveal">Купола и цены</span>
+      <h2 class="reveal" data-d="1">Пять куполов — выберите свой</h2>
+      <p class="reveal" data-d="2">Цены указаны за сутки, за весь домик: будни / выходные. В каждом — полноценная кухня, двуспальные кровати с чистым бельём, тёплый санузел и своя мангальная зона.</p>
     </div>
-    <div class="adv-grid">
-      <div class="adv-card reveal" data-d="1">
-        <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 21V11l9-7 9 7v10M9 21v-6h6v6"/></svg></div>
-        <h3>Дома, а не палатки</h3><p>Тёплые, светлые, с настоящими кроватями и панорамным видом. Комфортно в любой сезон.</p>
-      </div>
-      <div class="adv-card reveal" data-d="2">
-        <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M4 17c2-5 4-7 8-7s6 2 8 7M12 10V4M9 6l3-2 3 2M6 21h12"/></svg></div>
-        <h3>300+ лошадей</h3><p>Настоящая конюшня рядом. Прогулки верхом, общение с животными, фото, которые хочется в рамку.</p>
-      </div>
-      <div class="adv-card reveal" data-d="3">
-        <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
-        <h3>Тишина и звёзды</h3><p>Ни шума, ни соседей за стеной. Только ветер, костёр и небо, усыпанное звёздами.</p>
-      </div>
-      <div class="adv-card reveal" data-d="4">
-        <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-9-10a5 5 0 019-3 5 5 0 019 3c-2 5-9 10-9 10z"/></svg></div>
-        <h3>Час от Уфы</h3><p>Всего 67 км и вы на месте. Идеально на выходные, день рождения или побег среди недели.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="dome-grid">
 
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow center reveal">Дома и услуги</span>
-      <h2 class="reveal" data-d="1">Всё для идеальной перезагрузки</h2>
-      <p class="reveal" data-d="2">Пять домов на любой вкус и доп. услуги, которые превращают поездку в маленькое путешествие.</p>
-    </div>
-    <div class="serv-grid">
-      <div class="serv-card reveal" data-d="1">
-        <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1000&q=80" alt="Дом с панорамными окнами">
-        <div class="serv-body"><span>Проживание</span><h3>5 уютных домов</h3><p>Тёплые дома с панорамными окнами, мягкими кроватями и видом на холмы. Для пары, семьи или компании друзей.</p></div>
-      </div>
-      <div class="serv-card reveal" data-d="2">
-        <img src="https://images.unsplash.com/photo-1534773728080-33d31da27ae5?auto=format&fit=crop&w=1000&q=80" alt="Конная прогулка">
-        <div class="serv-body"><span>Главное событие</span><h3>Конные прогулки</h3><p>Верхом по холмам и лесу с инструктором — для новичков и опытных. 300+ лошадей рядом каждый день.</p></div>
-      </div>
-      <div class="serv-card reveal" data-d="3">
-        <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1000&q=80" alt="Баня и отдых на природе">
-        <div class="serv-body"><span>Доп. услуги</span><h3>Баня и костёр</h3><p>Жаркая баня, чан под открытым небом, зона для костра и мангала. Идеально завершить день.</p></div>
-      </div>
-      <div class="serv-wide reveal">
-        <div>
-          <h3>А ещё — завтраки, фотосессии и трансфер</h3>
-          <p>Домашняя кухня по утрам, фотограф для съёмки с лошадьми и доставка из Уфы, если без машины. Спросите при бронировании.</p>
+      <div class="dome-card reveal" data-d="1">
+        <div class="dome-media"><span class="dome-badge">Купол №1</span><span class="dome-cap">4 гостя</span>
+          <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=1100&q=80" alt="Купол №1 с камином и чаном"></div>
+        <div class="dome-body">
+          <h3>Камин, терраса и чан</h3>
+          <div class="chips"><span class="chip">Камин</span><span class="chip">Душевая</span><span class="chip">Терраса</span><span class="chip gold">Чан</span></div>
+          <div class="dome-price">
+            <div class="price-val"><b>7 000</b> <span>/ 9 000 ₽</span><small>+ чан: 12 000 / 14 000 ₽</small></div>
+            <a href="https://wa.me/79270803010" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Забронировать</a>
+          </div>
         </div>
-        <a href="#cta" class="btn btn-clay">Узнать всё меню услуг</a>
+      </div>
+
+      <div class="dome-card reveal" data-d="2">
+        <div class="dome-media"><span class="dome-badge">Купол №2</span><span class="dome-cap">4 гостя</span>
+          <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?auto=format&fit=crop&w=1100&q=80" alt="Купол №2 с чаном"></div>
+        <div class="dome-body">
+          <h3>Кухня, мангал и свой чан</h3>
+          <div class="chips"><span class="chip">Кухня</span><span class="chip">Мангальная зона</span><span class="chip gold">Чан</span></div>
+          <div class="dome-price">
+            <div class="price-val"><b>12 000</b> <span>/ 14 000 ₽</span><small>цена с чаном включена</small></div>
+            <a href="https://wa.me/79270803010" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Забронировать</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dome-card reveal" data-d="1">
+        <div class="dome-media"><span class="dome-badge">Купол №3</span><span class="dome-cap">2 гостя</span>
+          <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1100&q=80" alt="Купол №3 для двоих с ванной"></div>
+        <div class="dome-body">
+          <h3>Для двоих: ванна и камин</h3>
+          <div class="chips"><span class="chip">Ванна</span><span class="chip">Камин</span><span class="chip">Кухня</span><span class="chip">Мангал</span></div>
+          <div class="dome-price">
+            <div class="price-val"><b>6 000</b> <span>/ 8 000 ₽</span><small>самый романтичный купол</small></div>
+            <a href="https://wa.me/79270803010" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Забронировать</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dome-card reveal" data-d="2">
+        <div class="dome-media"><span class="dome-badge">Купол №4</span><span class="dome-cap">4 гостя</span>
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1100&q=80" alt="Купол №4 с большим столом"></div>
+        <div class="dome-body">
+          <h3>Большой стол и обновлённый санузел</h3>
+          <div class="chips"><span class="chip">Большой стол</span><span class="chip">Кухня</span><span class="chip">Мангал во дворе</span><span class="chip">Диван</span></div>
+          <div class="dome-price">
+            <div class="price-val"><b>7 000</b> <span>/ 9 000 ₽</span><small>выезд до 11:00</small></div>
+            <a href="https://wa.me/79270803010" class="btn btn-wa btn-sm" target="_blank" rel="noopener">Забронировать</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dome-card feat reveal">
+        <div class="dome-media"><span class="dome-badge">Купол №5 · Флагман</span><span class="dome-cap">до 12 гостей</span>
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1400&q=80" alt="Трёхкупольный дом №5 для большой компании"></div>
+        <div class="dome-body">
+          <h3>Трёхкупольный дом для большой компании</h3>
+          <div class="chips"><span class="chip">3 геокупола</span><span class="chip">2 спальни · 4 кровати</span><span class="chip">Терраса</span><span class="chip">Кухня</span><span class="chip gold">Чан</span><span class="chip">Мангальная зона</span></div>
+          <div class="feat-price">
+            <div><b>10 000 / 15 000 ₽</b><span>будни (4 чел / 5–12 чел)</span></div>
+            <div><b>20 000 ₽</b><span>пятница и воскресенье</span></div>
+            <div><b>25 000 ₽</b><span>суббота и праздники</span></div>
+            <div><b>+ 5 000 ₽</b><span>чан</span></div>
+          </div>
+          <a href="https://wa.me/79270803010" class="btn btn-wa" target="_blank" rel="noopener" style="align-self:flex-start">Забронировать дом №5</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="dome-note reveal"><b>Чан</b> работает круглый год · <b>баня</b> зимой не работает · вместимость всего глэмпинга — до <b>26 человек</b>.</p>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section" id="amenities">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center reveal">Всё для комфортного отдыха</span>
+      <h2 class="reveal" data-d="1">Здесь есть всё — и даже больше</h2>
+      <p class="reveal" data-d="2">От фена и банных полотенец до сапов и снегохода. Вам остаётся только приехать.</p>
+    </div>
+    <div class="amen-grid">
+      <div class="amen reveal" data-d="1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16M6 12V7a2 2 0 012-2h8a2 2 0 012 2v5M5 12l1 8M19 12l-1 8M9 8h0M12 8h0M15 8h0"/></svg></div><h4>Полноценная кухня</h4><p>Посуда, чайник, всё необходимое. Плюс фен и банные полотенца.</p></div>
+      <div class="amen reveal" data-d="1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6M3 18h18M6 10V8a3 3 0 013-3h6a3 3 0 013 3v2"/></svg></div><h4>Двуспальные кровати</h4><p>Мягкие кровати с чистым постельным бельём в каждом куполе.</p></div>
+      <div class="amen reveal" data-d="2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 13h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM7 13V7a2 2 0 014 0M7 9h4M16 8c0-1 1-1 1-2"/></svg></div><h4>Чан под открытым небом</h4><p>Горячий чан у домов №1, №2 и №5. Работает круглый год.</p></div>
+      <div class="amen reveal" data-d="2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 21v-7M5 14l5-4 4 3 5-5M5 21h14M19 9v5"/></svg></div><h4>Баня и терраса</h4><p>Настоящая баня и терраса со столом — для душевных вечеров.</p></div>
+      <div class="amen reveal" data-d="3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.5 4-1.5S9 17 11 17s2-1.5 4-1.5S17 17 19 17M6 13l3-7 3 3 3-4"/></svg></div><h4>Сапы и рыбалка</h4><p>Сапборды и собственный пруд для рыбалки прямо на территории.</p></div>
+      <div class="amen reveal" data-d="3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 17a3 3 0 100-6 3 3 0 000 6zM19 17a3 3 0 100-6 3 3 0 000 6zM8 14h6l3-4M6 11l2-3h5"/></svg></div><h4>Квадроциклы и снегоход</h4><p>Прогулки на квадроциклах к табуну и на закат. Зимой — снегоход.</p></div>
+      <div class="amen reveal" data-d="4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></div><h4>Зимние развлечения</h4><p>Аренда снегоходов и катание на тюбингах в снежный сезон.</p></div>
+      <div class="amen reveal" data-d="4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-9-10a5 5 0 019-3 5 5 0 019 3c-2 5-9 10-9 10z"/></svg></div><h4>Своя мангальная зона</h4><p>У каждого дома — место для мангала и вечеров у огня.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLOGAN STRIP -->
+<section class="strip">
+  <div class="strip-bg"><img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?auto=format&fit=crop&w=2000&q=80" alt="Сосновый лес"></div>
+  <div class="wrap strip-inner">
+    <h2 class="reveal">«Отключиться от суеты, не отключаясь от горячей воды. Это <em>единение с природой</em>, тишина, спокойствие и любовь к себе.»</h2>
+  </div>
+</section>
+
+<!-- AGRO -->
+<section class="section agro" id="agro">
+  <div class="wrap agro-grid">
+    <div class="agro-text">
+      <span class="eyebrow reveal" style="color:var(--clay-soft)">Настоящий агротуризм</span>
+      <h2 class="reveal" data-d="1">Дикий табун, олени и павлины — как в сказке</h2>
+      <p class="reveal" data-d="2">Недалеко от глэмпинга — большое хозяйство, какого вы точно не видели рядом с городом. Дикий табун из 300 лошадей, коровы породы Абердин-Ангус, курочки, и даже павлины и пятнистые олени, словно сошедшие из диснеевских сказок.</p>
+      <p class="reveal" data-d="2">Поезжайте к табуну на квадроцикле, понаблюдайте за животными, сделайте кадры, которые хочется в рамку. Для детей и взрослых — одинаковый восторг.</p>
+      <div class="agro-list reveal" data-d="3">
+        <span><b>300</b> лошадей</span><span>Абердин-Ангус</span><span>Павлины</span><span>Пятнистые олени</span><span>Курочки</span>
+      </div>
+    </div>
+    <div class="agro-imgs reveal" data-d="2">
+      <img class="tall" src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=900&q=80" alt="Табун лошадей">
+      <img src="https://images.unsplash.com/photo-1534773728080-33d31da27ae5?auto=format&fit=crop&w=900&q=80" alt="Лошадь крупным планом">
+      <img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=900&q=80" alt="Лошадь в поле">
+    </div>
+  </div>
+</section>
+
+<!-- QUAD -->
+<section class="section" id="quad" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center reveal">Прогулки на квадроциклах</span>
+      <h2 class="reveal" data-d="1">К табуну, на закат и до мельницы</h2>
+      <p class="reveal" data-d="2">Маршруты на любой вкус — от короткой прогулки до 3-часового приключения.</p>
+    </div>
+    <div class="quad-grid">
+      <div class="quad-card reveal" data-d="1">
+        <h3>СФ мото</h3><div class="sub">2-местный квадроцикл</div>
+        <div class="quad-row"><div class="nm">Короткий <small>~30–40 мин</small></div><div class="pr">2 000 ₽</div></div>
+        <div class="quad-row"><div class="nm">К табуну <small>~40–60 мин</small></div><div class="pr">3 000 ₽</div></div>
+        <div class="quad-row"><div class="nm">Офф-роуд <small>~50 мин</small></div><div class="pr">4 000 ₽</div></div>
+        <div class="quad-row"><div class="nm">Табун на закате <small>от 1 часа</small></div><div class="pr">5 000 ₽</div></div>
+        <div class="quad-row"><div class="nm">Мельница <small>~2–3 часа</small></div><div class="pr">6 000 ₽</div></div>
+      </div>
+      <div class="quad-card reveal" data-d="2">
+        <h3>Атлет</h3><div class="sub">3-местный квадроцикл</div>
+        <div class="quad-row"><div class="nm">Мельница <small>~2–3 часа</small></div><div class="pr">8 000 ₽</div></div>
+        <div class="quad-row"><div class="nm">Остальные маршруты <small>как у СФ мото</small></div><div class="pr">+1 000 ₽</div></div>
+        <p class="quad-note">Хозяйство с лошадьми, оленями, коровами и павлинами — рядом. По всем вопросам напишите нам в WhatsApp, подберём маршрут под вашу компанию.</p>
+        <a href="https://wa.me/79270803010" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:8px">Записаться на прогулку</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="strip">
-  <div class="strip-bg"><img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=2000&q=80" alt="Лошади в поле"></div>
-  <div class="wrap strip-inner">
-    <h2 class="reveal">«Здесь время замедляется. Уезжаешь другим человеком — <em>спокойным и наполненным.</em>»</h2>
-  </div>
-</section>
-
+<!-- REVIEWS -->
 <section class="section" id="reviews">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow center reveal">Отзывы гостей</span>
-      <h2 class="reveal" data-d="1">Нам доверяют свои выходные</h2>
+      <h2 class="reveal" data-d="1">Сюда возвращаются</h2>
     </div>
     <div class="rev-grid">
-      <div class="rev-card reveal" data-d="1">
-        <div class="stars">★★★★★</div>
-        <p>«Приехали с мужем на годовщину. Дом тёплый, вид с террасы — словами не передать. А катание на лошадях на рассвете я теперь не забуду никогда.»</p>
-        <div class="rev-who"><div class="rev-av">А</div><div><b>Алия Хабибуллина</b><small>Уфа</small></div></div>
-      </div>
-      <div class="rev-card reveal" data-d="2">
-        <div class="stars">★★★★★</div>
-        <p>«Брали дом на компанию из шести человек. Баня, костёр, лошади рядом — дети в восторге, взрослые отдохнули по-настоящему. Вернёмся точно.»</p>
-        <div class="rev-who"><div class="rev-av">Р</div><div><b>Руслан Гайнетдинов</b><small>Стерлитамак</small></div></div>
-      </div>
-      <div class="rev-card reveal" data-d="3">
-        <div class="stars">★★★★★</div>
-        <p>«Час от города — и ты в другом мире. Тишина, звёзды, утренний туман над полем. Лучшая перезагрузка без отпуска и самолётов. Спасибо ЙОЛА.»</p>
-        <div class="rev-who"><div class="rev-av">Е</div><div><b>Екатерина Носова</b><small>Уфа</small></div></div>
-      </div>
+      <div class="rev-card reveal" data-d="1"><div class="stars">★★★★★</div><p>«Брали купол №3 на годовщину. Ванна, камин, тишина и звёзды в панорамное окно. А утром поехали на квадрике к табуну — это нечто. Уезжать не хотелось.»</p><div class="rev-who"><div class="rev-av">А</div><div><b>Алия Х.</b><small>Уфа</small></div></div></div>
+      <div class="rev-card reveal" data-d="2"><div class="stars">★★★★★</div><p>«Снимали трёхкупольный дом №5 на компанию. Места всем хватило, чан до полуночи, мангал, павлины рядом — дети в полном восторге. Лучшие выходные за год.»</p><div class="rev-who"><div class="rev-av">Р</div><div><b>Руслан Г.</b><small>Стерлитамак</small></div></div></div>
+      <div class="rev-card reveal" data-d="3"><div class="stars">★★★★★</div><p>«Час от города — и ты в сосновом лесу, в тёплом куполе, с горячей водой и мягкой кроватью. Никаких соседей за стеной. Настоящая перезагрузка без отпуска.»</p><div class="rev-who"><div class="rev-av">Е</div><div><b>Екатерина Н.</b><small>Уфа</small></div></div></div>
     </div>
   </div>
 </section>
 
-<section class="section about">
-  <div class="wrap about-grid">
-    <div class="about-text">
-      <span class="eyebrow reveal" style="color:var(--clay-soft)">О нас</span>
-      <h2 class="reveal" data-d="1">Мы создали место, в которое хочется возвращаться</h2>
-      <p class="reveal" data-d="2">ЙОЛА выросла из простой мечты — чтобы у жителей Уфы было своё место силы рядом с домом. Без долгой дороги, без палаточных компромиссов, но с настоящей природой и живыми лошадьми.</p>
-      <p class="reveal" data-d="3">Сегодня это пять домов, большая конюшня и команда, которая искренне любит то, что делает. Мы встречаем каждого гостя как друга — и почти все возвращаются снова.</p>
-      <a href="#cta" class="btn btn-clay reveal" data-d="3" style="margin-top:14px">Приехать в гости</a>
-    </div>
-    <div class="about-imgs reveal" data-d="2">
-      <img class="tall" src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=800&q=80" alt="Природа вокруг глемпинга">
-      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Холмы на закате">
-      <img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=800&q=80" alt="Лошадь крупным планом">
-    </div>
-  </div>
-</section>
-
-<section class="section adv" id="faq">
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--cream)">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow center reveal">Частые вопросы</span>
-      <h2 class="reveal" data-d="1">Отвечаем на главное</h2>
+      <h2 class="reveal" data-d="1">Всё, что нужно знать перед приездом</h2>
     </div>
     <div class="faq-wrap">
-      <div class="faq-item reveal"><button class="faq-q">Как добраться до ЙОЛА?<span class="pl"></span></button><div class="faq-a"><p>Мы в 67 км от Уфы, в с. Теперишево. Дорога на машине занимает около часа. Если вы без авто — организуем трансфер, расскажем детали при бронировании.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-q">Можно приехать зимой?<span class="pl"></span></button><div class="faq-a"><p>Да! Дома тёплые и работают круглый год. Зимой особенно красиво: заснеженные холмы, баня, костёр и звёздное небо. Конные прогулки тоже доступны.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-q">Я никогда не катался на лошади — это безопасно?<span class="pl"></span></button><div class="faq-a"><p>Конечно. Прогулки проходят с опытным инструктором, лошади спокойные и обученные. Подберём маршрут под ваш уровень — от первого знакомства до уверенной верховой езды.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-q">На сколько человек рассчитаны дома?<span class="pl"></span></button><div class="faq-a"><p>У нас 5 домов разной вместимости — для пары, семьи или компании друзей. Подскажем подходящий вариант, когда вы напишете состав и даты.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-q">Как забронировать?<span class="pl"></span></button><div class="faq-a"><p>Просто позвоните или напишите в WhatsApp на +7 927 080-30-10. Подберём дом, дату и услуги, забронируем — это займёт пару минут.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Как забронировать и оплатить?<span class="pl"></span></button><div class="faq-a"><p>Бронь по телефону 8-927-080-3010, приоритет бронирования — WhatsApp. Предоплата 100% за все услуги, оплата на Сбер или Тинькофф. Напишите состав, даты и желаемый купол — подберём вариант за пару минут.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Во сколько заезд и выезд?<span class="pl"></span></button><div class="faq-a"><p>Заезд с 15:00 (дом №5 — с 16:00), выезд до 12:00 (дом №4 — до 11:00). Поздний заезд после 21:00 — +1000 ₽. После 23:00 заезд обговаривается индивидуально либо невозможен.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Чан и баня работают зимой?<span class="pl"></span></button><div class="faq-a"><p>Чан работает круглый год — это идеально зимой под звёздным небом. Баня зимой не работает. Чан есть у домов №1, №2 и №5.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Как добраться?<span class="pl"></span></button><div class="faq-a"><p>Мы в 67 км от Уфы, в с. Теперишево, Башкортостан. Дорога на машине занимает около часа. Точную геолокацию и детали маршрута пришлём при бронировании.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Сколько человек вмещает глэмпинг?<span class="pl"></span></button><div class="faq-a"><p>У нас 5 куполов: 2-, 4- и 8-местные. Трёхкупольный дом №5 принимает до 12 гостей. Максимальная вместимость всего глэмпинга — 26 человек, можно выкупить целиком для большого события.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q">Можно с шумной компанией и музыкой?<span class="pl"></span></button><div class="faq-a"><p>Наша концепция — спокойный отдых в кругу семьи и близких, без шумных компаний, громкой музыки и чрезмерного алкоголя. Если вы за тишину и единение с природой — вам точно к нам.</p></div></div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta" id="cta">
-  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=2000&q=80" alt="Костёр у дома ночью"></div>
+  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=2000&q=80" alt="Закат над лесом"></div>
   <div class="wrap cta-inner">
-    <span class="eyebrow center reveal" style="color:var(--clay-soft)">Свободные даты тают</span>
-    <h2 class="reveal" data-d="1">Забронируйте дом, который вас перезагрузит</h2>
-    <p class="reveal" data-d="2">Напишите состав и желаемые даты — подберём дом и услуги под вас за пару минут.</p>
+    <span class="eyebrow center reveal" style="color:var(--clay-soft)">Добро пожаловать в ЙОЛА</span>
+    <h2 class="reveal" data-d="1">Забронируйте свой купол</h2>
+    <p class="reveal" data-d="2">Напишите в WhatsApp состав и даты — подберём купол и услуги под вас. Это быстрее всего.</p>
+    <p class="small reveal" data-d="2">Приоритет бронирования — WhatsApp · предоплата 100% · оплата Сбер / Тинькофф</p>
     <div class="cta-actions reveal" data-d="3">
-      <a href="tel:+79270803010" class="btn btn-clay">Позвонить и забронировать</a>
-      <a href="https://wa.me/79270803010" class="btn btn-ghost" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a href="https://wa.me/79270803010" class="btn btn-clay" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a href="tel:+79270803010" class="btn btn-ghost">Позвонить</a>
     </div>
-    <a href="tel:+79270803010" class="cta-phone reveal" data-d="3">+7 927 080-30-10</a>
+    <a href="tel:+79270803010" class="cta-phone reveal" data-d="3">8 927 080-30-10</a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#" class="brand">
-          <div class="brand-mark">Й</div>
-          <div><div class="brand-name" style="color:#fff">ЙОЛА</div><div class="brand-sub">Глемпинг · Башкирия</div></div>
-        </a>
-        <p>Место, где наполняешься силой. Глемпинг с лошадьми в 67 км от Уфы — для тех, кто хочет отдохнуть по-настоящему.</p>
+        <a href="#" class="brand"><div class="brand-mark">Й</div><div><div class="brand-name" style="color:#fff">ЙОЛА</div><div class="brand-sub">Глэмпинг · Башкортостан</div></div></a>
+        <p>Место, где наполняешься силой. Геокуполы в сосновом лесу в 67 км от Уфы — тишина, чан, агротуризм и отдых, который перезагружает.</p>
+        <div class="foot-tags"><span>#йолаглэмпинг</span><span>#базаотдыхауфа</span><span>#башкортостан</span></div>
       </div>
       <div class="foot-col">
         <h4>Навигация</h4>
-        <a href="#solution">О месте</a>
-        <a href="#advantages">Почему ЙОЛА</a>
-        <a href="#services">Дома и услуги</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">Вопросы</a>
+        <a href="#concept">О глэмпинге</a><a href="#domes">Купола и цены</a><a href="#amenities">Услуги</a><a href="#agro">Хозяйство</a><a href="#quad">Квадроциклы</a><a href="#faq">Вопросы</a>
       </div>
       <div class="foot-col">
         <h4>Контакты</h4>
-        <a href="tel:+79270803010">+7 927 080-30-10</a>
-        <a href="https://wa.me/79270803010" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+79270803010">8 927 080-30-10</a>
+        <a href="https://wa.me/79270803010" target="_blank" rel="noopener">WhatsApp (приоритет брони)</a>
+        <a href="https://instagram.com/yola_glamp" target="_blank" rel="noopener">Instagram @yola_glamp</a>
         <p>с. Теперишево<br>67 км от Уфы, Башкортостан</p>
-        <p>Ежедневно · круглый год</p>
+        <p>Работаем круглый год</p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Глемпинг ЙОЛА. Все права защищены.</span>
-      <span>Сделано с любовью к башкирской природе</span>
+      <span>© 2026 Глэмпинг ЙОЛА. Все права защищены.</span>
+      <span>Добро пожаловать в гости 💚</span>
     </div>
   </div>
 </footer>
 
-<div class="mcall"><a href="tel:+79270803010">☏ Позвонить и забронировать</a></div>
+<div class="mcall">
+  <a class="c1" href="tel:+79270803010">☏ Позвонить</a>
+  <a class="c2" href="https://wa.me/79270803010" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <script>
   const nav=document.getElementById('nav');
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-
   const mmenu=document.getElementById('mmenu');
   document.getElementById('burger').onclick=()=>mmenu.classList.add('open');
   document.getElementById('mclose').onclick=()=>mmenu.classList.remove('open');
   mmenu.querySelectorAll('a').forEach(a=>a.onclick=()=>mmenu.classList.remove('open'));
-
-  const io=new IntersectionObserver((es)=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
   document.querySelectorAll('.faq-q').forEach(q=>{
-    q.onclick=()=>{
-      const item=q.parentElement, a=item.querySelector('.faq-a'), open=item.classList.contains('open');
+    q.onclick=()=>{const item=q.parentElement,a=item.querySelector('.faq-a'),open=item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
-      if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
-    }
+      if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}}
   });
 </script>
 </body>

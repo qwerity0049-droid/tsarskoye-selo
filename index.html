@@ -66,9 +66,9 @@
   @keyframes slowzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
   .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,37,32,.6) 0%,rgba(23,37,32,.32) 42%,rgba(23,37,32,.85) 100%)}
   .hero-inner{position:relative;z-index:2;width:100%;padding:140px 0 60px}
-  .hero h1{font-size:clamp(44px,7.4vw,100px);font-weight:600;letter-spacing:-.02em}
+  .hero h1{font-size:clamp(44px,7.4vw,100px);font-weight:600;letter-spacing:-.02em;text-shadow:0 4px 40px rgba(0,0,0,.45)}
   .hero h1 em{font-style:italic;color:var(--clay-soft);font-weight:500}
-  .hero-lead{font-size:clamp(17px,2.3vw,22px);font-weight:300;max-width:620px;margin:26px 0 38px;color:rgba(255,255,255,.92);line-height:1.55}
+  .hero-lead{font-size:clamp(17px,2.3vw,22px);font-weight:300;max-width:620px;margin:26px 0 38px;color:rgba(255,255,255,.92);line-height:1.55;text-shadow:0 2px 22px rgba(0,0,0,.5)}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
   .hero-meta{position:relative;z-index:2;display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);margin-top:60px}
   .hero-meta div{padding:24px 36px 0 0;margin-right:36px;border-right:1px solid rgba(255,255,255,.16)}
@@ -247,9 +247,26 @@
     .hero-meta div{padding:18px 22px 0 0;margin-right:22px}
     .hero-meta b{font-size:30px}
   }
+  /* ── Усиленный герой на мобиле ── */
+  @media(max-width:760px){
+    .hero{align-items:flex-end}
+    .hero-bg::after{background:linear-gradient(180deg,rgba(23,37,32,.5) 0%,rgba(23,37,32,.32) 30%,rgba(23,37,32,.86) 72%,rgba(23,37,32,.96) 100%)}
+    .hero-inner{padding:118px 0 84px}
+    .hero .eyebrow{font-size:11px;letter-spacing:.18em}
+    .hero h1{font-size:clamp(40px,12vw,56px);line-height:1.02}
+    .hero-lead{font-size:16.5px;margin:20px 0 30px;color:#fff;max-width:none}
+    .hero-cta{gap:12px}
+    .hero-cta .btn{flex:1;padding:17px 18px}
+    .hero-meta{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.22)}
+    .hero-meta div{padding:16px 6px 0 0;margin:0;border-right:1px solid rgba(255,255,255,.16)}
+    .hero-meta div:nth-child(3){border-right:0}
+    .hero-meta div:nth-child(4){display:none}
+    .hero-meta b{font-size:26px}
+    .hero-meta small{font-size:9.5px;letter-spacing:.1em}
+    .scroll-hint{display:none}
+  }
   @media(max-width:560px){
     .amen-grid{grid-template-columns:1fr}
-    .hero-cta .btn{flex:1}
     .wrap{padding:0 18px}
     .section,.pains{padding:80px 0}
     .quad-card{padding:32px 24px}
@@ -290,7 +307,7 @@
 <section class="hero">
   <div class="hero-bg">
     <picture>
-      <source media="(max-width:760px)" srcset="https://images.unsplash.com/photo-1777768785766-db03f4333406?auto=format&fit=crop&w=1100&h=1600&q=80">
+      <source media="(max-width:760px)" srcset="https://images.unsplash.com/photo-1762255107395-bcb83548e83f?auto=format&fit=crop&w=1100&h=1700&q=82">
       <img src="https://images.unsplash.com/photo-1774013710036-982f187dfe38?auto=format&fit=crop&w=2000&q=82" alt="Геокуполы ЙОЛА в сосновом лесу">
     </picture>
   </div>

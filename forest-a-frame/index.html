@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>forest.a.frame — Аренда A-frame домика под Петербургом · Баня и купель</title>
+<meta name="description" content="Уединённый A-frame домик с индивидуальной территорией, баней и купелью. 35 минут от Санкт-Петербурга. Тишина, лес и перезагрузка на выходные.">
+<meta property="og:title" content="forest.a.frame — лесной A-frame под Петербургом">
+<meta property="og:description" content="Своя территория, баня, купель, 35 минут от города. Перезагрузка без соседей.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#16271f;       /* глубокий хвойный */
+  --forest-2:#1f3a2c;
+  --moss:#3a5a40;
+  --sage:#a3b18a;
+  --ember:#d98a3d;        /* тепло огня / бани */
+  --ember-soft:#e9a860;
+  --cream:#f4efe6;        /* берёста / лён */
+  --cream-2:#ebe3d4;
+  --ink:#11140f;
+  --muted:#7c8a78;
+  --white:#ffffff;
+  --r:20px;
+  --shadow:0 30px 80px -30px rgba(10,20,12,.55);
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Manrope';font-size:.74rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--ember);margin-bottom:18px}
+.sec{padding:104px 0}
+@media(max-width:680px){.sec{padding:72px 0}}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:700;font-size:.96rem;letter-spacing:.01em;
+  padding:17px 30px;border-radius:100px;cursor:pointer;border:none;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--ember);color:#241404;box-shadow:0 14px 34px -10px rgba(217,138,61,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 48px -12px rgba(217,138,61,.85)}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.btn-dark{background:var(--forest);color:var(--cream)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.4s}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;max-width:var(--maxw);margin:0 auto}
+.logo{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700;color:var(--cream);letter-spacing:.02em;transition:.4s}
+.logo span{color:var(--ember-soft)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:600;color:rgba(244,239,230,.82);transition:.3s}
+.nav-links a:hover{color:var(--ember-soft)}
+.nav .btn{padding:12px 22px;font-size:.85rem}
+header.scrolled{background:rgba(244,239,230,.92);backdrop-filter:blur(14px);box-shadow:0 8px 30px -16px rgba(0,0,0,.3)}
+header.scrolled .logo{color:var(--forest)}
+header.scrolled .nav-links a{color:var(--forest)}
+@media(max-width:880px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:slowzoom 18s ease-out forwards}
+@keyframes slowzoom{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(15,25,18,.55) 0%,rgba(15,25,18,.1) 35%,rgba(13,22,16,.55) 70%,rgba(11,18,13,.95) 100%);}
+.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px 72px}
+.hero .pin{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;letter-spacing:.04em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:9px 16px;border-radius:100px;backdrop-filter:blur(6px);margin-bottom:26px}
+.hero h1{font-size:clamp(2.9rem,8vw,6rem);font-weight:600;max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--ember-soft)}
+.hero p.lead{font-size:clamp(1.05rem,2.4vw,1.32rem);font-weight:300;max-width:46ch;margin:24px 0 36px;color:rgba(244,239,230,.9)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:42px;margin-top:54px;flex-wrap:wrap}
+.hero-stats .s b{font-family:'Cormorant Garamond';font-size:2.4rem;font-weight:700;color:var(--cream);display:block;line-height:1}
+.hero-stats .s span{font-size:.82rem;color:rgba(244,239,230,.7);letter-spacing:.02em}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,239,230,.6);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+@media(max-width:680px){.hero-stats{gap:28px;margin-top:38px}.scroll-hint{display:none}}
+
+/* ---------- Pains ---------- */
+.pains{background:var(--forest);color:var(--cream)}
+.pains .head{text-align:center;max-width:24ch;margin:0 auto 56px}
+.pains h2{font-size:clamp(2rem,5vw,3.3rem)}
+.pains h2 em{font-style:italic;color:var(--ember-soft)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:32px 28px;transition:.4s}
+.pain:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+.pain .ic{font-size:1.7rem;margin-bottom:16px}
+.pain h3{font-size:1.4rem;margin-bottom:8px;color:var(--cream)}
+.pain p{color:rgba(244,239,230,.72);font-size:.96rem}
+@media(max-width:780px){.pain-grid{grid-template-columns:1fr}}
+
+/* ---------- Solution / split ---------- */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.split .media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);position:relative;aspect-ratio:4/5}
+.split .media img{width:100%;height:100%;object-fit:cover;transition:1.2s cubic-bezier(.2,.8,.2,1)}
+.split .media:hover img{transform:scale(1.05)}
+.split h2{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--forest);margin-bottom:22px}
+.split h2 em{font-style:italic;color:var(--ember)}
+.split p{color:#4a5347;font-size:1.06rem;margin-bottom:18px;max-width:46ch}
+.checks{list-style:none;margin:26px 0 32px}
+.checks li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-weight:500;border-bottom:1px solid rgba(0,0,0,.06)}
+.checks li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--moss);margin-top:3px;
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/13px no-repeat;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/13px no-repeat;}
+@media(max-width:840px){.split{grid-template-columns:1fr;gap:36px}.split .media{aspect-ratio:4/3}}
+
+/* ---------- Advantages ---------- */
+.adv{background:var(--cream-2)}
+.adv .head{text-align:center;margin-bottom:54px}
+.adv h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
+.adv h2 em{font-style:italic;color:var(--ember)}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--cream);border:1px solid rgba(20,30,20,.07);border-radius:var(--r);padding:30px 26px;transition:.4s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.card .ic{width:50px;height:50px;border-radius:14px;background:rgba(58,90,64,.12);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px}
+.card h3{font-size:1.28rem;color:var(--forest);margin-bottom:6px}
+.card p{font-size:.92rem;color:#5b6357}
+@media(max-width:960px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
+
+/* ---------- Services / pricing ---------- */
+.serv .head{text-align:center;margin-bottom:54px}
+.serv h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
+.serv h2 em{font-style:italic;color:var(--ember)}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tier{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid rgba(20,30,20,.08);display:flex;flex-direction:column;transition:.4s}
+.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.tier .ph{height:190px;overflow:hidden}
+.tier .ph img{width:100%;height:100%;object-fit:cover;transition:1s}
+.tier:hover .ph img{transform:scale(1.06)}
+.tier .body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+.tier.featured{border-color:var(--ember);box-shadow:0 30px 70px -34px rgba(217,138,61,.6)}
+.tier .tag{align-self:flex-start;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);background:rgba(217,138,61,.12);padding:5px 12px;border-radius:100px;margin-bottom:14px}
+.tier h3{font-size:1.7rem;color:var(--forest)}
+.tier .price{font-family:'Cormorant Garamond';font-size:2.2rem;font-weight:700;color:var(--forest);margin:8px 0 4px}
+.tier .price small{font-family:'Manrope';font-size:.9rem;font-weight:500;color:var(--muted)}
+.tier ul{list-style:none;margin:18px 0 24px}
+.tier ul li{font-size:.93rem;padding:7px 0;color:#4a5347;display:flex;gap:10px}
+.tier ul li::before{content:"·";color:var(--ember);font-weight:800}
+.tier .btn{margin-top:auto;justify-content:center}
+@media(max-width:880px){.serv-grid{grid-template-columns:1fr}}
+
+/* ---------- Social proof ---------- */
+.proof{background:var(--forest);color:var(--cream)}
+.proof .head{text-align:center;margin-bottom:52px}
+.proof h2{font-size:clamp(2rem,5vw,3.3rem)}
+.proof h2 em{font-style:italic;color:var(--ember-soft)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--r);padding:30px 28px}
+.rev .stars{color:var(--ember-soft);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
+.rev p{font-size:1rem;color:rgba(244,239,230,.9);font-style:italic;margin-bottom:20px}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .who .av{width:42px;height:42px;border-radius:50%;background:var(--moss);display:grid;place-items:center;font-weight:700;color:var(--cream)}
+.rev .who b{font-size:.95rem}
+.rev .who span{font-size:.8rem;color:rgba(244,239,230,.6)}
+@media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
+
+/* ---------- About ---------- */
+.about .split p{font-size:1.08rem}
+.about .sig{font-family:'Cormorant Garamond';font-style:italic;font-size:1.5rem;color:var(--forest);margin-top:18px}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--cream-2)}
+.faq .head{text-align:center;margin-bottom:46px}
+.faq h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
+.faq-list{max-width:780px;margin:0 auto}
+.q{background:var(--white);border:1px solid rgba(20,30,20,.08);border-radius:16px;margin-bottom:14px;overflow:hidden}
+.q button{width:100%;text-align:left;background:none;border:none;padding:24px 26px;font-family:'Manrope';font-size:1.08rem;font-weight:600;color:var(--forest);cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center}
+.q button .pl{flex:none;font-size:1.5rem;color:var(--ember);transition:.4s;line-height:1}
+.q.open button .pl{transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .45s ease;color:#4a5347}
+.q .a p{padding:0 26px 24px}
+
+/* ---------- CTA ---------- */
+.cta{position:relative;color:var(--cream);text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;z-index:-2}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(15,25,18,.72),rgba(11,18,13,.86))}
+.cta .wrap{padding:118px 22px}
+.cta h2{font-size:clamp(2.3rem,6vw,4rem)}
+.cta h2 em{font-style:italic;color:var(--ember-soft)}
+.cta p{font-size:1.15rem;font-weight:300;max-width:44ch;margin:22px auto 36px;color:rgba(244,239,230,.9)}
+.cta-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:rgba(244,239,230,.72);padding:64px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+footer .logo{color:var(--cream);font-size:1.6rem;margin-bottom:14px}
+footer h4{color:var(--cream);font-family:'Manrope';font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;font-weight:700}
+footer a{display:block;padding:6px 0;font-size:.95rem;transition:.3s}
+footer a:hover{color:var(--ember-soft)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.84rem;color:rgba(244,239,230,.5)}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+
+/* ---------- Mobile fixed call ---------- */
+.mcall{position:fixed;bottom:16px;left:16px;right:16px;z-index:95;display:none;gap:10px}
+.mcall a{flex:1;justify-content:center;box-shadow:0 16px 40px -12px rgba(0,0,0,.5)}
+.mcall .wa{background:#25D366;color:#06351c}
+@media(max-width:880px){.mcall{display:flex}body{padding-bottom:84px}}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-bg img{animation:none;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <nav class="nav">
+    <a href="#top" class="logo">forest<span>.a.frame</span></a>
+    <div class="nav-links">
+      <a href="#solution">О формате</a>
+      <a href="#adv">Почему мы</a>
+      <a href="#serv">Домики</a>
+      <a href="#proof">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+    </div>
+    <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Забронировать</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=2000&q=80" alt="A-frame домик в хвойном лесу">
+  </div>
+  <div class="hero-inner">
+    <span class="pin reveal">📍 35 минут от Санкт-Петербурга</span>
+    <h1 class="reveal d1">Лес, тишина и <em>только вы</em> — на своей территории</h1>
+    <p class="lead reveal d2">A-frame домик с личной поляной, банёй и купелью. Без соседей за стеной, без городского гула. Только потрескивание дров и небо в хвое.</p>
+    <div class="hero-cta reveal d3">
+      <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Проверить свободные даты</a>
+      <a href="#serv" class="btn btn-ghost">Смотреть домики</a>
+    </div>
+    <div class="hero-stats reveal d4">
+      <div class="s"><b>35</b><span>минут от КАД</span></div>
+      <div class="s"><b>100%</b><span>своя территория</span></div>
+      <div class="s"><b>4.9</b><span>★ средняя оценка гостей</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">прокрутите вниз</div>
+</section>
+
+<!-- PAINS -->
+<section class="pains sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Знакомо?</p>
+      <h2>Выходные прошли, а <em>сил не прибавилось</em></h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain reveal d1">
+        <div class="ic">🏙️</div>
+        <h3>Город не отпускает</h3>
+        <p>Шум, экраны, бесконечные уведомления. Голова не выключается даже в субботу утром.</p>
+      </div>
+      <div class="pain reveal d2">
+        <div class="ic">🚪</div>
+        <h3>Турбазы — это соседи</h3>
+        <p>Тонкие стены, чужие компании и мангал в метре от вашего. Уединением и не пахнет.</p>
+      </div>
+      <div class="pain reveal d3">
+        <div class="ic">🧳</div>
+        <h3>Далеко = не доедем</h3>
+        <p>Хочется природы, но тратить полдня на дорогу в Карелию ради двух выходных — не вариант.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="sec" id="solution">
+  <div class="wrap split">
+    <div class="media reveal">
+      <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1200&q=80" alt="Интерьер A-frame домика у леса">
+    </div>
+    <div>
+      <p class="eyebrow reveal">Решение</p>
+      <h2 class="reveal d1">Дом, где <em>выдыхаешь</em> уже на пороге</h2>
+      <p class="reveal d2">forest.a.frame — это не турбаза и не отель. Это отдельный треугольный дом на собственной поляне, спрятанный среди сосен в 35 минутах от города. Приехали — и мир сузился до бани, купели и вас двоих.</p>
+      <ul class="checks reveal d3">
+        <li>Индивидуальная огороженная территория — никаких соседей в кадре</li>
+        <li>Тёплая баня и купель с прохладной водой под открытым небом</li>
+        <li>Панорамное окно во всю стену: лес как живая картина</li>
+        <li>Всё для готовки, мангал и дрова уже ждут вас</li>
+      </ul>
+      <a href="https://wa.me/79118366585" class="btn btn-dark reveal d4" target="_blank" rel="noopener">Хочу так на выходные →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="adv sec" id="adv">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Почему гости возвращаются</p>
+      <h2>Детали, ради которых <em>хочется остаться дольше</em></h2>
+    </div>
+    <div class="adv-grid">
+      <div class="card reveal d1"><div class="ic">🌲</div><h3>Своя поляна</h3><p>Огороженный участок только для вас. Гуляйте в халате — никто не увидит.</p></div>
+      <div class="card reveal d2"><div class="ic">🔥</div><h3>Баня готова к приезду</h3><p>Растопим заранее. Заходите с дороги — и сразу в пар.</p></div>
+      <div class="card reveal d3"><div class="ic">❄️</div><h3>Купель</h3><p>Контраст после парной, от которого тело звенит, а голова ясная.</p></div>
+      <div class="card reveal d4"><div class="ic">🚗</div><h3>35 минут пути</h3><p>Асфальт почти до ворот. Доедет любая машина в любой сезон.</p></div>
+      <div class="card reveal d1"><div class="ic">🛏️</div><h3>Готовый уют</h3><p>Чистое бельё, тёплые пледы, посуда и свет, который хочется фотографировать.</p></div>
+      <div class="card reveal d2"><div class="ic">📶</div><h3>Связь и Wi-Fi</h3><p>Цифровой детокс — по желанию. Интернет есть, если вдруг понадобится.</p></div>
+      <div class="card reveal d3"><div class="ic">🐾</div><h3>Можно с питомцем</h3><p>Хвостатый друг — полноценный гость. Лес ему понравится не меньше.</p></div>
+      <div class="card reveal d4"><div class="ic">📸</div><h3>Кадры сами получаются</h3><p>A-frame, гирлянды и хвоя — фон, в котором каждое фото выглядит дорого.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="serv sec" id="serv">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Форматы отдыха</p>
+      <h2>Выберите <em>свой сценарий тишины</em></h2>
+    </div>
+    <div class="serv-grid">
+      <div class="tier reveal d1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80" alt="Домик на одну ночь"></div>
+        <div class="body">
+          <span class="tag">Перезагрузка</span>
+          <h3>Будни вдвоём</h3>
+          <div class="price">от 7 900 ₽<small> / ночь</small></div>
+          <ul>
+            <li>Заселение с 15:00</li>
+            <li>Дом, своя территория, мангал</li>
+            <li>Дрова и кофе в подарок</li>
+            <li>Идеально для побега в середине недели</li>
+          </ul>
+          <a href="https://wa.me/79118366585" class="btn btn-dark" target="_blank" rel="noopener">Узнать даты</a>
+        </div>
+      </div>
+      <div class="tier featured reveal d2">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="Выходные с баней"></div>
+        <div class="body">
+          <span class="tag">Хит выбора</span>
+          <h3>Выходные с баней</h3>
+          <div class="price">от 18 900 ₽<small> / 2 ночи</small></div>
+          <ul>
+            <li>Две ночи в домике</li>
+            <li>Протопленная баня + купель</li>
+            <li>Поздний выезд до 14:00</li>
+            <li>Веники и травяной чай — за счёт дома</li>
+          </ul>
+          <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Забронировать</a>
+        </div>
+      </div>
+      <div class="tier reveal d3">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Особый повод"></div>
+        <div class="body">
+          <span class="tag">Особый повод</span>
+          <h3>Свидание / годовщина</h3>
+          <div class="price">по запросу</div>
+          <ul>
+            <li>Украшение домика к приезду</li>
+            <li>Свечи, гирлянды, фотозона</li>
+            <li>Можно заказать ужин и фотографа</li>
+            <li>Сюрприз второй половинке под ключ</li>
+          </ul>
+          <a href="https://wa.me/79118366585" class="btn btn-dark" target="_blank" rel="noopener">Обсудить детали</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof sec" id="proof">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Гостям есть что сказать</p>
+      <h2>Сюда возвращаются <em>и привозят друзей</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>«Уехали с ощущением, будто были в отпуске неделю, а не два дня. Баня, купель, тишина и ни одного чужого человека вокруг. Это лучшее, что мы делали этой зимой.»</p>
+        <div class="who"><div class="av">А</div><div><b>Анна и Дмитрий</b><span>Санкт-Петербург</span></div></div>
+      </div>
+      <div class="rev reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>«Боялись, что 35 минут — это маркетинг. Реально доехали быстрее, чем до дачи. Дом тёплый, всё продумано, хозяева на связи. Уже забронировали на годовщину.»</p>
+        <div class="who"><div class="av">М</div><div><b>Марина К.</b><span>приехала повторно</span></div></div>
+      </div>
+      <div class="rev reveal d3">
+        <div class="stars">★★★★★</div>
+        <p>«Брали с собой собаку — и не пожалели. Своя поляна, лес, после бани в купель под звёздами. Фотографии получились такие, что друзья теперь просят адрес.»</p>
+        <div class="who"><div class="av">И</div><div><b>Игорь и Лена</b><span>с псом Бимом</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about sec">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow reveal">О нас</p>
+      <h2 class="reveal d1">Мы построили дом, в который <em>сами хотели сбегать</em></h2>
+      <p class="reveal d2">Несколько лет мы сами искали место под Петербургом, где можно выдохнуть без турбаз и соседей. Не нашли — и сделали сами. Каждую деталь forest.a.frame мы проверили на себе: от температуры в бане до света над кроватью.</p>
+      <p class="reveal d2">Мы не сеть и не отель. Это камерный дом, за которым стоят живые люди — мы лично готовим его к каждому вашему приезду и всегда на связи.</p>
+      <p class="sig reveal d3">— команда forest.a.frame</p>
+    </div>
+    <div class="media reveal d1">
+      <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80" alt="A-frame домик среди деревьев">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq sec" id="faq">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Частые вопросы</p>
+      <h2>Коротко о главном</h2>
+    </div>
+    <div class="faq-list">
+      <div class="q reveal"><button>Где именно находится домик и как добраться?<span class="pl">+</span></button><div class="a"><p>Мы в 35 минутах езды от КАД Санкт-Петербурга. Точную геолокацию и маршрут пришлём после бронирования — асфальт идёт почти до ворот, доедет любая машина в любое время года.</p></div></div>
+      <div class="q reveal"><button>Баня и купель уже входят в стоимость?<span class="pl">+</span></button><div class="a"><p>В тариф «Выходные с баней» — да, баня протоплена к вашему приезду, веники и чай за счёт дома. На других тарифах баню можно добавить отдельно — напишите нам, подскажем.</p></div></div>
+      <div class="q reveal"><button>Можно приехать с детьми или собакой?<span class="pl">+</span></button><div class="a"><p>Да. Территория огорожена и безопасна для детей, а питомцам мы только рады — рядом целый лес для прогулок. Сообщите заранее, чтобы мы всё подготовили.</p></div></div>
+      <div class="q reveal"><button>Как забронировать и нужна ли предоплата?<span class="pl">+</span></button><div class="a"><p>Напишите нам в WhatsApp — подберём свободные даты и тариф. Для брони вносится предоплата, остаток — при заселении. Это всё занимает пару минут.</p></div></div>
+      <div class="q reveal"><button>Что взять с собой?<span class="pl">+</span></button><div class="a"><p>Только продукты и хорошее настроение. Постельное бельё, полотенца, посуда, дрова и базовые мелочи уже в доме. Список «что приятно захватить» пришлём перед заездом.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=2000&q=80" alt="Ночной лес"></div>
+  <div class="wrap reveal">
+    <h2>Ближайшие выходные <em>могут пахнуть хвоей</em></h2>
+    <p>Свободных дат немного — особенно с баней. Напишите сейчас, и мы забронируем ваш домик в лесу.</p>
+    <div class="cta-cta">
+      <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a href="tel:+79118366585" class="btn btn-ghost">Позвонить +7 911 836-65-85</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">forest<span style="color:var(--ember-soft)">.a.frame</span></div>
+        <p style="max-width:34ch">A-frame домик с банёй, купелью и собственной территорией. 35 минут от Санкт-Петербурга.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <a href="#solution">О формате</a>
+        <a href="#adv">Почему мы</a>
+        <a href="#serv">Домики и цены</a>
+        <a href="#faq">Вопросы</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="https://wa.me/79118366585" target="_blank" rel="noopener">WhatsApp →</a>
+        <a href="tel:+79118366585">+7 911 836-65-85</a>
+        <a href="https://wa.me/79118366585" target="_blank" rel="noopener">Бронирование</a>
+        <span style="display:block;padding:6px 0;font-size:.95rem">📍 Ленинградская область</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 forest.a.frame · Аренда дома, Санкт-Петербург</span>
+      <span>Сделано с любовью к тишине</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE FIXED CALL -->
+<div class="mcall">
+  <a href="tel:+79118366585" class="btn btn-primary">📞 Позвонить</a>
+  <a href="https://wa.me/79118366585" class="btn wa" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+// header scroll
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.q button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const q=b.parentElement, a=q.querySelector('.a'), open=q.classList.contains('open');
+    document.querySelectorAll('.q').forEach(x=>{x.classList.remove('open');x.querySelector('.a').style.maxHeight=null});
+    if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+// smooth anchor offset handled by scroll-behavior; close nothing else
+</script>
+</body>
+</html>

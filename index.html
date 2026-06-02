@@ -3,692 +3,578 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOBCATSAR64 — Аренда спецтехники в Саратове | КАМАЗ, Bobcat, экскаватор-погрузчик</title>
-<meta name="description" content="Аренда строительной и спецтехники в Саратове и области. КАМАЗ-самосвал 10–20т, Bobcat с 12 насадками, экскаватор-погрузчик, манипулятор, ломовоз, вывоз мусора. Выезд в день звонка, работа 24/7, лицензия на отходы 3-4 класса. Звоните: 255-222.">
-<meta name="theme-color" content="#0d1117">
+<title>NelManHouse — Дома A-Frame, баня и купель у моря в Керчи</title>
+<meta name="description" content="Гостевой комплекс NelManHouse под Керчью: стильный дом A-Frame с видом на море, баня на дровах, горячая купель под открытым небом и гриль-домик. Первый и единственный в Керчи комплекс с индивидуальными банями и купелями. Рейтинг 5,0 — 59 отзывов.">
+<meta name="theme-color" content="#0d1714">
 <meta property="og:type" content="website">
-<meta property="og:title" content="BOBCATSAR64 — Аренда спецтехники в Саратове">
-<meta property="og:description" content="Парк техники под любые задачи: КАМАЗ-самосвал, Bobcat с насадками, экскаватор-погрузчик, манипулятор, вывоз мусора. Выезд в день звонка. 255-222.">
-<meta property="og:image" content="img/hero-kamaz.jpg">
+<meta property="og:title" content="NelManHouse — баня, купель и дом A-Frame у моря в Керчи">
+<meta property="og:description" content="Своя баня на дровах, горячая купель под звёздами и дом A-Frame с видом на море. В 10 км от Керчи, посёлок Челядиново. Рейтинг 5,0.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1200&q=80">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
   :root{
-    --bg:#0d1117;
-    --bg-2:#11161d;
-    --surface:#161c25;
-    --surface-2:#1c232e;
-    --line:#27303d;
-    --line-2:#323d4d;
-    --text:#eef2f7;
-    --muted:#9aa7b8;
-    --muted-2:#6b7686;
-    --accent:#f5a300;
-    --accent-2:#ffb724;
-    --accent-deep:#c47f00;
-    --hazard:#ffcb05;
-    --ok:#37c285;
-    --maxw:1240px;
-    --header-h:64px;
+    --bg:#0d1714;          /* глубокий хвойный-ночной */
+    --bg-2:#101e1a;
+    --surface:#13241f;
+    --surface-2:#18302a;
+    --line:#22382f;
+    --line-2:#2f4a3f;
+    --text:#f4efe4;        /* тёплый кремовый */
+    --muted:#b7c2b4;
+    --muted-2:#7e8d82;
+    --gold:#e0a44d;        /* тёплое золото гирлянд / огня */
+    --gold-2:#f0bd74;
+    --gold-deep:#bf8533;
+    --teal:#36b9a3;        /* бирюза подогретой купели */
+    --teal-2:#54d4bd;
+    --maxw:1200px;
+    --r:18px;
+    --r-lg:26px;
+    --shadow:0 24px 60px -24px rgba(0,0,0,.7);
     --ease:cubic-bezier(.22,.61,.36,1);
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px);-webkit-text-size-adjust:100%}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{
-    font-family:'Golos Text',system-ui,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    font-size:16px;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
+    background:var(--bg);color:var(--text);
+    font-family:'Manrope',system-ui,sans-serif;
+    line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  img{display:block;max-width:100%}
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  ::selection{background:var(--accent);color:#11161d}
-
-  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
   section{position:relative}
-
-  /* ---------- type ---------- */
-  .display{font-family:'Oswald',sans-serif;font-weight:600;line-height:1.04;letter-spacing:.5px;text-transform:uppercase}
-  h1.display{font-size:clamp(2.1rem,1.4rem + 3.6vw,4.4rem)}
-  h2.display{font-size:clamp(1.7rem,1.2rem + 2.4vw,3.1rem)}
-  h3.display{font-size:clamp(1.15rem,1rem + .7vw,1.5rem)}
   .eyebrow{
-    font-family:'Oswald',sans-serif;font-weight:500;letter-spacing:3px;
-    text-transform:uppercase;font-size:.78rem;color:var(--accent);
-    display:inline-flex;align-items:center;gap:10px;
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold-2);margin-bottom:18px;
   }
-  .eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-  .lead{color:var(--muted);font-size:clamp(1rem,.95rem + .3vw,1.18rem);max-width:62ch}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+  .lead{color:var(--muted);font-size:1.06rem;max-width:62ch}
 
   /* ---------- buttons ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-    font-size:.94rem;padding:16px 30px;border:1px solid transparent;cursor:pointer;
-    transition:.25s var(--ease);white-space:nowrap;
+    padding:16px 30px;border-radius:100px;font-weight:700;font-size:1rem;
+    cursor:pointer;border:1px solid transparent;transition:transform .25s var(--ease),box-shadow .25s,background .25s;
+    will-change:transform;
   }
-  .btn-primary{background:var(--accent);color:#11161d}
-  .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
-  .btn-ghost{background:transparent;color:var(--text);border-color:var(--line-2)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .btn-block{width:100%}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#2a1c08;box-shadow:0 14px 34px -12px rgba(224,164,77,.65)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 44px -14px rgba(224,164,77,.8)}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:var(--line-2);color:var(--text);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
 
   /* ---------- header ---------- */
   header{
-    position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:90;
-    background:rgba(13,17,23,.78);backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);transition:.3s;
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .4s,backdrop-filter .4s,border-color .4s,padding .3s;
+    border-bottom:1px solid transparent;
   }
-  .nav{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .logo{display:flex;align-items:center;gap:12px;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:1px;font-size:1.18rem}
-  .logo .mark{
-    width:34px;height:34px;background:var(--accent);color:#11161d;display:grid;place-items:center;
-    font-weight:700;font-size:1rem;clip-path:polygon(0 0,100% 0,100% 70%,80% 100%,0 100%);
-  }
-  .logo b{color:var(--accent)}
-  .nav-links{display:none;gap:28px;align-items:center}
-  .nav-links a{font-size:.9rem;color:var(--muted);transition:.2s;letter-spacing:.3px}
+  header.scrolled{background:rgba(10,18,15,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;flex-direction:column;line-height:1}
+  .brand b{font-family:'Playfair Display',serif;font-size:1.34rem;letter-spacing:.02em}
+  .brand span{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);margin-top:5px}
+  .nav-links{display:none;gap:32px}
+  .nav-links a{font-size:.95rem;color:var(--muted);font-weight:600;transition:color .2s;position:relative}
   .nav-links a:hover{color:var(--text)}
-  .nav-cta{display:flex;align-items:center;gap:18px}
-  .nav-phone{display:none;font-family:'Oswald',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:1px}
-  .nav-phone span{color:var(--muted-2);font-size:.7rem;display:block;letter-spacing:2px;font-weight:500}
-  .nav .btn{padding:11px 20px;font-size:.82rem}
+  .nav-cta{display:none;align-items:center;gap:18px}
+  .nav-phone{font-weight:700;font-size:.98rem;white-space:nowrap}
+  .nav-phone small{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+  .burger{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:2px;background:var(--text);transition:.3s}
+  .mobile-menu{
+    position:fixed;inset:0;z-index:55;background:rgba(8,15,12,.97);backdrop-filter:blur(8px);
+    display:flex;flex-direction:column;justify-content:center;gap:8px;padding:40px;
+    transform:translateY(-100%);transition:transform .5s var(--ease);
+  }
+  .mobile-menu.open{transform:translateY(0)}
+  .mobile-menu a{font-family:'Playfair Display',serif;font-size:1.9rem;padding:12px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:22px;font-size:1.1rem}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding-top:var(--header-h);overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05) brightness(.62)}
+  .hero{min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 56px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;animation:slowzoom 24s ease-out forwards}
+  @keyframes slowzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
   .hero-bg::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(13,17,23,.7) 0%,rgba(13,17,23,.35) 35%,rgba(13,17,23,.85) 80%,var(--bg) 100%),
-    linear-gradient(90deg,rgba(13,17,23,.85),rgba(13,17,23,.1))}
-  .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:46px}
-  .hero h1{margin:18px 0 0}
-  .hero h1 .hl{color:var(--accent)}
-  .hero-sub{margin-top:22px;max-width:54ch}
-  .hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px}
-  .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;color:var(--muted);font-size:.9rem}
-  .hero-meta b{color:var(--text)}
-  .hero-meta .dot{display:inline-flex;align-items:center;gap:9px}
-  .hero-meta .dot::before{content:"";width:7px;height:7px;background:var(--accent);transform:rotate(45deg)}
+    background:linear-gradient(180deg,rgba(10,18,15,.55) 0%,rgba(10,18,15,.25) 35%,rgba(10,18,15,.82) 78%,var(--bg) 100%)}
+  .hero-inner{position:relative;z-index:2;width:100%}
+  .hero h1{font-size:clamp(2.5rem,8.4vw,5.2rem);margin:18px 0 22px;max-width:16ch}
+  .hero h1 em{font-style:italic;color:var(--gold-2)}
+  .hero p.lead{font-size:1.14rem;color:#e7e2d4;max-width:54ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:42px;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:.95rem;color:#e7e2d4;font-weight:600}
+  .stars{color:var(--gold-2);letter-spacing:2px;font-size:1.05rem}
+  .trust-sep{width:1px;height:30px;background:var(--line-2);opacity:.6}
 
-  /* stats strip */
-  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr)}
-  .stat{padding:26px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .stat:nth-child(2n){border-right:none}
-  .stat .n{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(1.8rem,1.4rem + 2vw,2.7rem);color:var(--accent);line-height:1}
-  .stat .l{color:var(--muted);font-size:.86rem;margin-top:8px;letter-spacing:.3px}
-
-  /* ---------- generic section ---------- */
-  .sec{padding:clamp(64px,8vw,110px) 0}
-  .sec-head{max-width:720px;margin-bottom:46px}
-  .sec-head h2{margin:16px 0 18px}
+  /* ---------- generic section spacing ---------- */
+  .pad{padding:96px 0}
+  .section-head{max-width:760px;margin-bottom:54px}
+  .section-head h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:18px}
 
   /* ---------- pains ---------- */
-  .pains{display:grid;gap:1px;background:var(--line);grid-template-columns:1fr}
-  .pain{background:var(--bg);padding:28px 26px;display:flex;gap:18px;align-items:flex-start}
-  .pain .ic{flex:0 0 auto;width:44px;height:44px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--accent)}
-  .pain .ic svg{width:22px;height:22px}
-  .pain h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:1.02rem;margin-bottom:6px}
-  .pain p{color:var(--muted);font-size:.93rem}
+  .pains{background:radial-gradient(120% 100% at 80% 0%,#142822 0%,var(--bg) 60%)}
+  .pain-grid{display:grid;gap:18px;grid-template-columns:1fr}
+  .pain{
+    display:flex;gap:18px;padding:26px;border:1px solid var(--line);border-radius:var(--r);
+    background:linear-gradient(180deg,var(--surface),var(--bg-2));
+  }
+  .pain .x{flex:0 0 auto;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(224,164,77,.12);color:var(--gold-2);font-size:1.3rem}
+  .pain h3{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.06rem;margin-bottom:6px}
+  .pain p{color:var(--muted);font-size:.96rem}
 
-  /* ---------- fleet ---------- */
-  .fleet{display:grid;gap:18px;grid-template-columns:1fr}
-  .unit{position:relative;background:var(--surface);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
-  .unit-img{position:relative;aspect-ratio:16/10;overflow:hidden}
-  .unit-img img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease);filter:contrast(1.03)}
-  .unit:hover .unit-img img{transform:scale(1.05)}
-  .unit-tag{position:absolute;top:0;left:0;background:var(--accent);color:#11161d;font-family:'Oswald',sans-serif;font-weight:600;
-    text-transform:uppercase;letter-spacing:1px;font-size:.74rem;padding:7px 14px}
-  .unit-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
-  .unit-body h3{margin-bottom:8px}
-  .unit-body p{color:var(--muted);font-size:.92rem;flex:1}
-  .unit-spec{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.76rem;color:var(--text);border:1px solid var(--line-2);padding:5px 11px;letter-spacing:.3px;background:var(--bg-2)}
+  /* ---------- solution ---------- */
+  .solution{background:var(--bg-2)}
+  .sol-grid{display:grid;gap:42px;align-items:center}
+  .sol-media{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+  .sol-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+  .sol-media:hover img{transform:scale(1.05)}
+  .sol-badge{position:absolute;left:18px;bottom:18px;background:rgba(13,23,20,.78);backdrop-filter:blur(8px);
+    border:1px solid var(--line-2);border-radius:14px;padding:14px 18px}
+  .sol-badge b{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold-2)}
+  .sol-badge span{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+  .sol-text h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:20px}
+  .sol-text .lead{margin-bottom:26px}
+  .check-list{list-style:none;display:grid;gap:14px}
+  .check-list li{display:flex;gap:13px;align-items:flex-start;font-size:1.01rem}
+  .check-list svg{flex:0 0 auto;margin-top:3px}
 
-  /* ---------- attachments ---------- */
-  .att-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
-  .att{position:relative;background:var(--surface);border:1px solid var(--line);overflow:hidden}
-  .att-img{aspect-ratio:4/3;overflow:hidden;position:relative}
-  .att-img img{width:100%;height:100%;object-fit:cover;transition:.5s var(--ease)}
-  .att:hover .att-img img{transform:scale(1.06)}
-  .att-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,17,23,.88))}
-  .att-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:14px 14px}
-  .att-cap .nm{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.6px;font-size:.92rem;line-height:1.15}
-  .att-cap .pr{color:var(--accent);font-weight:700;font-size:.82rem;margin-top:3px}
-  .att-cap .ds{color:var(--muted);font-size:.76rem;margin-top:4px;display:none}
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;gap:22px;grid-template-columns:1fr}
+  .svc{
+    position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:440px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    border:1px solid var(--line);box-shadow:var(--shadow);isolation:isolate;
+  }
+  .svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.1s var(--ease)}
+  .svc::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg,rgba(10,16,13,0) 30%,rgba(10,16,13,.62) 62%,rgba(8,13,11,.94) 100%)}
+  .svc:hover img{transform:scale(1.07)}
+  .svc-body{padding:28px}
+  .svc .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold-2);background:rgba(224,164,77,.14);border:1px solid rgba(224,164,77,.28);
+    padding:5px 12px;border-radius:100px;margin-bottom:14px}
+  .svc h3{font-size:1.7rem;margin-bottom:8px}
+  .svc p{color:#dfdaccee;font-size:.97rem;max-width:42ch}
+  .svc.teal .tag{color:var(--teal-2);background:rgba(54,212,189,.13);border-color:rgba(54,212,189,.3)}
 
   /* ---------- advantages ---------- */
-  .adv{display:grid;gap:1px;background:var(--line);grid-template-columns:1fr}
-  .adv-cell{background:var(--bg);padding:30px 26px}
-  .adv-cell .no{font-family:'Oswald',sans-serif;font-weight:700;color:var(--line-2);font-size:2.4rem;line-height:1}
-  .adv-cell h4{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:1.05rem;margin:14px 0 8px}
-  .adv-cell p{color:var(--muted);font-size:.92rem}
+  .adv{background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+  .adv-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+  .adv-cell{background:var(--bg-2);padding:34px 28px;transition:background .3s}
+  .adv-cell:hover{background:var(--surface)}
+  .adv-cell .num{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold);margin-bottom:14px}
+  .adv-cell .ico{font-size:1.9rem;margin-bottom:14px;display:block}
+  .adv-cell h3{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.16rem;margin-bottom:8px}
+  .adv-cell p{color:var(--muted);font-size:.95rem}
 
-  /* ---------- services / price ---------- */
-  .svc-list{display:grid;gap:14px;grid-template-columns:1fr}
-  .svc{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);padding:24px 24px;display:flex;flex-direction:column;gap:14px}
-  .svc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-  .svc h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.5px;font-size:1.1rem;line-height:1.15}
-  .svc .price{font-family:'Oswald',sans-serif;font-weight:700;color:var(--accent);font-size:1.3rem;white-space:nowrap;line-height:1}
-  .svc .price small{display:block;color:var(--muted-2);font-size:.62rem;letter-spacing:1px;text-align:right;font-weight:500}
-  .svc p{color:var(--muted);font-size:.92rem}
-  .svc ul{list-style:none;display:flex;flex-direction:column;gap:7px}
-  .svc li{color:var(--muted);font-size:.9rem;padding-left:24px;position:relative}
-  .svc li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--bg)}
+  .g-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .g-grid figure{overflow:hidden;border-radius:14px;position:relative}
+  .g-grid img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  .g-grid figure:hover img{transform:scale(1.08)}
+  .g-tall{grid-row:span 2}
+  .g-wide{grid-column:span 2}
 
-  /* ---------- geo ---------- */
-  .geo{background:var(--bg-2);border:1px solid var(--line);padding:clamp(28px,5vw,48px)}
-  .geo-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:28px}
-  .geo-cols{columns:2;column-gap:24px}
-  .geo-cols span{display:block;color:var(--muted);font-size:.85rem;padding:5px 0;border-bottom:1px solid var(--line);break-inside:avoid}
-  .geo-note{color:var(--muted);font-size:.9rem;margin-top:20px}
-  .geo-main{display:flex;flex-direction:column;justify-content:center}
-  .geo-main h2{margin:14px 0 16px}
+  /* ---------- testimonials ---------- */
+  .reviews{background:var(--bg-2)}
+  .rev-top{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-bottom:46px}
+  .rev-score{display:flex;align-items:center;gap:18px;padding:18px 26px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--surface)}
+  .rev-score .big{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--gold-2);line-height:1}
+  .rev-grid{display:grid;gap:18px;grid-template-columns:1fr}
+  .rev{padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);position:relative}
+  .rev .stars{margin-bottom:12px;display:block}
+  .rev p{font-size:1rem;color:#e7e2d4;margin-bottom:18px}
+  .rev .who{display:flex;align-items:center;gap:12px}
+  .rev .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--teal));display:grid;place-items:center;font-weight:800;color:#10211c}
+  .rev .who b{display:block;font-size:.95rem}
+  .rev .who span{font-size:.82rem;color:var(--muted-2)}
 
-  /* ---------- proof ---------- */
-  .proof{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
-  .pcard{background:var(--surface);border:1px solid var(--line);padding:26px 22px}
-  .pcard .big{font-family:'Oswald',sans-serif;font-weight:700;color:var(--accent);font-size:2.2rem;line-height:1}
-  .pcard .lbl{color:var(--muted);font-size:.86rem;margin-top:8px}
-  .reviews{display:grid;gap:14px;grid-template-columns:1fr;margin-top:16px}
-  .rev{background:var(--bg-2);border:1px solid var(--line);padding:22px 22px}
-  .rev .stars{color:var(--accent);letter-spacing:3px;font-size:.9rem}
-  .rev p{color:var(--text);font-size:.95rem;margin:12px 0}
-  .rev .who{color:var(--muted-2);font-size:.82rem;font-family:'Oswald',sans-serif;letter-spacing:.5px;text-transform:uppercase}
-
-  /* ---------- about ---------- */
-  .about{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
-  .about-media{position:relative;border:1px solid var(--line);overflow:hidden;aspect-ratio:4/3}
+  /* ---------- about / location ---------- */
+  .about{background:var(--bg)}
+  .about-grid{display:grid;gap:42px;align-items:center}
+  .about-media{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/4}
   .about-media img{width:100%;height:100%;object-fit:cover}
-  .about-txt h2{margin:16px 0 18px}
-  .about-txt p{color:var(--muted);margin-bottom:14px}
-  .about-pts{list-style:none;margin-top:20px;display:grid;gap:10px}
-  .about-pts li{padding-left:28px;position:relative;color:var(--text);font-size:.95rem}
-  .about-pts li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
+  .info-rows{display:grid;gap:2px;margin-top:28px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .info-row{display:flex;gap:16px;padding:18px 20px;background:var(--surface);align-items:flex-start}
+  .info-row .k{flex:0 0 132px;color:var(--gold-2);font-weight:700;font-size:.92rem;letter-spacing:.02em}
+  .info-row .v{color:var(--text);font-size:.97rem}
+  .info-row .v a{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px}
 
   /* ---------- faq ---------- */
-  .faq{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
-  .q{background:var(--bg)}
-  .q summary{list-style:none;cursor:pointer;padding:24px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;
-    font-family:'Oswald',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.4px;font-size:1rem}
-  .q summary::-webkit-details-marker{display:none}
-  .q summary .pl{flex:0 0 auto;width:24px;height:24px;position:relative}
-  .q summary .pl::before,.q summary .pl::after{content:"";position:absolute;background:var(--accent);transition:.3s}
-  .q summary .pl::before{top:11px;left:0;width:24px;height:2px}
-  .q summary .pl::after{left:11px;top:0;width:2px;height:24px}
-  .q[open] summary .pl::after{transform:rotate(90deg);opacity:0}
-  .q .ans{padding:0 24px 24px;color:var(--muted);font-size:.94rem;max-width:80ch}
+  .faq{background:var(--bg-2)}
+  .faq-list{max-width:820px;margin:0 auto;display:grid;gap:14px}
+  .faq-item{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+  .faq-q{width:100%;text-align:left;background:none;border:0;color:var(--text);cursor:pointer;
+    padding:22px 24px;font-size:1.08rem;font-weight:700;display:flex;justify-content:space-between;gap:18px;align-items:center;font-family:'Manrope',sans-serif}
+  .faq-q .pm{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:.35s;color:var(--gold-2)}
+  .faq-item.open .pm{transform:rotate(45deg);background:var(--gold);color:#241804;border-color:var(--gold)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+  .faq-a p{padding:0 24px 24px;color:var(--muted);font-size:.98rem}
 
   /* ---------- CTA ---------- */
-  .cta{position:relative;overflow:hidden;border:1px solid var(--accent-deep);
-    background:linear-gradient(135deg,#1a1206,#0d1117 60%)}
-  .cta-bg{position:absolute;inset:0;z-index:0;opacity:.16}
-  .cta-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
-  .cta-inner{position:relative;z-index:2;padding:clamp(40px,6vw,72px) clamp(24px,5vw,60px);
-    display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
-  .cta h2{margin:14px 0 16px}
-  .cta p{color:var(--muted);max-width:48ch}
-  .cta-phone{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2rem,1.4rem + 3vw,3.2rem);color:var(--accent);letter-spacing:1px;line-height:1;display:inline-block;margin-top:10px}
-
-  /* form */
-  .form{background:var(--surface);border:1px solid var(--line);padding:clamp(26px,4vw,38px)}
-  .form h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.6px;font-size:1.3rem;margin-bottom:6px}
-  .form .fnote{color:var(--muted);font-size:.88rem;margin-bottom:22px}
-  .field{margin-bottom:14px}
-  .field label{display:block;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;font-family:'Oswald',sans-serif}
-  .field input,.field select,.field textarea{
-    width:100%;background:var(--bg);border:1px solid var(--line-2);color:var(--text);
-    padding:14px 14px;font-family:inherit;font-size:.95rem;transition:.2s}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
-  .form .consent{color:var(--muted-2);font-size:.76rem;margin-top:14px;line-height:1.5}
-  .form-ok{display:none;padding:22px;border:1px solid var(--ok);color:var(--ok);background:rgba(55,194,133,.08);font-size:.95rem;margin-top:14px}
+  .cta{position:relative;overflow:hidden;text-align:center;padding:110px 0}
+  .cta-bg{position:absolute;inset:0;z-index:-2}
+  .cta-bg img{width:100%;height:100%;object-fit:cover}
+  .cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,15,12,.82),rgba(9,15,12,.92))}
+  .cta h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:20px}
+  .cta .lead{margin:0 auto 36px;color:#e7e2d4}
+  .cta-form{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:600px;margin:0 auto}
+  .cta-form input{flex:1 1 200px;padding:16px 20px;border-radius:100px;border:1px solid var(--line-2);
+    background:rgba(255,255,255,.05);color:var(--text);font-size:1rem;font-family:inherit}
+  .cta-form input::placeholder{color:var(--muted-2)}
+  .cta-form input:focus{outline:none;border-color:var(--gold)}
+  .cta-note{font-size:.84rem;color:var(--muted-2);margin-top:18px}
 
   /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);background:var(--bg-2);padding:56px 0 120px}
-  .foot{display:grid;grid-template-columns:1fr;gap:34px}
-  .foot .logo{margin-bottom:16px}
-  .foot p{color:var(--muted);font-size:.9rem;max-width:42ch}
-  .foot h5{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:.86rem;color:var(--muted-2);margin-bottom:16px}
-  .foot a{display:block;color:var(--text);margin-bottom:10px;font-size:.95rem;transition:.2s}
-  .foot a:hover{color:var(--accent)}
-  .foot .muted{color:var(--muted);font-weight:400}
-  .copy{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--muted-2);font-size:.82rem;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+  footer{background:#0a120f;border-top:1px solid var(--line);padding:62px 0 120px}
+  .foot-grid{display:grid;gap:38px;grid-template-columns:1fr}
+  .foot-brand b{font-family:'Playfair Display',serif;font-size:1.5rem;display:block;margin-bottom:10px}
+  .foot-brand p{color:var(--muted);font-size:.95rem;max-width:34ch}
+  .foot-col h4{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);margin-bottom:16px}
+  .foot-col a,.foot-col p{display:block;color:var(--muted);font-size:.96rem;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--text)}
+  .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted-2);font-size:.85rem}
 
-  /* ---------- mobile fixed call ---------- */
-  .mcall{position:fixed;left:0;right:0;bottom:0;z-index:95;display:grid;grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--line);background:rgba(13,17,23,.94);backdrop-filter:blur(12px)}
-  .mcall a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 10px;
-    font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.86rem}
-  .mcall .c1{background:var(--accent);color:#11161d}
-  .mcall .c2{color:var(--text);border-left:1px solid var(--line)}
-  .mcall svg{width:18px;height:18px}
+  /* ---------- fixed mobile call ---------- */
+  .mobile-call{
+    position:fixed;left:14px;right:14px;bottom:14px;z-index:50;
+    display:flex;gap:10px;
+  }
+  .mobile-call a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;
+    padding:15px;border-radius:100px;font-weight:800;font-size:1rem;box-shadow:0 16px 30px -10px rgba(0,0,0,.6)}
+  .mc-call{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#2a1c08}
+  .mc-wa{background:#1f9d57;color:#fff}
 
   /* ---------- reveal ---------- */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
   .reveal.in{opacity:1;transform:none}
-  .reveal[data-d="1"]{transition-delay:.08s}
-  .reveal[data-d="2"]{transition-delay:.16s}
-  .reveal[data-d="3"]{transition-delay:.24s}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
 
   /* ---------- responsive ---------- */
-  @media(min-width:600px){
-    .stats-grid{grid-template-columns:repeat(4,1fr)}
-    .stat:nth-child(2n){border-right:1px solid var(--line)}
-    .stat:last-child{border-right:none}
-    .att-grid{grid-template-columns:repeat(3,1fr)}
-    .att-cap .ds{display:block}
-    .proof{grid-template-columns:repeat(4,1fr)}
+  @media(min-width:680px){
+    .pain-grid{grid-template-columns:1fr 1fr}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .rev-grid{grid-template-columns:1fr 1fr}
+    .g-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}
+    .adv-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1.4fr 1fr 1fr}
   }
-  @media(min-width:760px){
-    .pains{grid-template-columns:repeat(2,1fr)}
-    .fleet{grid-template-columns:repeat(2,1fr)}
-    .adv{grid-template-columns:repeat(2,1fr)}
-    .svc-list{grid-template-columns:repeat(2,1fr)}
-    .reviews{grid-template-columns:repeat(2,1fr)}
-    .geo-grid{grid-template-columns:.9fr 1.4fr}
-    .about{grid-template-columns:1fr 1fr}
-    .cta-inner{grid-template-columns:1.1fr 1fr}
-    .foot{grid-template-columns:1.6fr 1fr 1fr}
-    .mcall{display:none}
-    footer{padding-bottom:56px}
-  }
-  @media(min-width:1000px){
-    .nav-links{display:flex}
-    .nav-phone{display:block}
-    .fleet{grid-template-columns:repeat(3,1fr)}
-    .adv{grid-template-columns:repeat(4,1fr)}
-    .att-grid{grid-template-columns:repeat(4,1fr)}
-    .pains{grid-template-columns:repeat(4,1fr)}
+  @media(min-width:920px){
+    .nav-links{display:flex}.nav-cta{display:flex}.burger{display:none}
+    .mobile-call{display:none}
+    .sol-grid{grid-template-columns:1fr 1.05fr}
+    .about-grid{grid-template-columns:1fr 1.1fr}
+    .adv-grid{grid-template-columns:repeat(4,1fr)}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    body{font-size:18px}
   }
 </style>
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
-<header id="top">
+<header id="hdr">
   <div class="wrap nav">
-    <a href="#top" class="logo"><span class="mark">B</span>BOBCAT<b>SAR64</b></a>
+    <a href="#top" class="brand">
+      <b>NelManHouse</b>
+      <span>Баня · Дом · Купель · Керчь</span>
+    </a>
     <nav class="nav-links">
-      <a href="#fleet">Парк техники</a>
-      <a href="#att">Насадки Bobcat</a>
-      <a href="#prices">Услуги и цены</a>
-      <a href="#geo">География</a>
-      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#advantages">Почему мы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#about">Где мы</a>
+      <a href="#faq">Вопросы</a>
     </nav>
     <div class="nav-cta">
-      <a href="tel:+78452255222" class="nav-phone">255-222<span>Саратов · звонок бесплатно</span></a>
-      <a href="#zayavka" class="btn btn-primary">Заявка</a>
+      <a href="tel:+79786050741" class="nav-phone">+7 (978) 605-07-41<small>звонок 9:00–21:00</small></a>
+      <a href="#booking" class="btn btn-gold">Забронировать</a>
     </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-bg"><img src="img/hero-kamaz.jpg" alt="КАМАЗ-самосвал на объекте в Саратове" fetchpriority="high"></div>
-  <div class="wrap hero-inner">
-    <span class="eyebrow reveal">Спецтехника в Саратове и области</span>
-    <h1 class="display reveal" data-d="1">Аренда спецтехники,<br>которая <span class="hl">реально решает</span><br>вашу задачу</h1>
-    <p class="lead hero-sub reveal" data-d="2">КАМАЗ-самосвалы, Bobcat с 12 насадками, экскаватор-погрузчик, манипулятор, ломовоз и вывоз мусора. Один подрядчик на весь объект — без посредников и простоев.</p>
-    <div class="hero-actions reveal" data-d="3">
-      <a href="tel:+78452255222" class="btn btn-primary">Звонок: 255-222</a>
-      <a href="#zayavka" class="btn btn-ghost">Рассчитать стоимость</a>
-    </div>
-    <div class="hero-meta reveal" data-d="3">
-      <span class="dot"><b>Выезд в день звонка</b></span>
-      <span class="dot"><b>Работа 24/7</b></span>
-      <span class="dot"><b>Лицензия на отходы 3–4 класса</b></span>
-      <span class="dot"><b>10+ лет на рынке</b></span>
-    </div>
-  </div>
-</section>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Услуги</a>
+  <a href="#advantages">Почему мы</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#about">Где мы</a>
+  <a href="#faq">Вопросы</a>
+  <a href="#booking" class="btn btn-gold">Забронировать отдых</a>
+</div>
 
-<!-- ============ STATS ============ -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat reveal"><div class="n">10+</div><div class="l">лет работаем в&nbsp;Саратове</div></div>
-      <div class="stat reveal" data-d="1"><div class="n">12</div><div class="l">насадок для&nbsp;Bobcat</div></div>
-      <div class="stat reveal" data-d="2"><div class="n">24/7</div><div class="l">приём заявок и&nbsp;работа</div></div>
-      <div class="stat reveal" data-d="3"><div class="n">4.4★</div><div class="l">рейтинг на&nbsp;Яндекс.Картах</div></div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1900&q=80" alt="Дом A-Frame с тёплым светом в вечернем лесу — NelManHouse под Керчью">
+  </div>
+  <div class="wrap hero-inner">
+    <div class="reveal in">
+      <span class="eyebrow">Гостевой комплекс · 10 км от Керчи</span>
+      <h1>Своя баня, горячая купель и дом <em>A-Frame</em> у моря</h1>
+      <p class="lead">Первый и единственный в Керчи комплекс, где у каждого гостя — личная баня на дровах и купель с подогревом под открытым небом. Без соседей, без суеты. Только вы, тишина и вид на море.</p>
+      <div class="hero-cta">
+        <a href="#booking" class="btn btn-gold">Забронировать даты →</a>
+        <a href="#services" class="btn btn-ghost">Что входит в отдых</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="stars">★★★★★</span> 5,0 на Яндекс Картах</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">59 честных отзывов</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">с. Челядиново, у самого моря</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ PAINS ============ -->
-<section class="sec">
+<section class="pad pains">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="section-head reveal">
       <span class="eyebrow">Знакомо?</span>
-      <h2 class="display">Почему аренда техники<br>превращается в&nbsp;нервы</h2>
-      <p class="lead">Мы видели это сотни раз. И построили работу так, чтобы у&nbsp;вас этих проблем не&nbsp;было.</p>
+      <h2>Хочется уехать вдвоём — а везде одно и то же</h2>
+      <p class="lead">Отели с тонкими стенами, общая сауна по расписанию, толпа на пляже и «отдых», после которого нужен ещё один отдых. Мы сделали наоборот.</p>
     </div>
-    <div class="pains">
-      <div class="pain reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div><h4>Сорванные сроки</h4><p>Технику обещают «завтра», а она приезжает через неделю. Объект стоит, бригада простаивает за ваши деньги.</p></div>
+    <div class="pain-grid">
+      <div class="pain reveal d1">
+        <div class="x">✕</div>
+        <div><h3>Баня по записи и с чужими людьми</h3><p>В санаториях и банных комплексах вы делите парную с незнакомцами и подстраиваетесь под чужой график.</p></div>
       </div>
-      <div class="pain reveal" data-d="1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div><h4>Зоопарк подрядчиков</h4><p>Самосвал у одних, погрузчик у других, вывоз мусора у третьих. Каждому звони, с каждым договаривайся, за каждого отвечай.</p></div>
+      <div class="pain reveal d2">
+        <div class="x">✕</div>
+        <div><h3>Шумные соседи за стеной</h3><p>В гостинице романтический вечер легко обрывается голосами из соседнего номера и хлопаньем дверей.</p></div>
       </div>
-      <div class="pain reveal" data-d="2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 5h14l-2 7H7L5 5Z"/></svg></div>
-        <div><h4>Цена «по факту»</h4><p>На словах одна сумма, в конце смены — другая. Доплаты за подачу, за время, за «не предупредили».</p></div>
+      <div class="pain reveal d1">
+        <div class="x">✕</div>
+        <div><h3>Некуда вырваться из города</h3><p>В Керчи мало мест, где можно уединиться на природе с комфортом отеля, а не палаткой и костром.</p></div>
       </div>
-      <div class="pain reveal" data-d="3">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div>
-        <div><h4>Оператор «учится»</h4><p>Прислали машину без опытного механизатора — и вместо аккуратной работы получаете перекопанный участок и риски.</p></div>
+      <div class="pain reveal d2">
+        <div class="x">✕</div>
+        <div><h3>«Инстаграмные» фото ≠ реальность</h3><p>Картинка красивая, а на месте — старый диван и вид на парковку. Хочется, чтобы вживую было даже лучше, чем на снимках.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ FLEET ============ -->
-<section class="sec" id="fleet" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Парк техники</span>
-      <h2 class="display">Своя техника под весь<br>спектр работ</h2>
-      <p class="lead">От земляных работ и доставки сыпучих до демонтажа и вывоза мусора с лицензией. Берём объект целиком.</p>
+<!-- ============ SOLUTION ============ -->
+<section class="pad solution">
+  <div class="wrap sol-grid">
+    <div class="sol-media reveal">
+      <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1100&q=80" alt="Тёплый интерьер дома A-Frame с деревянной отделкой">
+      <div class="sol-badge"><b>Только вы</b><span>один дом — одна компания</span></div>
     </div>
-    <div class="fleet">
-
-      <article class="unit reveal">
-        <div class="unit-img"><span class="unit-tag">Самосвал</span><img src="img/kamaz-clean.jpg" alt="КАМАЗ-самосвал 10–20 тонн" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">КАМАЗ-самосвал</h3>
-          <p>Доставка песка, щебня, чернозёма, грунта и асфальтовой крошки. Вывоз строительного мусора и грунта в любых объёмах.</p>
-          <div class="unit-spec"><span class="chip">10–20 тонн</span><span class="chip">Песок · щебень · грунт</span><span class="chip">Сжатые сроки</span></div>
-        </div>
-      </article>
-
-      <article class="unit reveal" data-d="1">
-        <div class="unit-img"><span class="unit-tag">Минипогрузчик</span><img src="img/bobcat-hero.jpg" alt="Минипогрузчик Bobcat" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">Bobcat S175 / S300 / T300</h3>
-          <p>Универсальный минипогрузчик на колёсном и гусеничном ходу. 12 сменных насадок — берём с собой сразу несколько под задачи объекта.</p>
-          <div class="unit-spec"><span class="chip">12 насадок</span><span class="chip">Связка Bobcat + КАМАЗ</span><span class="chip">Узкие проезды</span></div>
-        </div>
-      </article>
-
-      <article class="unit reveal" data-d="2">
-        <div class="unit-img"><span class="unit-tag">Экскаватор-погрузчик</span><img src="img/exc-loader.jpg" alt="Экскаватор-погрузчик SANY 95BHL" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">Экскаватор-погрузчик SANY 95BHL</h3>
-          <p>Копка траншей и котлованов любой сложности, планировочные и земляные работы, погрузка. Рабочая лошадка на стройплощадке.</p>
-          <div class="unit-spec"><span class="chip">Котлованы</span><span class="chip">Траншеи</span><span class="chip">Планировка</span></div>
-        </div>
-      </article>
-
-      <article class="unit reveal">
-        <div class="unit-img"><span class="unit-tag">Манипулятор КМУ</span><img src="img/crane.jpg" alt="КАМАЗ-манипулятор Kanglim" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">Манипулятор Kanglim</h3>
-          <p>Стрела 7 тонн, вылет 18,7 м, борт 7,2 м. Подъём материалов на высоту, кровельные работы, монтажная люлька, перевозка оборудования.</p>
-          <div class="unit-spec"><span class="chip">Стрела 7 т</span><span class="chip">Борт 7,2 м</span><span class="chip">Люлька</span></div>
-        </div>
-      </article>
-
-      <article class="unit reveal" data-d="1">
-        <div class="unit-img"><span class="unit-tag">Ломовоз с КМУ</span><img src="img/container-truck.jpg" alt="Ломовоз с КМУ для вывоза мусора" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">Ломовоз «хапуга»</h3>
-          <p>Грузоподъёмность 15 т, объём 30 м³. Расчистка от веток, лома и боя бетона, демонтаж и разборка зданий. Лицензия на отходы 3–4 класса.</p>
-          <div class="unit-spec"><span class="chip">15 т · 30 м³</span><span class="chip">Демонтаж</span><span class="chip">Лицензия</span></div>
-        </div>
-      </article>
-
-      <article class="unit reveal" data-d="2">
-        <div class="unit-img"><span class="unit-tag">Мусоровоз · бункер</span><img src="img/garbage-truck.jpg" alt="Мусоровоз и бункер для вывоза мусора" loading="lazy"></div>
-        <div class="unit-body">
-          <h3 class="display">Мусоровоз · контейнер 8 м³</h3>
-          <p>Установка бункера 8 м³, разовый и постоянный вывоз ТБО и производственных отходов. Договоры на обслуживание организаций и УК.</p>
-          <div class="unit-spec"><span class="chip">Бункер 8 м³</span><span class="chip">Договор с УК</span><span class="chip">24/7</span></div>
-        </div>
-      </article>
-
+    <div class="sol-text reveal d1">
+      <span class="eyebrow">Решение</span>
+      <h2>Целый комплекс — в вашем личном распоряжении</h2>
+      <p class="lead">NelManHouse — это не номер в отеле. Это отдельный дом A-Frame со своей территорией: банькой на дровах, горячей купелью и гриль-домиком. Никаких соседей и общих зон — всё на участке принадлежит только вам на время отдыха.</p>
+      <ul class="check-list">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#36b9a3" opacity=".18"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#54d4bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Заезжаете в 15:00, выезжаете в 11:00 — день и две ночи наедине</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#36b9a3" opacity=".18"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#54d4bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Баня топится к вашему приезду — париться можно сразу</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#36b9a3" opacity=".18"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#54d4bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Купель с тёплой водой работает в любой сезон</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#36b9a3" opacity=".18"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#54d4bd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Гибкое время заезда — подстроимся, если получится</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ ATTACHMENTS ============ -->
-<section class="sec" id="att">
+<!-- ============ SERVICES ============ -->
+<section class="pad" id="services">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Насадки Bobcat · от 2 500 ₽</span>
-      <h2 class="display">Одна машина — двенадцать<br>видов работ</h2>
-      <p class="lead">Bobcat приезжает сразу с нужными насадками. Меняем оснастку на месте — экономите на подаче нескольких машин.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Что входит в отдых</span>
+      <h2>Четыре причины не хотеть уезжать</h2>
+      <p class="lead">Всё, ради чего едут к нам снова — и привозят друзей.</p>
     </div>
-    <div class="att-grid">
-      <div class="att reveal"><div class="att-img"><img src="img/att-bucket.jpg" alt="Bobcat с ковшом" loading="lazy"></div><div class="att-cap"><div class="nm">Ковш строительный</div><div class="pr">от 2 500 ₽</div><div class="ds">Планировка, погрузка, уборка. Есть ковш с зубьями.</div></div></div>
-      <div class="att reveal" data-d="1"><div class="att-img"><img src="img/att-excavator.jpg" alt="Bobcat с экскаватором копает траншею" loading="lazy"></div><div class="att-cap"><div class="nm">Экскаватор</div><div class="pr">копка до 3 м</div><div class="ds">Траншеи, котлованы, фундамент. Ковш 30–60 см.</div></div></div>
-      <div class="att reveal" data-d="2"><div class="att-img"><img src="img/breaker.jpg" alt="Bobcat с гидромолотом" loading="lazy"></div><div class="att-cap"><div class="nm">Гидромолот HB-980</div><div class="pr">демонтаж</div><div class="ds">Снос бетона и кирпича, вскрытие асфальта, скол льда.</div></div></div>
-      <div class="att reveal" data-d="3"><div class="att-img"><img src="img/att-auger.jpg" alt="Bobcat с гидробуром" loading="lazy"></div><div class="att-cap"><div class="nm">Гидробур · ямобур</div><div class="pr">шнек 150–900 мм</div><div class="ds">Бурение под столбы, забор, сваи. Заглубление до 3 м.</div></div></div>
-      <div class="att reveal"><div class="att-img"><img src="img/att-cultivator.jpg" alt="Bobcat с культиватором вспашка земли" loading="lazy"></div><div class="att-cap"><div class="nm">Культиватор</div><div class="pr">от 3 500 ₽</div><div class="ds">Вспашка и рыхление участка, заглубление до 15 см.</div></div></div>
-      <div class="att reveal" data-d="1"><div class="att-img"><img src="img/att-brush.jpg" alt="Bobcat с дорожной щёткой" loading="lazy"></div><div class="att-cap"><div class="nm">Щётка дорожная</div><div class="pr">от 3 000 ₽</div><div class="ds">Уборка территории, ширина ~2 м, поворотный механизм.</div></div></div>
-      <div class="att reveal" data-d="2"><div class="att-img"><img src="img/att-mill.jpg" alt="Bobcat с дорожной фрезой" loading="lazy"></div><div class="att-cap"><div class="nm">Фреза дорожная WS36</div><div class="pr">от 3 500 ₽</div><div class="ds">Ямочный ремонт асфальта, барабан 36–60 см.</div></div></div>
-      <div class="att reveal" data-d="3"><div class="att-img"><img src="img/att-forks.jpg" alt="Bobcat с паллетными вилами" loading="lazy"></div><div class="att-cap"><div class="nm">Вилы паллетные</div><div class="pr">от 2 500 ₽</div><div class="ds">Разгрузка фур до 1,7 т, регулируемая ширина.</div></div></div>
-      <div class="att reveal"><div class="att-img"><img src="img/att-stump.jpg" alt="Корчёвка пней пенькорезом" loading="lazy"></div><div class="att-cap"><div class="nm">Пенькорез · корчёвка</div><div class="pr">от 4 000 ₽</div><div class="ds">Удаление пней, расчистка и вывоз веток с участка.</div></div></div>
-      <div class="att reveal" data-d="1"><div class="att-img"><img src="img/att-excavator2.jpg" alt="Bobcat роет траншею у коммуникаций" loading="lazy"></div><div class="att-cap"><div class="nm">Челюстной ковш</div><div class="pr">захват</div><div class="ds">Захват веток и мусора, погрузка в КАМАЗ, планировка.</div></div></div>
-      <div class="att reveal" data-d="2"><div class="att-img"><img src="img/work-trench.jpg" alt="Bobcat на демонтаже" loading="lazy"></div><div class="att-cap"><div class="nm">Дисковая пила</div><div class="pr">пропил траншей</div><div class="ds">Ровный пропил под траншеи в твёрдом грунте.</div></div></div>
-      <div class="att reveal" data-d="3"><div class="att-img"><img src="img/att-auger2.jpg" alt="Bobcat с буром у дома" loading="lazy"></div><div class="att-cap"><div class="nm">Связка Bobcat + КАМАЗ</div><div class="pr">погрузка + вывоз</div><div class="ds">Грузим и сразу вывозим песок, мусор и материалы.</div></div></div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1000&q=80" alt="Дом A-Frame вечером">
+        <div class="svc-body">
+          <span class="tag">Дом A-Frame</span>
+          <h3>Стильный дом с видом на море</h3>
+          <p>Уютный треугольный дом с панорамным окном, тёплым деревом и всем для комфорта. Просыпаетесь — а перед вами морской горизонт.</p>
+        </div>
+      </article>
+      <article class="svc reveal d1">
+        <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1000&q=80" alt="Баня на дровах">
+        <div class="svc-body">
+          <span class="tag">Баня на дровах</span>
+          <h3>Настоящий жар и аромат дерева</h3>
+          <p>Личная парная на берёзовых дровах — тот самый лёгкий пар, которого не даёт ни одна электрокаменка. С веником и прохладной купелью рядом.</p>
+        </div>
+      </article>
+      <article class="svc teal reveal d1">
+        <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?auto=format&fit=crop&w=1000&q=80" alt="Горячая купель с видом на море">
+        <div class="svc-body">
+          <span class="tag">Купель с подогревом</span>
+          <h3>Тёплая вода под звёздами</h3>
+          <p>Погрузиться в горячую купель прохладным вечером, с бокалом и видом на огни залива — то, что вспоминается дольше всего.</p>
+        </div>
+      </article>
+      <article class="svc reveal d2">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=80" alt="Гриль и мангал в гриль-домике">
+        <div class="svc-body">
+          <span class="tag">Гриль-домик</span>
+          <h3>Свои шашлыки в любую погоду</h3>
+          <p>Отдельный домик с мангалом и зоной для готовки. Жарьте мясо и овощи, даже если на улице ветер с моря — внутри тепло и уютно.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============ ADVANTAGES ============ -->
-<section class="sec" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section class="pad adv" id="advantages">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Почему мы</span>
-      <h2 class="display">Условия, ради которых<br>к&nbsp;нам возвращаются</h2>
+    <div class="section-head reveal">
+      <span class="eyebrow">Почему именно NelManHouse</span>
+      <h2>Первый и единственный в Керчи</h2>
+      <p class="lead">Комплекс, где у каждого гостя своя баня и своя купель. Аналогов в городе просто нет.</p>
     </div>
-    <div class="adv">
-      <div class="adv-cell reveal"><div class="no">01</div><h4>Реально вникаем в задачу</h4><p>Не просто «подаём машину». Составляем план работ, считаем объёмы и предлагаем технику, которая закроет задачу дешевле.</p></div>
-      <div class="adv-cell reveal" data-d="1"><div class="no">02</div><h4>Один подрядчик</h4><p>Самосвал, погрузчик, манипулятор и вывоз отходов — всё из одних рук. Один договор, один ответственный, одна касса.</p></div>
-      <div class="adv-cell reveal" data-d="2"><div class="no">03</div><h4>Опытные механизаторы</h4><p>За рычагами — операторы со стажем. Аккуратная работа без испорченного участка и повреждённых коммуникаций.</p></div>
-      <div class="adv-cell reveal" data-d="3"><div class="no">04</div><h4>Прозрачная цена</h4><p>Стоимость согласовываем до выезда. Любые формы оплаты, работа с НДС и по договору для организаций и УК.</p></div>
+    <div class="adv-grid">
+      <div class="adv-cell reveal"><span class="num">01</span><span class="ico">🌊</span><h3>Вид на море</h3><p>В 10 км от Керчи, у воды. Морской горизонт — прямо из окна и из купели.</p></div>
+      <div class="adv-cell reveal d1"><span class="num">02</span><span class="ico">🔑</span><h3>Полная приватность</h3><p>Никаких общих зон и соседей. Весь участок — только для вашей компании.</p></div>
+      <div class="adv-cell reveal d2"><span class="num">03</span><span class="ico">🔥</span><h3>Всё уже готово</h3><p>Баня растоплена, купель тёплая, мангал ждёт. Приезжаете — и сразу отдыхаете.</p></div>
+      <div class="adv-cell reveal d3"><span class="num">04</span><span class="ico">⭐</span><h3>Рейтинг 5,0</h3><p>59 оценок и ни одной ниже пяти звёзд. Гости возвращаются и советуют друзьям.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ SERVICES / PRICES ============ -->
-<section class="sec" id="prices">
+<!-- ============ GALLERY ============ -->
+<section class="pad gallery">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Услуги и цены</span>
-      <h2 class="display">Ключевые услуги<br>с понятной стоимостью</h2>
-      <p class="lead">Цены — стартовые, от объёма и сложности. Точную сумму назовём по телефону за пару минут.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Атмосфера</span>
+      <h2>Как проходит вечер у нас</h2>
     </div>
-    <div class="svc-list">
-
-      <div class="svc reveal">
-        <div class="svc-top"><h3>Экскаватор-погрузчик</h3><div class="price">3 500 ₽<small>за час</small></div></div>
-        <p>SANY 95BHL. Строительные и планировочные работы, земляные работы любой сложности, копка траншей и котлованов.</p>
-        <ul><li>Котлованы и траншеи</li><li>Планировка территории</li><li>Погрузо-разгрузочные работы</li></ul>
-      </div>
-
-      <div class="svc reveal" data-d="1">
-        <div class="svc-top"><h3>Манипулятор КМУ</h3><div class="price">3 500 ₽<small>за час</small></div></div>
-        <p>Kanglim 7 т, вылет 18,7 м, борт 7,2 м, г/п 10 т. Подъём материалов на высоту, кровельные работы, монтажная люлька.</p>
-        <ul><li>Доставка стройматериалов</li><li>Перевозка оборудования</li><li>Работа на высоте</li></ul>
-      </div>
-
-      <div class="svc reveal" data-d="2">
-        <div class="svc-top"><h3>Доставка сыпучих · КАМАЗ</h3><div class="price">3 500 ₽<small>за рейс</small></div></div>
-        <p>Самосвалы 10 и 20 тонн. Песок речной и карьерный, щебень ершовский и тепловский, чернозём, грунт, асфальтовая крошка.</p>
-        <ul><li>Любые фракции</li><li>Доставка в кратчайшие сроки</li><li>Любая форма оплаты</li></ul>
-      </div>
-
-      <div class="svc reveal">
-        <div class="svc-top"><h3>Bobcat с насадками</h3><div class="price">2 500 ₽<small>за час</small></div></div>
-        <p>Минипогрузчик S175 / S300 на выезд в день заказа. Возьмём с собой несколько насадок под задачи объекта.</p>
-        <ul><li>12 видов оснастки</li><li>Связка Bobcat + КАМАЗ</li><li>Круглосуточно 24/7</li></ul>
-      </div>
-
-      <div class="svc reveal" data-d="1">
-        <div class="svc-top"><h3>Вывоз мусора · ломовоз</h3><div class="price">14 000 ₽<small>за смену</small></div></div>
-        <p>Ломовоз с КМУ «хапуга», 15 т / 30 м³. Демонтаж, разборка зданий, расчистка от лома и боя бетона. Лицензия 3–4 класса.</p>
-        <ul><li>Демонтажные работы</li><li>Договоры с организациями и УК</li><li>Работа 24/7</li></ul>
-      </div>
-
-      <div class="svc reveal" data-d="2">
-        <div class="svc-top"><h3>Вывоз мусора контейнером</h3><div class="price">от 6 500 ₽<small>за вывоз</small></div></div>
-        <p>Бункер 8 м³ — установка и вывоз ТБО, строительных и производственных отходов. Разово или на постоянной основе.</p>
-        <ul><li>Объём бункера 8 м³</li><li>Уборка территории</li><li>Постоянное обслуживание</li></ul>
-      </div>
-
+    <div class="g-grid reveal">
+      <figure class="g-tall g-wide"><img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1200&q=80" alt="Дом A-Frame с гирляндами"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?auto=format&fit=crop&w=700&q=80" alt="Купель у моря"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=700&q=80" alt="Звёздное небо над комплексом"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=700&q=80" alt="Баня на дровах в лесу"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="Уютный интерьер"></figure>
+      <figure class="g-wide"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80" alt="Вид на море"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Шашлык на гриле"></figure>
     </div>
   </div>
 </section>
 
-<!-- ============ GEO ============ -->
-<section class="sec" id="geo" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<!-- ============ REVIEWS ============ -->
+<section class="pad reviews" id="reviews">
   <div class="wrap">
-    <div class="geo">
-      <div class="geo-grid">
-        <div class="geo-main reveal">
-          <span class="eyebrow">География работы</span>
-          <h2 class="display">Весь Саратов<br>и область</h2>
-          <p class="lead">Работаем во всех районах города и по области. Техника в Саратове, по области — доставка эвакуатором.</p>
-          <p class="geo-note">Октябрьский, Фрунзенский, Ленинский, Заводской, Кировский, Волжский, Саратовский районы — и десятки направлений за городом.</p>
-        </div>
-        <div class="reveal" data-d="1">
-          <div class="geo-cols">
-            <span>Энгельс</span><span>Юбилейный</span><span>Солнечный</span><span>Усть-Курдюм</span><span>Поливановка</span><span>Тепличный</span><span>Комсомольский</span><span>Расково</span><span>Сабуровка</span><span>Дубки</span><span>Сторожевка</span><span>Вольский тракт</span><span>Кумысная поляна</span><span>Красный Октябрь</span><span>Татищево</span><span>Рассловка</span><span>Шумейка</span><span>Багаевка</span><span>Усовка</span><span>Каменка</span>
-          </div>
-          <p class="geo-note">…и ещё 60+ населённых пунктов. Не нашли свой адрес — просто позвоните, приедем.</p>
-        </div>
+    <div class="section-head reveal">
+      <span class="eyebrow">Соцдоказательство</span>
+      <h2>Гостям не хочется уезжать</h2>
+    </div>
+    <div class="rev-top reveal">
+      <div class="rev-score">
+        <div class="big">5,0</div>
+        <div><span class="stars">★★★★★</span><br><b>59 оценок</b><br><span style="color:var(--muted);font-size:.86rem">на Яндекс Картах</span></div>
+      </div>
+      <p class="lead" style="margin:0">Реальные отзывы гостей NelManHouse — без накруток и купленных пятёрок.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal d1">
+        <span class="stars">★★★★★</span>
+        <p>«Приехали на годовщину — остались в полном восторге. Баня шикарная, купель тёплая, вечером в ней под звёздами просто сказка. Уезжать не хотелось совсем.»</p>
+        <div class="who"><div class="av">А</div><div><b>Анна и Дмитрий</b><span>отдыхали вдвоём</span></div></div>
+      </div>
+      <div class="rev reveal d2">
+        <span class="stars">★★★★★</span>
+        <p>«Дом A-Frame внутри ещё уютнее, чем на фото. Всё чисто, продумано, хозяева на связи. Гриль-домик — отдельный кайф, нажарили мяса на всю компанию.»</p>
+        <div class="who"><div class="av">С</div><div><b>Сергей</b><span>приезжал с друзьями</span></div></div>
+      </div>
+      <div class="rev reveal d3">
+        <span class="stars">★★★★★</span>
+        <p>«Лучшее место под Керчью, чтобы перезагрузиться. Тишина, море, своя банька. Никаких соседей. Вернёмся обязательно и привезём родителей.»</p>
+        <div class="who"><div class="av">М</div><div><b>Марина</b><span>семейный отдых</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROOF ============ -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Нам доверяют</span>
-      <h2 class="display">Цифры и отзывы,<br>а не обещания</h2>
+<!-- ============ ABOUT / LOCATION ============ -->
+<section class="pad about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1000&q=80" alt="Уединённый дом среди природы — NelManHouse">
     </div>
-    <div class="proof">
-      <div class="pcard reveal"><div class="big">4.4★</div><div class="lbl">рейтинг компании на Яндекс.Картах</div></div>
-      <div class="pcard reveal" data-d="1"><div class="big">10+</div><div class="lbl">лет на рынке спецтехники Саратова</div></div>
-      <div class="pcard reveal" data-d="2"><div class="big">24/7</div><div class="lbl">приём заявок и работа без выходных</div></div>
-      <div class="pcard reveal" data-d="3"><div class="big">3–4</div><div class="lbl">класс отходов — есть лицензия на вывоз</div></div>
-    </div>
-    <div class="reviews">
-      <div class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>«Заказывал КАМАЗ песка и Bobcat под планировку участка. Приехали в тот же день, оператор грамотный — разровняли всё чисто. Цену назвали сразу и не меняли.»</p>
-        <div class="who">Андрей · частный участок, Усть-Курдюм</div>
-      </div>
-      <div class="rev reveal" data-d="1">
-        <div class="stars">★★★★★</div>
-        <p>«Заключили договор на вывоз мусора бункером для объекта. Возят стабильно, документы все в порядке, лицензия есть. По организации работать удобно.»</p>
-        <div class="who">Управляющая компания · Ленинский район</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="sec" id="about" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="about">
-      <div class="about-media reveal"><img src="img/kamaz-sand.jpg" alt="КАМАЗ с песком на объекте в Саратове" loading="lazy"></div>
-      <div class="about-txt reveal" data-d="1">
-        <span class="eyebrow">О компании</span>
-        <h2 class="display">BOBCATSAR64 —<br>в ответе за свою работу</h2>
-        <p>Больше 10 лет мы решаем задачи по механизированной технике для частных лиц и компаний в Саратове и области. Собственный парк, опытные механизаторы и гибкие условия — поэтому к нам возвращаются и заключают договоры на постоянной основе.</p>
-        <p>Мы не перепродаём чужие машины. Вся техника наша, выезд — в день звонка, а цену согласуем до начала работ.</p>
-        <ul class="about-pts">
-          <li>Собственный парк: КАМАЗ, Bobcat, экскаватор-погрузчик, манипулятор, ломовоз</li>
-          <li>Лицензия на транспортировку отходов 3–4 класса опасности</li>
-          <li>Работа по договору с организациями, УК и производственными объектами</li>
-          <li>г. Саратов, ул. Н.Г. Чернышевского, 90</li>
-        </ul>
-        <div class="hero-actions" style="margin-top:26px"><a href="#zayavka" class="btn btn-primary">Обсудить задачу</a></div>
+    <div class="reveal d1">
+      <span class="eyebrow">О комплексе</span>
+      <h2>NelManHouse — в 10 минутах от Керчи и в шаге от моря</h2>
+      <p class="lead">Мы построили место, куда сами хотели бы приезжать: тихий посёлок Челядиново, морской воздух и комфорт, ради которого не нужно лететь за тридевять земель. Здесь отмечают годовщины, делают предложения и просто переводят дух от города.</p>
+      <div class="info-rows">
+        <div class="info-row"><div class="k">Адрес</div><div class="v">ул. Победы, 7, с. Челядиново · 10 км от Керчи, Крым</div></div>
+        <div class="info-row"><div class="k">На карте</div><div class="v"><a href="https://yandex.ru/maps/org/161148251313" target="_blank" rel="noopener">Открыть в Яндекс Картах →</a></div></div>
+        <div class="info-row"><div class="k">Заезд / выезд</div><div class="v">Заселение 15:00 · Выселение 11:00. Время можно скорректировать по возможности.</div></div>
+        <div class="info-row"><div class="k">Телефон</div><div class="v"><a href="tel:+79786050741">+7 (978) 605-07-41</a> · звоните с 9:00 до 21:00</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="sec">
+<section class="pad faq" id="faq">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="eyebrow">Вопросы и ответы</span>
-      <h2 class="display">Коротко о&nbsp;главном</h2>
+      <h2>Коротко о главном</h2>
     </div>
-    <div class="faq reveal">
-      <details class="q" open><summary>Как быстро приедет техника?<span class="pl"></span></summary><div class="ans">В большинстве случаев — в день обращения. Принимаем заявки круглосуточно, по срочным задачам выезжаем максимально оперативно. Точное время подачи назовём при звонке.</div></details>
-      <details class="q"><summary>Как формируется стоимость?<span class="pl"></span></summary><div class="ans">Цена зависит от вида техники, объёма и сложности работ. Стартовые тарифы указаны на сайте, итоговую сумму согласуем до выезда — без скрытых доплат «по факту».</div></details>
-      <details class="q"><summary>Работаете с организациями по договору?<span class="pl"></span></summary><div class="ans">Да. Заключаем договоры на разовое и постоянное обслуживание организаций, управляющих компаний и производственных объектов. Принимаем любые формы оплаты, работаем с НДС.</div></details>
-      <details class="q"><summary>Есть лицензия на вывоз мусора?<span class="pl"></span></summary><div class="ans">Да, у нас есть лицензия на транспортировку отходов 3–4 класса опасности. Вывозим ТБО, строительные и производственные отходы законно, с закрывающими документами.</div></details>
-      <details class="q"><summary>Выезжаете за город?<span class="pl"></span></summary><div class="ans">Работаем по всему Саратову и области. Техника базируется в Саратове, по области возможна доставка эвакуатором. Назовите адрес — подскажем условия.</div></details>
-      <details class="q"><summary>Оператор входит в стоимость?<span class="pl"></span></summary><div class="ans">Да. Технику подаём с опытным механизатором. Вам не нужно искать оператора — мы отвечаем и за машину, и за качество работы.</div></details>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Баня и купель уже включены в стоимость?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Да. У каждого дома своя баня на дровах и купель с подогревом — это часть комплекса, а не отдельная платная зона. Баню растапливаем к вашему приезду, чтобы париться можно было сразу.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Сколько человек можно разместить?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Дом A-Frame идеален для пары или небольшой компании. Точную вместимость и условия для большой компании подскажем по телефону — напишите или позвоните, подберём вариант под вашу дату.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Купель работает зимой и в межсезонье?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Да, купель с подогревом, поэтому тёплая вода ждёт вас в любой сезон. Контраст «горячая купель — морозный воздух» зимой нравится гостям даже больше, чем летом.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Как добраться и есть ли парковка?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Мы в селе Челядиново, примерно в 10 км от Керчи — около 15 минут на машине. Адрес: ул. Победы, 7. Удобнее всего построить маршрут через <a href="https://yandex.ru/maps/org/161148251313" target="_blank" rel="noopener">Яндекс Карты</a>. Место для машины есть.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Можно ли скорректировать время заезда и выезда?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Стандартно заселение в 15:00, выезд в 11:00. При наличии возможности время пребывания скорректируем — просто скажите об этом при бронировании.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Как забронировать?<span class="pm">+</span></button>
+        <div class="faq-a"><p>Оставьте имя и телефон в форме ниже или позвоните нам с 9:00 до 21:00. Подтвердим свободные даты и забронируем отдых за пару минут.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA / FORM ============ -->
-<section class="sec" id="zayavka">
+<!-- ============ CTA / BOOKING ============ -->
+<section class="cta" id="booking">
+  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1900&q=80" alt="Дом на закате у моря"></div>
   <div class="wrap">
-    <div class="cta reveal">
-      <div class="cta-bg"><img src="img/kamaz-bridge.jpg" alt=""></div>
-      <div class="cta-inner">
-        <div>
-          <span class="eyebrow">Бесплатная консультация</span>
-          <h2 class="display">Составим план работ<br>и назовём цену</h2>
-          <p>Оставьте заявку или просто позвоните — разберёмся в задаче, подберём технику и сориентируем по стоимости. Консультация бесплатна.</p>
-          <a href="tel:+78452255222" class="cta-phone">255-222</a>
-          <div class="hero-meta" style="margin-top:22px">
-            <span class="dot"><b>WhatsApp / Viber:</b>&nbsp;+7 937 225-52-22</span>
-          </div>
-        </div>
-        <div class="form">
-          <h3>Заявка на технику</h3>
-          <p class="fnote">Перезвоним в течение 10 минут в рабочее время.</p>
-          <form id="leadForm" novalidate>
-            <div class="field">
-              <label for="nm">Ваше имя</label>
-              <input id="nm" name="name" type="text" placeholder="Как к вам обращаться" required>
-            </div>
-            <div class="field">
-              <label for="ph">Телефон</label>
-              <input id="ph" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required>
-            </div>
-            <div class="field">
-              <label for="sv">Что нужно</label>
-              <select id="sv" name="service">
-                <option>КАМАЗ-самосвал / сыпучие</option>
-                <option>Bobcat с насадками</option>
-                <option>Экскаватор-погрузчик</option>
-                <option>Манипулятор</option>
-                <option>Вывоз мусора / ломовоз</option>
-                <option>Контейнер 8 м³</option>
-                <option>Другое — подскажите</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="cm">Кратко о задаче (необязательно)</label>
-              <textarea id="cm" name="comment" rows="2" placeholder="Адрес, объём, сроки"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Получить расчёт</button>
-            <p class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-            <div class="form-ok" id="formOk">Заявка принята. Мы перезвоним вам в ближайшее время. Спасибо!</div>
-          </form>
-        </div>
-      </div>
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">Забронировать отдых</span>
+      <h2>Выберите свободные даты — пока их не заняли</h2>
+      <p class="lead">Оставьте контакты, и мы перезвоним, чтобы подтвердить даты и ответить на вопросы. Или просто позвоните — с 9:00 до 21:00.</p>
+      <form class="cta-form" id="bookForm">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <button type="submit" class="btn btn-gold">Забронировать →</button>
+      </form>
+      <p class="cta-note">Нажимая кнопку, вы соглашаетесь на обработку данных. Никакого спама — только подтверждение брони.</p>
     </div>
   </div>
 </section>
@@ -696,93 +582,81 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <div class="reveal">
-        <a href="#top" class="logo"><span class="mark">B</span>BOBCAT<b>SAR64</b></a>
-        <p>Аренда строительной и спецтехники в Саратове и области. Реально погружаемся в ваши задачи — от первого звонка до сданного объекта.</p>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>NelManHouse</b>
+        <p>Гостевой комплекс с домами A-Frame, банями на дровах и горячими купелями в 10 км от Керчи. Море, тишина и комфорт.</p>
+        <p class="stars" style="margin-top:14px">★★★★★ <span style="color:var(--muted);font-family:'Manrope'">5,0 · 59 отзывов</span></p>
       </div>
-      <div class="reveal" data-d="1">
-        <h5>Контакты</h5>
-        <a href="tel:+78452255222">255-222 <span class="muted">— звонок бесплатно</span></a>
-        <a href="tel:+79172138000">+7 (917) 213-80-00</a>
-        <a href="https://wa.me/79372255222" target="_blank" rel="noopener">WhatsApp · +7 937 225-52-22</a>
-        <a href="https://yandex.ru/maps/?text=Саратов,%20Чернышевского%2090" target="_blank" rel="noopener" class="muted">г. Саратов, ул. Чернышевского, 90</a>
+      <div class="foot-col">
+        <h4>Навигация</h4>
+        <a href="#services">Услуги</a>
+        <a href="#advantages">Почему мы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#booking">Забронировать</a>
       </div>
-      <div class="reveal" data-d="2">
-        <h5>Услуги</h5>
-        <a href="#fleet">Парк техники</a>
-        <a href="#att">Насадки Bobcat</a>
-        <a href="#prices">Услуги и цены</a>
-        <a href="#geo">География работы</a>
+      <div class="foot-col">
+        <h4>Контакты</h4>
+        <a href="tel:+79786050741">+7 (978) 605-07-41</a>
+        <a href="https://wa.me/79786050741" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://yandex.ru/maps/org/161148251313" target="_blank" rel="noopener">ул. Победы, 7, с. Челядиново</a>
+        <p>Звонки: 9:00–21:00 · Заезд 15:00 / Выезд 11:00</p>
       </div>
     </div>
-    <div class="copy">
-      <span>© 2026 BOBCATSAR64 · Спецтехника в Саратове</span>
-      <span>Работаем 24/7 · Лицензия на отходы 3–4 класса</span>
+    <div class="foot-bottom">
+      <span>© 2026 NelManHouse · Керчь, Крым</span>
+      <span>Дома A-Frame · Баня · Купель · Гриль</span>
     </div>
   </div>
 </footer>
 
-<!-- ============ MOBILE FIXED CALL ============ -->
-<div class="mcall">
-  <a class="c1" href="tel:+78452255222"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Позвонить</a>
-  <a class="c2" href="https://wa.me/79372255222" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.2-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.6-.1 1Z"/></svg>WhatsApp</a>
+<!-- ============ MOBILE CALL BAR ============ -->
+<div class="mobile-call">
+  <a href="tel:+79786050741" class="mc-call">📞 Позвонить</a>
+  <a href="https://wa.me/79786050741" target="_blank" rel="noopener" class="mc-wa">WhatsApp</a>
 </div>
 
 <script>
-  // Reveal on scroll
-  (function(){
-    var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
-      });
-    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e);});
-  })();
+(function(){
+  // header scroll state
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>40)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 
-  // Header shadow on scroll
-  (function(){
-    var h=document.querySelector('header');
-    var onScroll=function(){h.style.boxShadow=window.scrollY>20?'0 1px 0 rgba(255,255,255,.05),0 12px 40px rgba(0,0,0,.5)':'none';};
-    onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-  })();
+  // mobile menu
+  var burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open');document.body.style.overflow=menu.classList.contains('open')?'hidden':''});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');document.body.style.overflow=''})});
 
-  // Phone mask (light)
-  (function(){
-    var ph=document.getElementById('ph');
-    if(!ph)return;
-    ph.addEventListener('input',function(){
-      var d=ph.value.replace(/\D/g,'');
-      if(d.startsWith('8'))d='7'+d.slice(1);
-      if(!d.startsWith('7'))d='7'+d;
-      d=d.slice(0,11);
-      var r='+7';
-      if(d.length>1)r+=' ('+d.slice(1,4);
-      if(d.length>=4)r+=') '+d.slice(4,7);
-      if(d.length>=7)r+='-'+d.slice(7,9);
-      if(d.length>=9)r+='-'+d.slice(9,11);
-      ph.value=r;
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');
+    q.addEventListener('click',function(){
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null});
+      if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
     });
-  })();
+  });
 
-  // Form submit (demo: no backend)
-  (function(){
-    var f=document.getElementById('leadForm');
-    if(!f)return;
-    f.addEventListener('submit',function(e){
-      e.preventDefault();
-      var nm=f.name.value.trim(),phv=f.phone.value.replace(/\D/g,'');
-      if(nm.length<2||phv.length<11){
-        if(nm.length<2)f.querySelector('#nm').focus();else f.querySelector('#ph').focus();
-        return;
-      }
-      document.getElementById('formOk').style.display='block';
-      f.querySelector('button[type=submit]').textContent='Заявка отправлена';
-      f.querySelector('button[type=submit]').disabled=true;
-    });
-  })();
+  // booking form -> whatsapp prefill
+  var form=document.getElementById('bookForm');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var n=form.name.value.trim(),p=form.phone.value.trim();
+    var txt=encodeURIComponent('Здравствуйте! Хочу забронировать отдых в NelManHouse.\nИмя: '+n+'\nТелефон: '+p);
+    window.open('https://wa.me/79786050741?text='+txt,'_blank');
+    form.reset();
+    var btn=form.querySelector('button');var old=btn.innerHTML;btn.innerHTML='Готово ✓';
+    setTimeout(function(){btn.innerHTML=old},2500);
+  });
+})();
 </script>
 </body>
 </html>

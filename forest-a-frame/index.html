@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>forest.a.frame — Аренда A-frame домика под Петербургом · Баня и купель</title>
-<meta name="description" content="Уединённый A-frame домик с индивидуальной территорией, баней и купелью. 35 минут от Санкт-Петербурга. Тишина, лес и перезагрузка на выходные.">
-<meta property="og:title" content="forest.a.frame — лесной A-frame под Петербургом">
-<meta property="og:description" content="Своя территория, баня, купель, 35 минут от города. Перезагрузка без соседей.">
+<title>karjala_aparts — Отдых в Карелии на берегу озера · Дома, баня, природа</title>
+<meta name="description" content="Уютные дома и дом-палатка на первой береговой линии озера в Карелии. Баня с панорамным видом, своя территория, 40 км от Петрозаводска. Кивач, Сампо, Марциальные воды рядом.">
+<meta property="og:title" content="karjala_aparts — отдых в Карелии на берегу озера">
+<meta property="og:description" content="Два дома и дом-палатка, баня с видом на озеро, первая береговая линия. 40 км от Петрозаводска.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --forest:#16271f;       /* глубокий хвойный */
+  --forest:#16271f;
   --forest-2:#1f3a2c;
   --moss:#3a5a40;
   --sage:#a3b18a;
-  --ember:#d98a3d;        /* тепло огня / бани */
+  --water:#5a8aa8;       /* холодная гладь озера */
+  --ember:#d98a3d;        /* тепло бани и камина */
   --ember-soft:#e9a860;
-  --cream:#f4efe6;        /* берёста / лён */
+  --cream:#f4efe6;        /* лён / берёста */
   --cream-2:#ebe3d4;
   --ink:#11140f;
   --muted:#7c8a78;
@@ -59,463 +61,489 @@ a{color:inherit;text-decoration:none}
 .btn-ghost{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
 .btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
 .btn-dark{background:var(--forest);color:var(--cream)}
-.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn-dark:hover{transform:translateY(-3px);background:var(--forest-2)}
 
-/* ---------- Header ---------- */
-header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.4s}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;max-width:var(--maxw);margin:0 auto}
-.logo{font-family:'Cormorant Garamond';font-size:1.5rem;font-weight:700;color:var(--cream);letter-spacing:.02em;transition:.4s}
-.logo span{color:var(--ember-soft)}
-.nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:.9rem;font-weight:600;color:rgba(244,239,230,.82);transition:.3s}
-.nav-links a:hover{color:var(--ember-soft)}
-.nav .btn{padding:12px 22px;font-size:.85rem}
-header.scrolled{background:rgba(244,239,230,.92);backdrop-filter:blur(14px);box-shadow:0 8px 30px -16px rgba(0,0,0,.3)}
-header.scrolled .logo{color:var(--forest)}
-header.scrolled .nav-links a{color:var(--forest)}
-@media(max-width:880px){.nav-links{display:none}}
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:90;transition:background .4s,backdrop-filter .4s,box-shadow .4s,padding .4s;padding:22px 0}
+.nav.scrolled{background:rgba(244,239,230,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(0,0,0,.06);padding:14px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--cream);letter-spacing:.02em;transition:color .4s}
+.brand b{color:var(--ember-soft);font-weight:700}
+.nav.scrolled .brand{color:var(--forest)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.92rem;font-weight:500;color:rgba(255,255,255,.85);transition:color .3s}
+.nav.scrolled .nav-links a{color:var(--forest)}
+.nav-links a:hover{color:var(--ember)}
+.nav .btn{padding:11px 22px;font-size:.86rem}
+@media(max-width:880px){.nav-links a:not(.btn){display:none}}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:slowzoom 18s ease-out forwards}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:slowzoom 16s ease-out forwards}
 @keyframes slowzoom{to{transform:scale(1)}}
-.hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(15,25,18,.55) 0%,rgba(15,25,18,.1) 35%,rgba(13,22,16,.55) 70%,rgba(11,18,13,.95) 100%);}
-.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px 72px}
-.hero .pin{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;letter-spacing:.04em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:9px 16px;border-radius:100px;backdrop-filter:blur(6px);margin-bottom:26px}
-.hero h1{font-size:clamp(2.9rem,8vw,6rem);font-weight:600;max-width:14ch}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(12,20,14,.55) 0%,rgba(12,20,14,.15) 35%,rgba(12,20,14,.78) 100%)}
+.hero-content{padding-bottom:8vh;max-width:760px}
+.hero .eyebrow{color:var(--ember-soft)}
+.hero h1{font-size:clamp(2.9rem,7vw,5.4rem);margin-bottom:22px}
 .hero h1 em{font-style:italic;color:var(--ember-soft)}
-.hero p.lead{font-size:clamp(1.05rem,2.4vw,1.32rem);font-weight:300;max-width:46ch;margin:24px 0 36px;color:rgba(244,239,230,.9)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.28rem);color:rgba(244,239,230,.92);max-width:560px;margin-bottom:34px;font-weight:300}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:42px;margin-top:54px;flex-wrap:wrap}
-.hero-stats .s b{font-family:'Cormorant Garamond';font-size:2.4rem;font-weight:700;color:var(--cream);display:block;line-height:1}
-.hero-stats .s span{font-size:.82rem;color:rgba(244,239,230,.7);letter-spacing:.02em}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,239,230,.6);animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
-@media(max-width:680px){.hero-stats{gap:28px;margin-top:38px}.scroll-hint{display:none}}
-
-/* ---------- Pains ---------- */
-.pains{background:var(--forest);color:var(--cream)}
-.pains .head{text-align:center;max-width:24ch;margin:0 auto 56px}
-.pains h2{font-size:clamp(2rem,5vw,3.3rem)}
-.pains h2 em{font-style:italic;color:var(--ember-soft)}
-.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:32px 28px;transition:.4s}
-.pain:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
-.pain .ic{font-size:1.7rem;margin-bottom:16px}
-.pain h3{font-size:1.4rem;margin-bottom:8px;color:var(--cream)}
-.pain p{color:rgba(244,239,230,.72);font-size:.96rem}
-@media(max-width:780px){.pain-grid{grid-template-columns:1fr}}
-
-/* ---------- Solution / split ---------- */
-.split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.split .media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);position:relative;aspect-ratio:4/5}
-.split .media img{width:100%;height:100%;object-fit:cover;transition:1.2s cubic-bezier(.2,.8,.2,1)}
-.split .media:hover img{transform:scale(1.05)}
-.split h2{font-size:clamp(2rem,4.6vw,3.2rem);color:var(--forest);margin-bottom:22px}
-.split h2 em{font-style:italic;color:var(--ember)}
-.split p{color:#4a5347;font-size:1.06rem;margin-bottom:18px;max-width:46ch}
-.checks{list-style:none;margin:26px 0 32px}
-.checks li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-weight:500;border-bottom:1px solid rgba(0,0,0,.06)}
-.checks li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--moss);margin-top:3px;
-  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/13px no-repeat;
-  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/13px no-repeat;}
-@media(max-width:840px){.split{grid-template-columns:1fr;gap:36px}.split .media{aspect-ratio:4/3}}
-
-/* ---------- Advantages ---------- */
-.adv{background:var(--cream-2)}
-.adv .head{text-align:center;margin-bottom:54px}
-.adv h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
-.adv h2 em{font-style:italic;color:var(--ember)}
-.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:var(--cream);border:1px solid rgba(20,30,20,.07);border-radius:var(--r);padding:30px 26px;transition:.4s}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-.card .ic{width:50px;height:50px;border-radius:14px;background:rgba(58,90,64,.12);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px}
-.card h3{font-size:1.28rem;color:var(--forest);margin-bottom:6px}
-.card p{font-size:.92rem;color:#5b6357}
-@media(max-width:960px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.adv-grid{grid-template-columns:1fr}}
-
-/* ---------- Services / pricing ---------- */
-.serv .head{text-align:center;margin-bottom:54px}
-.serv h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
-.serv h2 em{font-style:italic;color:var(--ember)}
-.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.tier{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid rgba(20,30,20,.08);display:flex;flex-direction:column;transition:.4s}
-.tier:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.tier .ph{height:190px;overflow:hidden}
-.tier .ph img{width:100%;height:100%;object-fit:cover;transition:1s}
-.tier:hover .ph img{transform:scale(1.06)}
-.tier .body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
-.tier.featured{border-color:var(--ember);box-shadow:0 30px 70px -34px rgba(217,138,61,.6)}
-.tier .tag{align-self:flex-start;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);background:rgba(217,138,61,.12);padding:5px 12px;border-radius:100px;margin-bottom:14px}
-.tier h3{font-size:1.7rem;color:var(--forest)}
-.tier .price{font-family:'Cormorant Garamond';font-size:2.2rem;font-weight:700;color:var(--forest);margin:8px 0 4px}
-.tier .price small{font-family:'Manrope';font-size:.9rem;font-weight:500;color:var(--muted)}
-.tier ul{list-style:none;margin:18px 0 24px}
-.tier ul li{font-size:.93rem;padding:7px 0;color:#4a5347;display:flex;gap:10px}
-.tier ul li::before{content:"·";color:var(--ember);font-weight:800}
-.tier .btn{margin-top:auto;justify-content:center}
-@media(max-width:880px){.serv-grid{grid-template-columns:1fr}}
-
-/* ---------- Social proof ---------- */
-.proof{background:var(--forest);color:var(--cream)}
-.proof .head{text-align:center;margin-bottom:52px}
-.proof h2{font-size:clamp(2rem,5vw,3.3rem)}
-.proof h2 em{font-style:italic;color:var(--ember-soft)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rev{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--r);padding:30px 28px}
-.rev .stars{color:var(--ember-soft);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
-.rev p{font-size:1rem;color:rgba(244,239,230,.9);font-style:italic;margin-bottom:20px}
-.rev .who{display:flex;align-items:center;gap:12px}
-.rev .who .av{width:42px;height:42px;border-radius:50%;background:var(--moss);display:grid;place-items:center;font-weight:700;color:var(--cream)}
-.rev .who b{font-size:.95rem}
-.rev .who span{font-size:.8rem;color:rgba(244,239,230,.6)}
-@media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
-
-/* ---------- About ---------- */
-.about .split p{font-size:1.08rem}
-.about .sig{font-family:'Cormorant Garamond';font-style:italic;font-size:1.5rem;color:var(--forest);margin-top:18px}
-
-/* ---------- FAQ ---------- */
-.faq{background:var(--cream-2)}
-.faq .head{text-align:center;margin-bottom:46px}
-.faq h2{font-size:clamp(2rem,5vw,3.3rem);color:var(--forest)}
-.faq-list{max-width:780px;margin:0 auto}
-.q{background:var(--white);border:1px solid rgba(20,30,20,.08);border-radius:16px;margin-bottom:14px;overflow:hidden}
-.q button{width:100%;text-align:left;background:none;border:none;padding:24px 26px;font-family:'Manrope';font-size:1.08rem;font-weight:600;color:var(--forest);cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center}
-.q button .pl{flex:none;font-size:1.5rem;color:var(--ember);transition:.4s;line-height:1}
-.q.open button .pl{transform:rotate(45deg)}
-.q .a{max-height:0;overflow:hidden;transition:max-height .45s ease;color:#4a5347}
-.q .a p{padding:0 26px 24px}
-
-/* ---------- CTA ---------- */
-.cta{position:relative;color:var(--cream);text-align:center;overflow:hidden}
-.cta-bg{position:absolute;inset:0;z-index:-2}
-.cta-bg img{width:100%;height:100%;object-fit:cover}
-.cta-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(15,25,18,.72),rgba(11,18,13,.86))}
-.cta .wrap{padding:118px 22px}
-.cta h2{font-size:clamp(2.3rem,6vw,4rem)}
-.cta h2 em{font-style:italic;color:var(--ember-soft)}
-.cta p{font-size:1.15rem;font-weight:300;max-width:44ch;margin:22px auto 36px;color:rgba(244,239,230,.9)}
-.cta-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* ---------- Footer ---------- */
-footer{background:var(--ink);color:rgba(244,239,230,.72);padding:64px 0 40px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
-footer .logo{color:var(--cream);font-size:1.6rem;margin-bottom:14px}
-footer h4{color:var(--cream);font-family:'Manrope';font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;font-weight:700}
-footer a{display:block;padding:6px 0;font-size:.95rem;transition:.3s}
-footer a:hover{color:var(--ember-soft)}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.84rem;color:rgba(244,239,230,.5)}
-@media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:30px}}
-
-/* ---------- Mobile fixed call ---------- */
-.mcall{position:fixed;bottom:16px;left:16px;right:16px;z-index:95;display:none;gap:10px}
-.mcall a{flex:1;justify-content:center;box-shadow:0 16px 40px -12px rgba(0,0,0,.5)}
-.mcall .wa{background:#25D366;color:#06351c}
-@media(max-width:880px){.mcall{display:flex}body{padding-bottom:84px}}
+.hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,239,230,.7);display:flex;flex-direction:column;align-items:center;gap:8px}
+.hero-scroll span{width:1px;height:38px;background:linear-gradient(var(--ember-soft),transparent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+.returns{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:8px 16px;border-radius:100px;font-size:.84rem;font-weight:600;margin-bottom:22px}
+.returns .dot{width:7px;height:7px;border-radius:50%;background:var(--ember-soft);box-shadow:0 0 0 0 rgba(233,168,96,.6);animation:beat 2.2s infinite}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(233,168,96,.55)}70%{box-shadow:0 0 0 10px rgba(233,168,96,0)}100%{box-shadow:0 0 0 0 rgba(233,168,96,0)}}
 
 /* ---------- Reveal ---------- */
-.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-bg img{animation:none;transform:none}}
+
+/* ---------- Section heads ---------- */
+.head{max-width:680px;margin-bottom:56px}
+.head.center{margin-left:auto;margin-right:auto;text-align:center}
+.head h2{font-size:clamp(2.1rem,4.4vw,3.3rem);margin-bottom:18px;color:var(--forest)}
+.head p{color:var(--muted);font-size:1.08rem}
+
+/* ---------- Pains (intro band) ---------- */
+.intro{background:var(--forest);color:var(--cream);position:relative;overflow:hidden}
+.intro::before{content:"";position:absolute;top:-40%;right:-10%;width:60%;height:120%;background:radial-gradient(circle,rgba(217,138,61,.16),transparent 65%)}
+.intro .head h2{color:var(--cream)}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
+.pain{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:30px 26px}
+.pain .ic{font-size:1.7rem;margin-bottom:14px}
+.pain h3{font-family:'Manrope';font-weight:700;font-size:1.06rem;margin-bottom:8px;color:var(--white)}
+.pain p{color:rgba(244,239,230,.7);font-size:.96rem;font-weight:300}
+.intro-quote{margin-top:54px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.2vw,2.3rem);color:var(--sage);max-width:820px;margin-left:auto;margin-right:auto;line-height:1.3}
+.intro-quote em{color:var(--ember-soft);font-style:italic}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr}}
+
+/* ---------- Stays ---------- */
+.stays{display:grid;gap:28px}
+.stay{display:grid;grid-template-columns:1.05fr 1fr;background:var(--white);border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+.stay:nth-child(even){grid-template-columns:1fr 1.05fr}
+.stay:nth-child(even) .stay-media{order:2}
+.stay-media{position:relative;min-height:380px;overflow:hidden}
+.stay-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.stay:hover .stay-media img{transform:scale(1.06)}
+.stay-tag{position:absolute;top:18px;left:18px;background:rgba(22,39,31,.78);backdrop-filter:blur(6px);color:var(--cream);font-size:.78rem;font-weight:700;letter-spacing:.04em;padding:8px 15px;border-radius:100px}
+.stay-body{padding:46px 44px;display:flex;flex-direction:column;justify-content:center}
+.stay-body h3{font-size:2rem;color:var(--forest);margin-bottom:6px}
+.stay-cap{color:var(--ember);font-weight:700;font-size:.86rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
+.feat{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.feat li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:#3a443a}
+.feat li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 4px rgba(217,138,61,.16)}
+@media(max-width:820px){
+  .stay,.stay:nth-child(even){grid-template-columns:1fr}
+  .stay:nth-child(even) .stay-media{order:0}
+  .stay-media{min-height:260px}
+  .stay-body{padding:34px 26px}
+}
+
+/* ---------- Banya feature ---------- */
+.banya{position:relative;border-radius:28px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;color:var(--cream)}
+.banya img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banya::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,12,.1),rgba(10,18,12,.82))}
+.banya-body{position:relative;padding:54px 50px;max-width:620px}
+.banya-body .eyebrow{color:var(--ember-soft)}
+.banya-body h2{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:16px}
+.banya-body p{color:rgba(244,239,230,.9);font-size:1.1rem;font-weight:300}
+@media(max-width:680px){.banya-body{padding:38px 26px}.banya{min-height:440px}}
+
+/* ---------- Advantages ---------- */
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.adv{padding:32px 26px;background:var(--white);border:1px solid var(--cream-2);border-radius:var(--r);transition:transform .4s,box-shadow .4s}
+.adv:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.adv .ic{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--moss),var(--forest-2));color:var(--ember-soft);font-size:1.4rem;margin-bottom:18px}
+.adv h3{font-family:'Manrope';font-weight:700;font-size:1.08rem;color:var(--forest);margin-bottom:8px}
+.adv p{color:var(--muted);font-size:.95rem;font-weight:300}
+@media(max-width:980px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.adv-grid{grid-template-columns:1fr}}
+
+/* ---------- Location ---------- */
+.loc{background:var(--cream-2)}
+.loc-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:54px}
+.loc-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);min-height:380px}
+.loc-photo img{width:100%;height:100%;object-fit:cover}
+.loc-top h2{font-size:clamp(2rem,4.2vw,3rem);color:var(--forest);margin-bottom:16px}
+.loc-top p{color:#46503f;font-size:1.06rem;margin-bottom:14px}
+.addr{display:inline-flex;align-items:center;gap:10px;background:var(--white);border-radius:14px;padding:14px 20px;font-weight:600;color:var(--forest);box-shadow:0 10px 30px -16px rgba(0,0,0,.3)}
+.poi-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.poi{background:var(--white);border-radius:18px;padding:26px 24px;border:1px solid #e0d8c8}
+.poi h4{font-family:'Manrope';font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:14px}
+.poi ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.poi li{font-size:.96rem;color:#3a443a;display:flex;gap:9px;align-items:flex-start}
+.poi li b{color:var(--muted);font-weight:600;font-size:.84rem}
+.poi li::before{content:"→";color:var(--sage);flex:none}
+@media(max-width:880px){.loc-top{grid-template-columns:1fr}.loc-photo{min-height:260px}.poi-cols{grid-template-columns:1fr}}
+
+/* ---------- Gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gal figure{overflow:hidden;border-radius:16px;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.08)}
+.gal .big{grid-column:span 2;grid-row:span 2}
+.gal .tall{grid-row:span 2}
+@media(max-width:780px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gal .big{grid-column:span 2}}
+
+/* ---------- Reviews ---------- */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:var(--white);border-radius:var(--r);padding:34px 30px;border:1px solid var(--cream-2);display:flex;flex-direction:column}
+.stars{color:var(--ember);letter-spacing:3px;margin-bottom:16px}
+.rev p{font-size:1.02rem;color:#33402f;flex:1;margin-bottom:22px}
+.rev .who{display:flex;align-items:center;gap:13px}
+.rev .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--moss),var(--ember));color:#fff;display:grid;place-items:center;font-weight:700;font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+.rev .who b{display:block;font-size:.96rem;color:var(--forest)}
+.rev .who span{font-size:.84rem;color:var(--muted)}
+@media(max-width:880px){.rev-grid{grid-template-columns:1fr}}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto}
+.q{border-bottom:1px solid var(--cream-2)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:none;border:none;cursor:pointer;padding:26px 4px;text-align:left;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--forest);font-weight:600}
+.q .plus{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ember);color:var(--ember);display:grid;place-items:center;font-size:1.2rem;transition:transform .4s,background .3s,color .3s}
+.q.open .plus{transform:rotate(45deg);background:var(--ember);color:#fff}
+.q .ans{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.q .ans p{padding:0 4px 26px;color:var(--muted);font-size:1.02rem}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--forest);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(217,138,61,.28),transparent 60%)}
+.cta-inner{position:relative;max-width:740px;margin:0 auto}
+.cta h2{font-size:clamp(2.3rem,5vw,3.7rem);margin-bottom:18px}
+.cta h2 em{font-style:italic;color:var(--ember-soft)}
+.cta p{color:rgba(244,239,230,.82);font-size:1.12rem;margin-bottom:34px;font-weight:300}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cta-phone{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--cream);font-weight:600;display:inline-block;margin-bottom:6px}
+.cta-phone:hover{color:var(--ember-soft)}
+.cta-sub{font-size:.92rem;color:var(--sage)}
+
+/* ---------- Footer ---------- */
+.footer{background:#0e1813;color:rgba(244,239,230,.7);padding:60px 0 120px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:40px}
+.footer .brand{color:var(--cream);font-size:1.6rem;margin-bottom:14px}
+.footer p{font-size:.95rem;font-weight:300;max-width:320px}
+.foot-col h5{font-family:'Manrope';font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin-bottom:16px}
+.foot-col a{display:block;font-size:.96rem;margin-bottom:10px;transition:color .3s}
+.foot-col a:hover{color:var(--ember-soft)}
+.foot-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;font-size:.84rem;color:rgba(244,239,230,.45);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+/* ---------- Mobile sticky call ---------- */
+.mcall{position:fixed;bottom:0;left:0;right:0;z-index:95;display:none;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(244,239,230,.92);backdrop-filter:blur(12px);box-shadow:0 -8px 30px -12px rgba(0,0,0,.25)}
+.mcall a{flex:1;justify-content:center}
+@media(max-width:880px){.mcall{display:flex}.footer{padding-bottom:120px}}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="hdr">
-  <nav class="nav">
-    <a href="#top" class="logo">forest<span>.a.frame</span></a>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">karjala<b>_aparts</b></a>
     <div class="nav-links">
-      <a href="#solution">О формате</a>
-      <a href="#adv">Почему мы</a>
-      <a href="#serv">Домики</a>
-      <a href="#proof">Отзывы</a>
+      <a href="#stays">Размещение</a>
+      <a href="#banya">Баня</a>
+      <a href="#location">Локация</a>
       <a href="#faq">Вопросы</a>
+      <a href="tel:+79210146609" class="btn btn-primary">Забронировать</a>
     </div>
-    <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Забронировать</a>
-  </nav>
-</header>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=2000&q=80" alt="A-frame домик в хвойном лесу">
-  </div>
-  <div class="hero-inner">
-    <span class="pin reveal">📍 35 минут от Санкт-Петербурга</span>
-    <h1 class="reveal d1">Лес, тишина и <em>только вы</em> — на своей территории</h1>
-    <p class="lead reveal d2">A-frame домик с личной поляной, банёй и купелью. Без соседей за стеной, без городского гула. Только потрескивание дров и небо в хвое.</p>
-    <div class="hero-cta reveal d3">
-      <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Проверить свободные даты</a>
-      <a href="#serv" class="btn btn-ghost">Смотреть домики</a>
-    </div>
-    <div class="hero-stats reveal d4">
-      <div class="s"><b>35</b><span>минут от КАД</span></div>
-      <div class="s"><b>100%</b><span>своя территория</span></div>
-      <div class="s"><b>4.9</b><span>★ средняя оценка гостей</span></div>
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="A-frame дом в карельском лесу у озера" fetchpriority="high"></div>
+  <div class="wrap hero-content">
+    <div class="returns reveal in"><span class="dot"></span> К нам возвращаются снова и снова</div>
+    <div class="eyebrow reveal in d1">Карелия · берег озера · д. Восточное Кончезеро</div>
+    <h1 class="reveal in d2">Отдохнуть душой<br>в окружении <em>карельской</em> природы</h1>
+    <p class="lead reveal in d3">Два уютных дома, дом-палатка и баня с панорамным видом на воду. Первая береговая линия, собственный съезд к озеру и тишина, которой так не хватает в городе.</p>
+    <div class="hero-cta reveal in d4">
+      <a href="tel:+79210146609" class="btn btn-primary">Забронировать отдых</a>
+      <a href="#stays" class="btn btn-ghost">Смотреть размещение</a>
     </div>
   </div>
-  <div class="scroll-hint">прокрутите вниз</div>
-</section>
+  <div class="hero-scroll"><span></span>листайте</div>
+</header>
 
-<!-- PAINS -->
-<section class="pains sec">
+<!-- PAINS / INTRO -->
+<section class="sec intro">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">Знакомо?</p>
-      <h2>Выходные прошли, а <em>сил не прибавилось</em></h2>
+      <div class="eyebrow">Знакомо?</div>
+      <h2>Город не отпускает, а выходные проходят впустую</h2>
     </div>
-    <div class="pain-grid">
-      <div class="pain reveal d1">
-        <div class="ic">🏙️</div>
-        <h3>Город не отпускает</h3>
-        <p>Шум, экраны, бесконечные уведомления. Голова не выключается даже в субботу утром.</p>
-      </div>
-      <div class="pain reveal d2">
-        <div class="ic">🚪</div>
-        <h3>Турбазы — это соседи</h3>
-        <p>Тонкие стены, чужие компании и мангал в метре от вашего. Уединением и не пахнет.</p>
-      </div>
-      <div class="pain reveal d3">
-        <div class="ic">🧳</div>
-        <h3>Далеко = не доедем</h3>
-        <p>Хочется природы, но тратить полдня на дорогу в Карелию ради двух выходных — не вариант.</p>
-      </div>
+    <div class="intro-grid">
+      <div class="pain reveal d1"><div class="ic">📵</div><h3>Усталость не уходит</h3><p>Два дня дома пролетают за экраном и делами — а в понедельник снова как выжатый.</p></div>
+      <div class="pain reveal d2"><div class="ic">🏨</div><h3>Шумные базы и соседи</h3><p>Хотелось тишины и природы, а получаете толпу, очередь к воде и чужую музыку до утра.</p></div>
+      <div class="pain reveal d3"><div class="ic">🧳</div><h3>Сложно вырваться</h3><p>Кажется, нужен отпуск и самолёт. А душа просит всего пары дней у воды, в лесу.</p></div>
+    </div>
+    <p class="intro-quote reveal d2">Здесь вы выдыхаете уже на пороге. Только лес, гладь озера и тёплый дом — <em>ваш и только ваш</em>.</p>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="sec" id="stays">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">Где вы остановитесь</div>
+      <h2>Три формата отдыха — под ваше настроение</h2>
+      <p>Семьёй, со второй половинкой или компанией друзей. Выбирайте уют дома или близость к природе — комфорт остаётся с вами в любом.</p>
+    </div>
+
+    <div class="stays">
+
+      <article class="stay reveal">
+        <div class="stay-media">
+          <span class="stay-tag">До 5 человек · 2 дома</span>
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1100&q=80" alt="Современный интерьер уютного дома с камином">
+        </div>
+        <div class="stay-body">
+          <div class="stay-cap">Уютные дома</div>
+          <h3>Два дома с камином и террасой</h3>
+          <ul class="feat">
+            <li>Современный ремонт, камин и уютные террасы с видом на озеро</li>
+            <li>Интернет и ТВ — оставайтесь на связи, когда сами захотите</li>
+            <li>Первая береговая линия и собственный съезд к воде</li>
+          </ul>
+          <a href="tel:+79210146609" class="btn btn-dark">Узнать свободные даты</a>
+        </div>
+      </article>
+
+      <article class="stay reveal">
+        <div class="stay-media">
+          <span class="stay-tag">До 4 человек · глэмпинг</span>
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1100&q=80" alt="Дом-палатка на природе с удобствами">
+        </div>
+        <div class="stay-body">
+          <div class="stay-cap">Дом-палатка</div>
+          <h3>Ближе к природе — но с удобствами</h3>
+          <ul class="feat">
+            <li>Для тех, кто хочет проснуться под пение птиц и шум сосен</li>
+            <li>Оборудована всем необходимым для жизни в походных условиях</li>
+            <li>Романтика палатки без отказа от комфорта и тепла</li>
+          </ul>
+          <a href="tel:+79210146609" class="btn btn-dark">Забронировать палатку</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- SOLUTION -->
-<section class="sec" id="solution">
-  <div class="wrap split">
-    <div class="media reveal">
-      <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1200&q=80" alt="Интерьер A-frame домика у леса">
-    </div>
-    <div>
-      <p class="eyebrow reveal">Решение</p>
-      <h2 class="reveal d1">Дом, где <em>выдыхаешь</em> уже на пороге</h2>
-      <p class="reveal d2">forest.a.frame — это не турбаза и не отель. Это отдельный треугольный дом на собственной поляне, спрятанный среди сосен в 35 минутах от города. Приехали — и мир сузился до бани, купели и вас двоих.</p>
-      <ul class="checks reveal d3">
-        <li>Индивидуальная огороженная территория — никаких соседей в кадре</li>
-        <li>Тёплая баня и купель с прохладной водой под открытым небом</li>
-        <li>Панорамное окно во всю стену: лес как живая картина</li>
-        <li>Всё для готовки, мангал и дрова уже ждут вас</li>
-      </ul>
-      <a href="https://wa.me/79118366585" class="btn btn-dark reveal d4" target="_blank" rel="noopener">Хочу так на выходные →</a>
+<!-- BANYA -->
+<section class="sec" id="banya" style="padding-top:0">
+  <div class="wrap">
+    <div class="banya reveal">
+      <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1400&q=80" alt="Баня с панорамным видом на озеро">
+      <div class="banya-body">
+        <div class="eyebrow">Ритуал, ради которого едут</div>
+        <h2>Баня с панорамным<br>видом на озеро</h2>
+        <p>Жар парной, прохлада карельской воды и закат над гладью озера в одном кадре. Самый честный способ оставить городскую суету за дверью.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ADVANTAGES -->
-<section class="adv sec" id="adv">
+<section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Почему гости возвращаются</p>
-      <h2>Детали, ради которых <em>хочется остаться дольше</em></h2>
+    <div class="head center reveal">
+      <div class="eyebrow">Почему у нас тепло</div>
+      <h2>Детали, из которых складывается отдых</h2>
     </div>
     <div class="adv-grid">
-      <div class="card reveal d1"><div class="ic">🌲</div><h3>Своя поляна</h3><p>Огороженный участок только для вас. Гуляйте в халате — никто не увидит.</p></div>
-      <div class="card reveal d2"><div class="ic">🔥</div><h3>Баня готова к приезду</h3><p>Растопим заранее. Заходите с дороги — и сразу в пар.</p></div>
-      <div class="card reveal d3"><div class="ic">❄️</div><h3>Купель</h3><p>Контраст после парной, от которого тело звенит, а голова ясная.</p></div>
-      <div class="card reveal d4"><div class="ic">🚗</div><h3>35 минут пути</h3><p>Асфальт почти до ворот. Доедет любая машина в любой сезон.</p></div>
-      <div class="card reveal d1"><div class="ic">🛏️</div><h3>Готовый уют</h3><p>Чистое бельё, тёплые пледы, посуда и свет, который хочется фотографировать.</p></div>
-      <div class="card reveal d2"><div class="ic">📶</div><h3>Связь и Wi-Fi</h3><p>Цифровой детокс — по желанию. Интернет есть, если вдруг понадобится.</p></div>
-      <div class="card reveal d3"><div class="ic">🐾</div><h3>Можно с питомцем</h3><p>Хвостатый друг — полноценный гость. Лес ему понравится не меньше.</p></div>
-      <div class="card reveal d4"><div class="ic">📸</div><h3>Кадры сами получаются</h3><p>A-frame, гирлянды и хвоя — фон, в котором каждое фото выглядит дорого.</p></div>
+      <div class="adv reveal d1"><div class="ic">🌊</div><h3>Первая линия</h3><p>Собственный съезд к воде — озеро начинается прямо у вашего порога.</p></div>
+      <div class="adv reveal d2"><div class="ic">🔥</div><h3>Камин и баня</h3><p>Тепло живого огня в доме и жаркая парная с видом на воду.</p></div>
+      <div class="adv reveal d3"><div class="ic">🤫</div><h3>Только вы</h3><p>Своя территория без шумных соседей и общих очередей к озеру.</p></div>
+      <div class="adv reveal d4"><div class="ic">🚗</div><h3>Трансфер</h3><p>Встретим от аэропорта или ЖД вокзала Петрозаводска по запросу.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="serv sec" id="serv">
+<!-- LOCATION -->
+<section class="sec loc" id="location">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Форматы отдыха</p>
-      <h2>Выберите <em>свой сценарий тишины</em></h2>
+    <div class="loc-top">
+      <div class="loc-photo reveal"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1100&q=80" alt="Карельский лес и природа вокруг"></div>
+      <div class="reveal d1">
+        <div class="eyebrow">Где это</div>
+        <h2>40 км от Петрозаводска — и вы в Карелии настоящей</h2>
+        <p>Деревня Восточное Кончезеро. Достаточно близко, чтобы добраться без долгой дороги, и достаточно далеко, чтобы город остался позади.</p>
+        <div class="addr">📍 д. Восточное Кончезеро · 40 км от Петрозаводска</div>
+      </div>
     </div>
-    <div class="serv-grid">
-      <div class="tier reveal d1">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80" alt="Домик на одну ночь"></div>
-        <div class="body">
-          <span class="tag">Перезагрузка</span>
-          <h3>Будни вдвоём</h3>
-          <div class="price">от 7 900 ₽<small> / ночь</small></div>
-          <ul>
-            <li>Заселение с 15:00</li>
-            <li>Дом, своя территория, мангал</li>
-            <li>Дрова и кофе в подарок</li>
-            <li>Идеально для побега в середине недели</li>
-          </ul>
-          <a href="https://wa.me/79118366585" class="btn btn-dark" target="_blank" rel="noopener">Узнать даты</a>
-        </div>
+
+    <div class="poi-cols">
+      <div class="poi reveal d1">
+        <h4>Рядом, под боком</h4>
+        <ul>
+          <li>Марциальные воды</li>
+          <li>Гора Сампо</li>
+          <li>Рудник «Надежда»</li>
+        </ul>
       </div>
-      <div class="tier featured reveal d2">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="Выходные с баней"></div>
-        <div class="body">
-          <span class="tag">Хит выбора</span>
-          <h3>Выходные с баней</h3>
-          <div class="price">от 18 900 ₽<small> / 2 ночи</small></div>
-          <ul>
-            <li>Две ночи в домике</li>
-            <li>Протопленная баня + купель</li>
-            <li>Поздний выезд до 14:00</li>
-            <li>Веники и травяной чай — за счёт дома</li>
-          </ul>
-          <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Забронировать</a>
-        </div>
+      <div class="poi reveal d2">
+        <h4>В радиусе 50 км</h4>
+        <ul>
+          <li>Водопад Кивач (заповедник)</li>
+          <li>Кондопога — Органный зал, Ледовый дворец</li>
+          <li>Долина зайцев · Вотчина Талвиукко</li>
+          <li>Палеовулкан Гирвас · Чёртов стул</li>
+          <li>Ботанический сад · Онежская набережная</li>
+          <li>Музеи Петрозаводска и выставочные залы</li>
+        </ul>
       </div>
-      <div class="tier reveal d3">
-        <div class="ph"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Особый повод"></div>
-        <div class="body">
-          <span class="tag">Особый повод</span>
-          <h3>Свидание / годовщина</h3>
-          <div class="price">по запросу</div>
-          <ul>
-            <li>Украшение домика к приезду</li>
-            <li>Свечи, гирлянды, фотозона</li>
-            <li>Можно заказать ужин и фотографа</li>
-            <li>Сюрприз второй половинке под ключ</li>
-          </ul>
-          <a href="https://wa.me/79118366585" class="btn btn-dark" target="_blank" rel="noopener">Обсудить детали</a>
-        </div>
+      <div class="poi reveal d3">
+        <h4>Активный отдых</h4>
+        <ul>
+          <li>Горнолыжный курорт «Укко» <b>· 24 км</b></li>
+          <li>Всесезонный курорт «Ялгора» <b>· 65 км</b></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="proof sec" id="proof">
+<!-- GALLERY -->
+<section class="sec">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Гостям есть что сказать</p>
-      <h2>Сюда возвращаются <em>и привозят друзей</em></h2>
+    <div class="head center reveal">
+      <div class="eyebrow">Атмосфера</div>
+      <h2>Карелия, которую вы запомните</h2>
+    </div>
+    <div class="gal reveal">
+      <figure class="big"><img src="img/hero.jpg" alt="A-frame дом в лесу"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=80" alt="Озеро в Карелии"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80" alt="Интерьер дома с камином"></figure>
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=700&q=80" alt="Утро у озера"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80" alt="Спальня дома"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1533873984035-25970ab07461?auto=format&fit=crop&w=700&q=80" alt="Хвойный лес"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="head center reveal">
+      <div class="eyebrow">К нам возвращаются</div>
+      <h2>Что говорят наши гости</h2>
     </div>
     <div class="rev-grid">
       <div class="rev reveal d1">
         <div class="stars">★★★★★</div>
-        <p>«Уехали с ощущением, будто были в отпуске неделю, а не два дня. Баня, купель, тишина и ни одного чужого человека вокруг. Это лучшее, что мы делали этой зимой.»</p>
+        <p>Приехали на выходные вдвоём — уезжать не хотелось. Баня с видом на озеро это что-то отдельное. Тишина, свой берег, утром туман над водой. Вернёмся обязательно.</p>
         <div class="who"><div class="av">А</div><div><b>Анна и Дмитрий</b><span>Санкт-Петербург</span></div></div>
       </div>
       <div class="rev reveal d2">
         <div class="stars">★★★★★</div>
-        <p>«Боялись, что 35 минут — это маркетинг. Реально доехали быстрее, чем до дачи. Дом тёплый, всё продумано, хозяева на связи. Уже забронировали на годовщину.»</p>
-        <div class="who"><div class="av">М</div><div><b>Марина К.</b><span>приехала повторно</span></div></div>
+        <p>Были семьёй с детьми в доме у воды. Камин, уютная терраса, всё продумано. Дети не вылезали из озера, мы отдохнули по-настоящему. Спасибо хозяевам за заботу.</p>
+        <div class="who"><div class="av">М</div><div><b>Марина</b><span>Москва</span></div></div>
       </div>
       <div class="rev reveal d3">
         <div class="stars">★★★★★</div>
-        <p>«Брали с собой собаку — и не пожалели. Своя поляна, лес, после бани в купель под звёздами. Фотографии получились такие, что друзья теперь просят адрес.»</p>
-        <div class="who"><div class="av">И</div><div><b>Игорь и Лена</b><span>с псом Бимом</span></div></div>
+        <p>Жили в доме-палатке — это тот случай, когда природа рядом, а комфорт никуда не делся. Съездили на Кивач и Сампо, вечером баня. Идеальная перезагрузка.</p>
+        <div class="who"><div class="av">К</div><div><b>Кирилл</b><span>Петрозаводск</span></div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about sec">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow reveal">О нас</p>
-      <h2 class="reveal d1">Мы построили дом, в который <em>сами хотели сбегать</em></h2>
-      <p class="reveal d2">Несколько лет мы сами искали место под Петербургом, где можно выдохнуть без турбаз и соседей. Не нашли — и сделали сами. Каждую деталь forest.a.frame мы проверили на себе: от температуры в бане до света над кроватью.</p>
-      <p class="reveal d2">Мы не сеть и не отель. Это камерный дом, за которым стоят живые люди — мы лично готовим его к каждому вашему приезду и всегда на связи.</p>
-      <p class="sig reveal d3">— команда forest.a.frame</p>
-    </div>
-    <div class="media reveal d1">
-      <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80" alt="A-frame домик среди деревьев">
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq sec" id="faq">
+<section class="sec" id="faq">
   <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Частые вопросы</p>
-      <h2>Коротко о главном</h2>
+    <div class="head center reveal">
+      <div class="eyebrow">Частые вопросы</div>
+      <h2>Коротко о важном</h2>
     </div>
-    <div class="faq-list">
-      <div class="q reveal"><button>Где именно находится домик и как добраться?<span class="pl">+</span></button><div class="a"><p>Мы в 35 минутах езды от КАД Санкт-Петербурга. Точную геолокацию и маршрут пришлём после бронирования — асфальт идёт почти до ворот, доедет любая машина в любое время года.</p></div></div>
-      <div class="q reveal"><button>Баня и купель уже входят в стоимость?<span class="pl">+</span></button><div class="a"><p>В тариф «Выходные с баней» — да, баня протоплена к вашему приезду, веники и чай за счёт дома. На других тарифах баню можно добавить отдельно — напишите нам, подскажем.</p></div></div>
-      <div class="q reveal"><button>Можно приехать с детьми или собакой?<span class="pl">+</span></button><div class="a"><p>Да. Территория огорожена и безопасна для детей, а питомцам мы только рады — рядом целый лес для прогулок. Сообщите заранее, чтобы мы всё подготовили.</p></div></div>
-      <div class="q reveal"><button>Как забронировать и нужна ли предоплата?<span class="pl">+</span></button><div class="a"><p>Напишите нам в WhatsApp — подберём свободные даты и тариф. Для брони вносится предоплата, остаток — при заселении. Это всё занимает пару минут.</p></div></div>
-      <div class="q reveal"><button>Что взять с собой?<span class="pl">+</span></button><div class="a"><p>Только продукты и хорошее настроение. Постельное бельё, полотенца, посуда, дрова и базовые мелочи уже в доме. Список «что приятно захватить» пришлём перед заездом.</p></div></div>
+    <div class="faq reveal">
+      <div class="q"><button>Сколько человек можно разместить?<span class="plus">+</span></button><div class="ans"><p>В каждом из двух домов — до 5 гостей, в доме-палатке — до 4. Можно бронировать как один объект, так и всю территорию для большой компании или семьи.</p></div></div>
+      <div class="q"><button>Как добраться и есть ли трансфер?<span class="plus">+</span></button><div class="ans"><p>Мы находимся в д. Восточное Кончезеро, 40 км от Петрозаводска. По запросу организуем трансфер от аэропорта или ЖД вокзала Петрозаводска — напишите нам заранее.</p></div></div>
+      <div class="q"><button>Что есть в домах?<span class="plus">+</span></button><div class="ans"><p>Современный ремонт, камин, уютная терраса, интернет и ТВ. Первая береговая линия и собственный съезд к воде. Дом-палатка оборудована всем необходимым для комфортного проживания в походных условиях.</p></div></div>
+      <div class="q"><button>Работает ли баня и что с видом?<span class="plus">+</span></button><div class="ans"><p>Да, у нас своя баня с панорамным видом на озеро. Топим к вашему приезду — уточняйте при бронировании.</p></div></div>
+      <div class="q"><button>Что посмотреть рядом?<span class="plus">+</span></button><div class="ans"><p>Марциальные воды, гора Сампо, рудник «Надежда» — совсем близко. В радиусе 50 км: водопад Кивач, Кондопога, Гирвас, Долина зайцев, музеи Петрозаводска. Для активного отдыха — курорты «Укко» и «Ялгора».</p></div></div>
+      <div class="q"><button>Как забронировать?<span class="plus">+</span></button><div class="ans"><p>Звоните или пишите в Telegram / MAX на +7 (921) 014-66-09, либо в личные сообщения нашей группы. Подскажем свободные даты и поможем спланировать поездку.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <div class="cta-bg"><img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=2000&q=80" alt="Ночной лес"></div>
-  <div class="wrap reveal">
-    <h2>Ближайшие выходные <em>могут пахнуть хвоей</em></h2>
-    <p>Свободных дат немного — особенно с баней. Напишите сейчас, и мы забронируем ваш домик в лесу.</p>
-    <div class="cta-cta">
-      <a href="https://wa.me/79118366585" class="btn btn-primary" target="_blank" rel="noopener">Написать в WhatsApp</a>
-      <a href="tel:+79118366585" class="btn btn-ghost">Позвонить +7 911 836-65-85</a>
+<section class="sec cta">
+  <div class="wrap cta-inner">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--ember-soft)">Забронировать отдых</div>
+      <h2>Подарите себе <em>тёплое</em><br>воспоминание на годы</h2>
+      <p>Мы сделаем всё, чтобы время с семьёй, второй половинкой или друзьями стало ярким и тёплым воспоминанием. Напишите нам — подберём даты под вас.</p>
+      <div class="cta-row">
+        <a href="tel:+79210146609" class="btn btn-primary">Позвонить</a>
+        <a href="https://t.me/+79210146609" class="btn btn-ghost">Telegram / MAX</a>
+      </div>
+      <a href="tel:+79210146609" class="cta-phone">+7 (921) 014-66-09</a>
+      <div class="cta-sub">Телефон · Telegram · MAX · сообщения группы</div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="footer">
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="logo">forest<span style="color:var(--ember-soft)">.a.frame</span></div>
-        <p style="max-width:34ch">A-frame домик с банёй, купелью и собственной территорией. 35 минут от Санкт-Петербурга.</p>
+        <div class="brand">karjala<b style="color:var(--ember-soft)">_aparts</b></div>
+        <p>Отдых в Карелии на берегу озера. Два дома, дом-палатка и баня с панорамным видом. Первая береговая линия, д. Восточное Кончезеро.</p>
       </div>
-      <div>
-        <h4>Навигация</h4>
-        <a href="#solution">О формате</a>
-        <a href="#adv">Почему мы</a>
-        <a href="#serv">Домики и цены</a>
+      <div class="foot-col">
+        <h5>Навигация</h5>
+        <a href="#stays">Размещение</a>
+        <a href="#banya">Баня</a>
+        <a href="#location">Локация</a>
         <a href="#faq">Вопросы</a>
       </div>
-      <div>
-        <h4>Контакты</h4>
-        <a href="https://wa.me/79118366585" target="_blank" rel="noopener">WhatsApp →</a>
-        <a href="tel:+79118366585">+7 911 836-65-85</a>
-        <a href="https://wa.me/79118366585" target="_blank" rel="noopener">Бронирование</a>
-        <span style="display:block;padding:6px 0;font-size:.95rem">📍 Ленинградская область</span>
+      <div class="foot-col">
+        <h5>Связаться</h5>
+        <a href="tel:+79210146609">+7 (921) 014-66-09</a>
+        <a href="https://t.me/+79210146609">Telegram</a>
+        <a href="tel:+79210146609">MAX</a>
+        <a href="#top">Сообщения группы</a>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 forest.a.frame · Аренда дома, Санкт-Петербург</span>
-      <span>Сделано с любовью к тишине</span>
+    <div class="foot-bot">
+      <span>© 2026 karjala_aparts · Карелия, д. Восточное Кончезеро</span>
+      <span>Сделано с теплом к гостям</span>
     </div>
   </div>
 </footer>
 
-<!-- MOBILE FIXED CALL -->
+<!-- MOBILE STICKY CALL -->
 <div class="mcall">
-  <a href="tel:+79118366585" class="btn btn-primary">📞 Позвонить</a>
-  <a href="https://wa.me/79118366585" class="btn wa" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="tel:+79210146609" class="btn btn-primary">📞 Позвонить</a>
+  <a href="https://t.me/+79210146609" class="btn btn-dark">✈️ Telegram</a>
 </div>
 
 <script>
-// header scroll
-const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+// Nav background on scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
 
-// reveal on scroll
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Reveal on scroll
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 
 // FAQ accordion
 document.querySelectorAll('.q button').forEach(b=>{
   b.addEventListener('click',()=>{
-    const q=b.parentElement, a=q.querySelector('.a'), open=q.classList.contains('open');
-    document.querySelectorAll('.q').forEach(x=>{x.classList.remove('open');x.querySelector('.a').style.maxHeight=null});
-    if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+    const q=b.parentElement, ans=q.querySelector('.ans'), open=q.classList.contains('open');
+    document.querySelectorAll('.q.open').forEach(o=>{o.classList.remove('open');o.querySelector('.ans').style.maxHeight=null;});
+    if(!open){q.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
   });
 });
-
-// smooth anchor offset handled by scroll-behavior; close nothing else
 </script>
 </body>
 </html>
